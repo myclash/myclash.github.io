@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-19891.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>DeferredResult异步处理spring mvc Demo</title>
+        <meta name="description" content="spring mvc同步接口在请求处理过程中一直处于阻塞状态，而异步接口可以启用后台线程去处理耗时任务。简单来说适用场景： 1.高并发； 2.高IO耗时操作。  Spring MVC3.2之后支持异步" />
+        <link rel="icon" href="__ADDON__/img/myclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">DeferredResult异步处理spring mvc Demo</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>spring mvc同步接口在请求处理过程中一直处于阻塞状态，而异步接口可以启用后台线程去处理耗时任务。简单来说适用场景：<br /> 1.高并发；<br /> 2.高IO耗时操作。</p> </h1> <p>Spring MVC3.2之后支持异步请求，能够在controller中返回一个Callable或者DeferredResult。<br /> 1.Callable实例</p> <pre><code>@Controller public class CallableController {     @RequestMapping(path = "/async1", method = RequestMethod.GET)     @ResponseBody     public Callable&lt;String&gt; asyncRequest() {         return () -&gt; {             final long currentThread = Thread.currentThread().getId();             final Date requestProcessingStarted = new Date();              Thread.sleep(6000L);              final Date requestProcessingFinished = new Date();              return String.format(                     "request: [threadId: %s, started: %s - finished: %s]"                     , currentThread, requestProcessingStarted, requestProcessingFinished);         };     } } </code></pre> <p>2.DeferredResult使用方式与Callable类似，但在返回结果上不一样，它返回的时候实际结果可能没有生成，实际的结果可能会在另外的线程里面设置到DeferredResult中去，能实现更加复杂的业务场景。</p> <pre><code>@Controller public class DeferredResultController {     private Map&lt;Integer, DeferredResult&lt;String&gt;&gt; deferredResultMap = new HashMap&lt;&gt;();      @ResponseBody     @GetMapping("/get")     public DeferredResult&lt;String&gt; getId(@RequestParam Integer id) throws Exception {         System.out.println("start hello");         DeferredResult&lt;String&gt; deferredResult = new DeferredResult&lt;&gt;();          //先存起来，等待触发         deferredResultMap.put(id, deferredResult);         System.out.println("end hello");         return deferredResult;     }      @ResponseBody     @GetMapping("/set")     public void setId(@RequestParam Integer id) throws Exception {         // 让所有hold住的请求给与响应         if (deferredResultMap.containsKey(id)) {             deferredResultMap.get(id).setResult("hello " + id);         }     } } </code></pre> <p>当从浏览器请求http://localhost:8080/get/1时，页面处于等待状态；当访问http://localhost:8080/set/1，前面的页面会返回"hello 1"。</p> <p>处理过程：</p> <ul> <li>controller 返回一个DeferredResult，我们把它保存到内存里或者List里面（供后续访问）</li> <li>Spring MVC调用request.startAsync()，开启异步处理</li> <li>与此同时将DispatcherServlet里的拦截器、Filter等等都马上退出主线程，但是response仍然保持打开的状态</li> <li>应用通过另外一个线程（可能是MQ消息、定时任务等）给DeferredResult set值。然后Spring MVC会把这个请求再次派发给servlet容器</li> <li>DispatcherServlet再次被调用，然后处理后续的标准流程</li> </ul> <p>3.模拟场景：接口接收请求，推送到队列receiveQueue，后台线程处理完成后推送到resultQueue，监听器监听resultQueue将结果赋值给DeferredResult，接口响应结果。<br /> 首先定义类Task:</p> <pre><code>public class Task&lt;T&gt; {     private DeferredResult&lt;String&gt; result;     private T message;     private Boolean isTimeout; </code></pre> <p>定义MockQueue,用于管理队列及处理数据：</p> <pre><code>@Component public class MockQueue {     /**      * 接收队列      */     private BlockingQueue&lt;Task&lt;String&gt;&gt; receiveQueue = new LinkedBlockingDeque&lt;&gt;(5000);     /**      * 结果队列      */     private BlockingQueue&lt;Task&lt;String&gt;&gt; resultQueue = new LinkedBlockingDeque&lt;&gt;(5000);      public MockQueue() {         this.run();     }      /**      * 接收task      *      * @param task task实体      * @throws InterruptedException      */     public void put(Task&lt;String&gt; task) throws InterruptedException {         receiveQueue.put(task);     }      /**      * 获取结果      *      * @return      * @throws InterruptedException      */     public Task&lt;String&gt; get() throws InterruptedException {         return resultQueue.take();     }      private void run() {         new Thread(() -&gt; {             while (true) {                 try {                     Task&lt;String&gt; task = receiveQueue.take();                     System.out.println("receive data,start process!");                     Thread.sleep(1000);                     task.setMessage("success");                      //任务超时，跳过                     if (task.getIsTimeout()) {                         continue;                     }                      resultQueue.put(task);                     System.out.println("process done!");                 } catch (InterruptedException e) {                     e.printStackTrace();                 }             }         }).start();     } } </code></pre> <p>然后实现Controller异步接口：</p> <pre><code>@Controller public class DeferredResultQueueController {     @Autowired     MockQueue queue;      @ResponseBody     @GetMapping("/test")     public DeferredResult&lt;String&gt; test(@RequestParam Integer id) throws InterruptedException {         System.out.println("start test");         DeferredResult&lt;String&gt; deferredResult = new DeferredResult&lt;&gt;();         Task&lt;String&gt; task = new Task&lt;&gt;(deferredResult, "任务", false);         deferredResult.onTimeout(() -&gt; {             System.out.println("任务超时 id=" + id);             task.setMessage("任务超时");             task.setIsTimeout(true);         });         queue.put(task);         return deferredResult;     } } </code></pre> <p>最后定义监听器，将resultQueue的结果写入DeferredResult。</p> <pre><code>@Component public class QueueResultListener implements ApplicationListener&lt;ContextRefreshedEvent&gt; {     @Autowired     MockQueue mockQueue;      @Override     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {         new Thread(() -&gt; {             try {                 Task&lt;String&gt; task = mockQueue.get();                 task.getResult().setResult(task.getMessage());                 System.out.println("监听器获取到结果：task=" + task);             } catch (InterruptedException e) {                 e.printStackTrace();             }         }).start();     } } </code></pre> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.baeldung.com/spring-deferred-result"  rel="nofollow">https://www.baeldung.com/spring-deferred-result</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cloud.tencent.com/developer/article/1497796"  rel="nofollow">https://cloud.tencent.com/developer/article/1497796</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://zhuanlan.zhihu.com/p/31223106"  rel="nofollow">https://zhuanlan.zhihu.com/p/31223106</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-19438.htm">天宫院宠物医院怎么样（天宫院附近医院）</a></p>
+                                        <p>下一个：<a href="/news/article-19892.htm">动物疫苗规定几岁打的（动物疫苗接种时间）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-8-24-linux-clash-github.htm" title="「8月24日」最高速度20.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「8月24日」最高速度20.7M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-22-clash-node-github.htm" title="「8月22日」最高速度21M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「8月22日」最高速度21M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-26-free-node-subscribe-links.htm" title="「8月26日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「8月26日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-10-free-ssr-node.htm" title="「7月10日」最高速度21.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「7月10日」最高速度21.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-shadowrocket-node.htm" title="「11月4日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月4日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-21-free-node-subscribe.htm" title="「9月21日」最高速度18.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「9月21日」最高速度18.8M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-25-free-subscribe-node.htm" title="「7月25日」最高速度18.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「7月25日」最高速度18.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-12-clash-node.htm" title="「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-node-subscribe.htm" title="「9月27日」最高速度20.6M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「9月27日」最高速度20.6M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-5-today-clash-node.htm" title="「8月5日」最高速度20.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「8月5日」最高速度20.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
