@@ -2,12 +2,11 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://myclash.github.io" />
+        <link rel="canonical" href="https://myclash.github.io/news/article-25417.htm" />
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>2024-08归档 - MyClash官网每日更新站</title>
-        <meta name="keywords" content="2024-08归档" />
-        <meta name="description" content="2024-08归档" />
+    <title>elemen-ui表格默认样式的修改</title>
+        <meta name="description" content="方法一：通过element-ui里给的属性值修改  查找element-ui的官方文档，找到组件的表属性，其他组件也一样。 比如要改表头行： 利用header-row-style 表头行的 style" />
         <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
@@ -31,7 +30,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <!--[if lte IE 9]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -114,9 +113,9 @@
                 <div class="row align-items-end">
                     <div class="col-lg-6">
                         <div class="hero-content-wrapper">
-                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">2024-08 归档</h1>
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">elemen-ui表格默认样式的修改</h1>
                             <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
-                                <a href="/">首页</a> / <span>2024-08 归档</span>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
                             </p>
                         </div>
                     </div>
@@ -137,30 +136,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="xcblog-blog-list">
-                                                <div class="row item xcblog-blog-item" data-date="2024-08-01">
-                            <div class="col-md-3">
-                                <div class="about-image wow fadeInLeft" data-wow-delay=".2s">
-                                    <a href="/free-nodes/2024-8-1-clash-windows.htm" class="xcblog-blog-url">
-                                        <img src="/uploads/20240710/d8a3461d6dd8d50f0701258d99178975.webp" alt="「8月1日」最高速度19M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content-wrapper">
-                                    <div class="section-title mb-40">
-                                        <a href="/free-nodes/2024-8-1-clash-windows.htm" class="xcblog-blog-url">
-                                            <h3 class="mb-25 xcblog-blog-title">
-                                                「8月1日」最高速度19M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接                                            </h3>
-                                        </a>
-                                        <p class="wow fadeInUp" data-wow-delay=".4s">这一次的节点更新覆盖了新加坡、韩国、日本、美国、欧洲、香港、加拿大等地区,最高速度可达19 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="elementui_0" rel="nofollow"></a>方法一：通过element-ui里给的属性值修改</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/de681c6ed67bcabc09c3be696d1e5a42.jpg" alt="elemen-ui表格默认样式的修改"><br /> 查找element-ui的官方文档，找到组件的表属性，其他组件也一样。<br /> 比如要改表头行：<br /> 利用header-row-style 表头行的 style 的回调方法，也可以使用一个固定的 Object 为所有表头行设置一样的 Style。例子如下：</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table</span> <span class="token attr-name">:header-cell-style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tableHeaderColor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table</span><span class="token punctuation">&gt;</span></span> </code></pre> <h2> <a id="style_12" rel="nofollow"></a>方法二：通过在style标签里修改</h2> <p>如果不生效，可能是你全局定义了el-table的样式，引起的冲突。可以加上scope，表示只属于当前页，<em><strong>防止样式冲突</strong></em>，不对全局造成污染，可以在style标签上添加scoped属性以表示它的只属于当下的模块。如图在style标签中添加scoped：</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span> </code></pre> <p>1、修改<strong>表格头部</strong>背景</p> <pre><code class="prism language-html">.el-table th{     background: #eee;   } </code></pre> <p>2、修改<strong>表格行</strong>背景</p> <pre><code class="prism language-html">.el-table tr{    background: #eee;   } </code></pre> <p>3、修改<strong>斑马线表格</strong>的背景</p> <pre><code class="prism language-html">.el-table--striped .el-table__body tr.el-table__row--striped td {     background: #ccc;   } </code></pre> <p>4、修改<strong>行内线</strong>的颜色</p> <pre><code class="prism language-html">.el-table td,.building-top .el-table th.is-leaf {     border-bottom:  2px solid #eee;   } </code></pre> <p>5、修改<strong>表格最底部边框</strong>颜色和高度</p> <pre><code class="prism language-html">.el-table::before{    border-bottom:  1px solid #ccc;     height: 3px   } </code></pre> <p>6、修改<strong>表头字体</strong>颜色</p> <pre><code class="prism language-html">.el-table thead {     color: #ccc;     font-weight: 700;   } </code></pre> <p>7、修改<strong>表格内容</strong>字体颜色和字体大小</p> <pre><code class="prism language-html">.el-table{     color: #6B91CE;     font-size: 14px;   } </code></pre> <p>8、修改<strong>表格无数据的时候</strong>背景，字体颜色</p> <pre><code class="prism language-html">.el-table__empty-block{     background: #ccc;   } .el-table__empty-text{   color: #fff } </code></pre> <p>9、修改<strong>表格鼠标悬浮</strong>hover背景色</p> <pre><code class="prism language-html">.el-table--enable-row-hover .el-table__body tr:hover&gt;td {     background-color: #ccc; } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-24950.htm">宠物美容工资多少钱一个月（宠物美容师基本工资）</a></p>
+                                        <p>下一个：<a href="/news/article-25421.htm">动物疫苗接种方法有哪些种类图片 动物疫苗接种方法有哪些种类图片大全</a></p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                                            </div>
-
-                    <ul class="pagination"><li><a href="/date/2024-08/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-08/">1</a></li><li><a href="/date/2024-08/page-2.htm">2</a></li><li><a href="/date/2024-08/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -168,16 +149,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-8-19-free-subscribe-node.htm" title="「8月19日」最高速度18.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「8月19日」最高速度18.1M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-26-free-node-subscribe-links.htm" title="「8月26日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「8月26日」最高速度21M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-21-free-shadowrocket-node.htm" title="「7月21日」最高速度22.4M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「7月21日」最高速度22.4M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/news/article-19891.htm" title="DeferredResult异步处理spring mvc Demo">DeferredResult异步处理spring mvc Demo</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-19-node-share.htm" title="「9月19日」最高速度20.1M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「9月19日」最高速度20.1M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-8-linux-clash-github.htm" title="「9月8日」最高速度18.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「9月8日」最高速度18.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-16-clash-node-daily-updates.htm" title="「7月16日」最高速度21.2M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「7月16日」最高速度21.2M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-10-free-ssr-node.htm" title="「7月10日」最高速度21.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「7月10日」最高速度21.5M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-free-v2ray-subscribe.htm" title="「10月23日」最高速度21M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「10月23日」最高速度21M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-14-free-high-speed-nodes.htm" title="「8月14日」最高速度22.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「8月14日」最高速度22.5M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-clash-node-daily-updates.htm" title="「9月28日」最高速度23M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「9月28日」最高速度23M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-11-clash-node.htm" title="「8月11日」最高速度20.1M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接">「8月11日」最高速度20.1M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-clash-subscribe.htm" title="「10月22日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「10月22日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-today-clash-node.htm" title="「9月11日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「9月11日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23101.htm" title="Web前端：Ruby On Rails与JavaScript的主要差异">Web前端：Ruby On Rails与JavaScript的主要差异</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-shadowrocket-node.htm" title="「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-high-speed-nodes.htm" title="「11月23日」最高速度21.1M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「11月23日」最高速度21.1M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-v2ray-ss-ssr.htm" title="「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-clash-node-github.htm" title="「11月15日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月15日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
