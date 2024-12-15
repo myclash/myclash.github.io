@@ -2,12 +2,11 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://myclash.github.io" />
+        <link rel="canonical" href="https://myclash.github.io/news/article-26352.htm" />
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>2024-08归档 - MyClash官网每日更新站</title>
-        <meta name="keywords" content="2024-08归档" />
-        <meta name="description" content="2024-08归档" />
+    <title>Redux基础必知必会 reducer拆分 中间件 单向数据流</title>
+        <meta name="description" content="什么是 redux? 三大原则？ 什么是 redux Redux 是一个基于 js 的全局可预测状态容器，主要用于现代前端框架中进行全局状态管理，能够在不同组件之间进行状态共享 Redux 常与 Re" />
         <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
@@ -31,7 +30,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <!--[if lte IE 9]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
@@ -114,9 +113,9 @@
                 <div class="row align-items-end">
                     <div class="col-lg-6">
                         <div class="hero-content-wrapper">
-                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">2024-08 归档</h1>
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Redux基础必知必会 reducer拆分 中间件 单向数据流</h1>
                             <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
-                                <a href="/">首页</a> / <span>2024-08 归档</span>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
                             </p>
                         </div>
                     </div>
@@ -137,30 +136,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="xcblog-blog-list">
-                                                <div class="row item xcblog-blog-item" data-date="2024-08-01">
-                            <div class="col-md-3">
-                                <div class="about-image wow fadeInLeft" data-wow-delay=".2s">
-                                    <a href="/free-nodes/2024-8-1-clash-windows.htm" class="xcblog-blog-url">
-                                        <img src="/uploads/20240710/d8a3461d6dd8d50f0701258d99178975.webp" alt="「8月1日」最高速度19M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content-wrapper">
-                                    <div class="section-title mb-40">
-                                        <a href="/free-nodes/2024-8-1-clash-windows.htm" class="xcblog-blog-url">
-                                            <h3 class="mb-25 xcblog-blog-title">
-                                                「8月1日」最高速度19M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接                                            </h3>
-                                        </a>
-                                        <p class="wow fadeInUp" data-wow-delay=".4s">这一次的节点更新覆盖了新加坡、韩国、日本、美国、欧洲、香港、加拿大等地区,最高速度可达19 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                                      				  				  				<h2 id="什么是-redux-三大原则">什么是 redux? 三大原则？</h2> <p><strong>什么是 redux</strong><br /> Redux 是一个基于 js 的全局可预测状态容器，主要用于现代前端框架中进行全局状态管理，能够在不同组件之间进行状态共享<br /> Redux 常与 React 配合使用，但它并非只能用于 React，由于 Vue 官方推出了自己的状态管理库 Vuex，因此 Redux 很少在 Vue 中使用<br /> Redux 的实现借鉴了 Flux， 如单项数据流。但又有别于 Flux，如全局单例 store</p> <p><strong>redux 三大原则</strong></p> <ol> <li> <p>单一数据源<br /> store 必须是唯一的，全局的 state 存储在单一 store 中</p> </li> <li> <p>state 是只读的<br /> state 只能通过派发 action 来改变</p> </li> <li> <p>reducer 必须是纯函数<br /> reducer 只做一件事情，通过累积的 preState 和当前的 action 计算得出新的 state<br /> 相同的输入必须得到相同的结果，因此 reducer 必须是一个纯函数</p> </li> </ol> <p>reducer 中不应该出现副作用，比如发请求</p> <p></p> <h2 id="为什么要用-redux">为什么要用 redux</h2> <p>React 的定义是"一个用于构建 UI 界面的 javascript 库"，React 关注的点在于如何将状态转换为 UI(UI = fn(state))，在自带的状态管理方案中:</p> <ul> <li>state: 适用于管理自身状态，也可联合 this.props.chidren 实现 callback render</li> <li>props: 适用于父子组件传值，但父子组件嵌套过深时这种方式过于繁琐</li> <li>context: 适用于父子组件嵌套过深和兄弟组件共享状态的场景。context 一般是作为局部的状态管理方案而不是全局的，因为 context 一旦更新，Provider 下包裹的所有子组件都会重新渲染，造成性能问题</li> </ul> <p>在一个复杂的应用中，数据的流向存在跨层、反向的数据流， 在交互上也存在父子、兄弟、跨组件通信， 不利于维护<br /> 而 Redux 只需要在最外层传入 store， 内层组件即可通过 props 与 store 中的状态交互<br /> 在 Redux 中，数据的流动是单向的，store 是全局单一的，reducer 是纯函数，同样的输入得到的输出一定相同，因此状态是可预测的</p> <h2 id="什么时候用-redux">什么时候用 redux</h2> <ol> <li>某个组件的状态，需要让其他组件可以随时拿到</li> <li>一个组件需要改变另外一个组件的状态</li> <li>如果你不确定要不要用 redux，那就一定不需要用 redux</li> </ol> <p></p> <h2 id="redux-基本-api">redux 基本 api</h2> <h4 id="createstore">createStore</h4> <p>createStore 是 redux 的重要组成部分， 大部分 api 都基于它生成<br /> 以下是 createStore 的形参列表</p> <ol> <li>reducer: 初始化、更新 state</li> <li>preloadedState: 默认初始化 state，但一般不用它而是 reducer 处理 init action 来初始化一个 state</li> <li>enhancer: 一般用于 applyMiddleWare 增加中间件，作用是对 createStore 进行增强，覆盖原来的 dispatch 来实现一些功能上的拓展，如异步 action、日志打印、异常监听</li> </ol> <p></p> <h4 id="getstate">getState</h4> <p>获取 state 的唯一方式，返回当前最新的 state<br /> createStore 内部维持了一个变量 currentState，这个变量是私有的，对外部隐藏，只通过唯一接口 getState 对外暴露<br /> react-redux connect 方法底层也是通过这个 api 拿到 state</p> <p></p> <h4 id="dispatch">dispatch</h4> <p>改变 state 的唯一方式，通过 dispatch 将用户的行为以 action 的形式通知给 redux，通知 redux 把计算最新的状态并反馈给用户<br /> 如果你想在 dispatch 的前后做一些拓展功能，比如异步 action，异常收集，日志打印，建议使用中间件来做一些增强</p> <p></p> <h4 id="subscribe">subscribe</h4> <p>订阅 store 的状态变化，当且仅当 dispatch 触发状态更新之后执行入参 callback 回调函数，并返回一个取消订阅时执行的回调函数。<br /> 通常我们使用这个 api 来实现 redux 和其他 js 库通信<br /> react-redux 底层在 Provider 中通过 store.subscribe 发起订阅，在 state 改变时，会检查子组件是否通过 connect 消费了 store 以及子组件的 props 有变化，如果这两个条件都满足，就使用最新的状态更新子组件，从而达到精确的最小粒度的 render，相对于 context 一旦数据更新就渲染所有 Provider 包裹的子组件而言，这种处理方式在性能上显然是更优的</p> <p></p> <h2 id="redux-combinereducers-拆分reducer">redux combineReducers 拆分reducer</h2> <p>随着业务复杂度的增加，把所有状态都放在一个 reducer 中进行处理只会让代码变得更加难以维护<br /> 此时可以利用 combineReducers 拆分多个不同的 reducer，对不同业务模块的状态进行分别管理</p> <p>combineReducers 接受一个 reducers obj 作为入参，你可以给不同 reducer 指定 key，这样调用 getState 时拿到的也是对应 key 的 state<br /> 如果多个组件要共享 state，使用相同的 reducer 即可</p> <pre><code class="language-javascript">import {combineReducers, createStore} from 'redux' import countReducer from './reducer' import countReducer2 from './count2reducer'  const store = createStore(combineReducers(myCountState:countReducer,myCountState2:countReducer2})) // store.getState() {myCountState:{...},myCountState2:{...}}  export default store</code></pre> <p></p> <h2 id="redux-middleware-中间件">redux MiddleWare 中间件</h2> <p>如果要记录状态的历史变化，你会怎么做？<br /> 我们可能很容易想到只要在 dispatch 前后分别 log 一下就好了<br /> 但是一个复杂的大型项目，调用 dispatch 的地方不计其数，上述实现过于臃肿</p> <p>所以我们应当使用中间件</p> <p>中间件其实就是对 dispatch 的增强，中间件在 action 到达 store 的前后提供了逻辑插入点，我们可以在上面实现一些异步 action、日志输出、异常检测等功能</p> <p><strong>使用中间件</strong><br /> 通过 applyMiddleWare 传入中间件</p> <pre><code class="language-javascript">const store = createStore(reducer, applyMiddleware(thunk))</code></pre> <p></p> <h2 id="redux-数据流向">redux 数据流向</h2> <ol> <li>初始化 store，此时 redux 会 dispatch 一个 type 为 init，payload 为 undefined 的 action 并从 reducer 拿到最初的 state</li> <li>组件引入 store 并通过 getState 消费 store 状态，通过 subscribe 订阅 store 状态变化</li> <li>用户动作产生 action，dispatch 派发 action 到 store 并通过 reducer 更新状态。dispatch 的前后如果有中间件会在此时执行中间件相关逻辑</li> <li>状态更新发布之后通知订阅者，订阅者执行注册订阅的回调函数，在回调函数中可以调用 render 将最新的状态展现给用户，并等待用户的下一次动作</li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3ee2b41b77553e64dde12dab76263137.jpg" alt="Redux基础必知必会 reducer拆分 中间件 单向数据流"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25887.htm">宠物粮在哪里买便宜又安全可靠（宠物粮在哪里买比较放心）</a></p>
+                                        <p>下一个：<a href="/news/article-26355.htm">24小时宠物医院咨询电话（24小时宠物医院咨询电话天水市）</a></p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                                            </div>
-
-                    <ul class="pagination"><li><a href="/date/2024-08/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-08/">1</a></li><li><a href="/date/2024-08/page-2.htm">2</a></li><li><a href="/date/2024-08/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -168,16 +149,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node.htm" title="「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19438.htm" title="天宫院宠物医院怎么样（天宫院附近医院）">天宫院宠物医院怎么样（天宫院附近医院）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-8-linux-clash-github.htm" title="「9月8日」最高速度18.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「9月8日」最高速度18.2M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-7-11-clash-node-daily-updates.htm" title="「7月11日」最高速度21.1M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月11日」最高速度21.1M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-ssr-subscribe.htm" title="「12月6日」最高速度18.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「12月6日」最高速度18.1M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-17-free-clash-subscribe.htm" title="「8月17日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「8月17日」最高速度23M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-6-free-v2ray.htm" title="「8月6日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「8月6日」最高速度19.8M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-8-18-free-clash-subscribe.htm" title="「8月18日」最高速度22.7M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接">「8月18日」最高速度22.7M/S，2024年Shadowrocket/Clash/V2ray/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-23-linux-clash-github.htm" title="「9月23日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月23日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-15-shadowrocket-node.htm" title="「8月15日」最高速度22.8M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接">「8月15日」最高速度22.8M/S，2024年SSR/Shadowrocket/V2ray/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-12-clash-node.htm" title="「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-clash.htm" title="「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-6-clash-v2ray-ss-ssr.htm" title="「9月6日」最高速度22.6M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「9月6日」最高速度22.6M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-4-shadowrocket-node.htm" title="「11月4日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月4日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-high-speed-nodes.htm" title="「10月8日」最高速度18.6M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接">「10月8日」最高速度18.6M/S，2024年V2ray/Shadowrocket/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-clash-node-github.htm" title="「11月11日」最高速度22.2M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接">「11月11日」最高速度22.2M/S，2024年Shadowrocket/Clash/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-node-share.htm" title="「12月2日」最高速度20.3M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接">「12月2日」最高速度20.3M/S，2024年Shadowrocket/V2ray/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24019.htm" title="叫猫过来的手势（叫猫过来的手势 视频）">叫猫过来的手势（叫猫过来的手势 视频）</a></li>
                     </ul>
     </div>
 </div>
