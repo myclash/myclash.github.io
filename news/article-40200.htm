@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-40200.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>一步一步生成滑动验证码图片详解</title>
+        <meta name="description" content="图片准备    图片 名称 尺寸      bg.jpg 552 * 344    hole.png 110 * 110    slider.png 110 * 110     hole.png和sl" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">一步一步生成滑动验证码图片详解</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="图片准备">图片准备</h2> <table> <thead> <tr> <th>图片</th> <th>名称</th> <th>尺寸</th> </tr> </thead> <tbody> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194058652-1999387479.jpg" alt="一步一步生成滑动验证码图片详解"></td> <td>bg.jpg</td> <td>552 * 344</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194356514-1712042113.png" alt="一步一步生成滑动验证码图片详解"></td> <td>hole.png</td> <td>110 * 110</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413194440229-300505845.png" alt="一步一步生成滑动验证码图片详解"></td> <td>slider.png</td> <td>110 * 110</td> </tr> </tbody> </table> <blockquote> <p>hole.png和slider.png为png是因为图片带有透明度。</p> </blockquote> <p></p> <h2 id="合成目标">合成目标</h2> <p>最终为前端生成两张图片：</p> <table> <thead> <tr> <th>图片</th> <th>名称</th> <th>尺寸</th> </tr> </thead> <tbody> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413195051086-218511065.png" alt="一步一步生成滑动验证码图片详解"></td> <td>out_bg.jpg</td> <td>552 * 344</td> </tr> <tr> <td><img decoding="async" src="https://img2022.cnblogs.com/blog/1409297/202204/1409297-20220413195103783-1663722283.png" alt="一步一步生成滑动验证码图片详解"></td> <td>out_slider.png</td> <td>110 * 344</td> </tr> </tbody> </table> <blockquote> <p><strong>out_slider.png高度为344</strong>与背景图等高。</p> </blockquote> <p>也可以打开滑动验证<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.sunseeyou.com/"  target="_blank" rel="nofollow">Demo</a>页面，F12来观察图片。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/2c210ee701cc4afe69147237a8248a37.jpg" alt="一步一步生成滑动验证码图片详解"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f24cd2d785899b0c0d92b7864e61b362.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p></p> <h2 id="实现">实现</h2> <p>本机环境为.net 6.0.300-preview.22204.3, 装有Vscode。</p> <h3 id="1创建项目">1.创建项目</h3> <p>创建console项目</p> <pre><code>mkdir SlideImageGenerator cd SlideImageGenerator dotnet new console</code></pre> <h3 id="2添加imagesharp">2.添加ImageSharp</h3> <pre><code>dotnet add package SixLabors.ImageSharp dotnet add package SixLabors.ImageSharp.Drawing --prerelease</code></pre> <h3 id="3vscode打开">3.vscode打开</h3> <pre><code>code .</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d433a12c55eeb1de6d013b7e3b5a1c40.jpg" alt="一步一步生成滑动验证码图片详解"></p> <h3 id="4引入图片">4.引入图片</h3> <p>创建Images目录, 并放入bg.jpg，hole.png，slider.png</p> <pre><code>mkdir Images</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/99df045c3bf56cdb2d794b344b5ecc5a.jpg" alt="一步一步生成滑动验证码图片详解"></p> <h3 id="5生成out_bgjpg">5.生成out_bg.jpg</h3> <p>out_bg.jpg生成比较简单，直接将hole.png"叠加"到bg.jpg。hole.png灰色区域是半透明的，因此能够隐约看到背景。开始!<br /> 清空Program.cs，引入命名空间</p> <pre><code class="language-c#">using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;</code></pre> <p>生成随机坐标，代表绘制凹槽的起始位置:</p> <pre><code class="language-c#">// 生成随机坐标 int randomX = 100, randomY = 120;</code></pre> <p>加载图片</p> <pre><code class="language-csharp">using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");</code></pre> <p>"叠加"holeTemplateImage到backgroundImage。用ImageSharp来说就是以backgroundImage为底，从位置randomX，randomY开始绘制holeTemplateImage。</p> <pre><code class="language-csharp">backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");</code></pre> <p>运行</p> <pre><code>dotnet run</code></pre> <p>运行后可以在目录看到out_bg.jpg<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/be864fe9a57bbd9cf6990c72c9a21b07.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>全部代码：</p> <pre><code class="language-c#">using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;  // 生成随机坐标 int randomX = 100, randomY = 120;  // 加载图片 using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");  // "叠加"holeTemplateImage到backgroundImage backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");</code></pre> <h3 id="6生成out_sliderpng">6.生成out_slider.png</h3> <p>out_slider.png生成需要三步:<br /> a. 从背景图中扣出凹槽区域，形成holeMattingImage。<br /> b. 将slider.png"叠加"到抠图holeMattingImage。<br /> c. 将b生成的图形"叠加"到一个高为344,宽为110的透明区域，最终生成out_slider.<br /> 以下具体讲解：<br /> a步骤我直接上代码，其实就一个裁剪操作:</p> <pre><code class="language-c#">// backgroundImage已做修改，这里重新加载背景 using var backgroundImage2 = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeMattingImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, sliderTemplateImage.Height); // 110 * 110 // 根据透明度计算凹槽图轮廓形状(形状由不透明区域形成) var holeShape = CalcHoleShape(holeTemplateImage); // 生成凹槽抠图 holeMattingImage.Mutate(x =&gt; {     // 可以这样理解：     //   将holeShape想象成一幅110X110的图片     //   p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)则表示     //   从holeShape的-randomX, -randomY开始绘制backgroundImage2(相当于backgroundImage2左移randomX，上移randomY)     //   然后将holeShape绘制结果叠加到holeMattingImage上     x.Clip(holeShape, p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)); }); holeMattingImage.SaveAsJpegAsync("out_holeMatting.jpg");</code></pre> <p>裁剪注意传入的负坐标，注释是我个人的理解。凹槽的形状通过CalcHoleShape实现的，原理是一行行扫描图像，每行连续不透明区域（包含半透明）形成一个或多个n*1的矩形。最后将所有小矩形组合形成一个组合形状ComplexPolygon</p> <pre><code class="language-c#">Func&lt;Image&lt;Rgba32&gt;, ComplexPolygon&gt; CalcHoleShape = (holeTemplateImage) =&gt; {      int temp = 0;     var pathList = new List&lt;IPath&gt;();     holeTemplateImage.ProcessPixelRows(accessor =&gt;     {         for (int y = 0; y &lt; holeTemplateImage.Height; y++)         {             var rowSpan = accessor.GetRowSpan(y);             for (int x = 0; x &lt; rowSpan.Length; x++)             {                 ref Rgba32 pixel = ref rowSpan[x];                 if (pixel.A != 0)                 {                     if (temp == 0)                     {                         temp = x;                     }                 }                 else                 {                     if (temp != 0)                     {                         pathList.Add(new RectangularPolygon(temp, y, x - temp, 1));                         temp = 0;                     }                 }             }         }     });      return new ComplexPolygon(new PathCollection(pathList)); };</code></pre> <p>运行,形成out_holeMatting.jpg</p> <pre><code class="language-c#">dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3eac7ce63ddc6ead1f1e70816a22769e.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>b. 将slider.png"叠加"到抠图holeMattingImage，代码比较简单</p> <pre><code class="language-c#">// 叠加拖块模板 holeMattingImage.Mutate(x =&gt; x.DrawImage(sliderTemplateImage, new Point(0, 0), 1)); holeMattingImage.SaveAsJpegAsync("out_holeMatting2.jpg");</code></pre> <p>运行,形成out_holeMatting2.jpg</p> <pre><code>dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/45c070d1f2d3559662c3624c128a0b4f.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>c. 将out_holeMatting2叠加到"叠加"到一个高为344,宽为110的透明区域</p> <pre><code class="language-c#">using var sliderBarImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, backgroundImage2.Height); // 绘制拖块条 sliderBarImage.Mutate(x =&gt; x.DrawImage(holeMattingImage, new Point(0, randomY), 1)); sliderBarImage.SaveAsJpegAsync("out_slider.jpg");</code></pre> <p>运行,形成out_slider.jpg</p> <pre><code>dotnet run</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fdef8fc038e07088102d9377c5dfc564.jpg" alt="一步一步生成滑动验证码图片详解"></p> <p>全部代码</p> <pre><code>using SixLabors.ImageSharp; using SixLabors.ImageSharp.Drawing; using SixLabors.ImageSharp.PixelFormats; using SixLabors.ImageSharp.Processing; using SixLabors.ImageSharp.Drawing.Processing;  // 生成随机坐标 int randomX = 100, randomY = 120;  // 加载图片 using var backgroundImage = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeTemplateImage = Image.Load&lt;Rgba32&gt;("images/hole.png"); using var sliderTemplateImage = Image.Load&lt;Rgba32&gt;("images/slider.png");  // "叠加"holeTemplateImage到backgroundImage backgroundImage.Mutate(x =&gt; x.DrawImage(holeTemplateImage, new Point(randomX, randomY), 1)); backgroundImage.SaveAsJpegAsync("out_bg.jpg");  Func&lt;Image&lt;Rgba32&gt;, ComplexPolygon&gt; CalcHoleShape = (holeTemplateImage) =&gt; {      int temp = 0;     var pathList = new List&lt;IPath&gt;();     holeTemplateImage.ProcessPixelRows(accessor =&gt;     {         for (int y = 0; y &lt; holeTemplateImage.Height; y++)         {             var rowSpan = accessor.GetRowSpan(y);             for (int x = 0; x &lt; rowSpan.Length; x++)             {                 ref Rgba32 pixel = ref rowSpan[x];                 if (pixel.A != 0)                 {                     if (temp == 0)                     {                         temp = x;                     }                 }                 else                 {                     if (temp != 0)                     {                         pathList.Add(new RectangularPolygon(temp, y, x - temp, 1));                         temp = 0;                     }                 }             }         }     });      return new ComplexPolygon(new PathCollection(pathList)); };  // backgroundImage已做修改，这里重新加载背景 using var backgroundImage2 = Image.Load&lt;Rgba32&gt;("images/bg.jpg"); using var holeMattingImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, sliderTemplateImage.Height); // 110 * 110 // 根据透明度计算凹槽图轮廓形状(形状由不透明区域形成) var holeShape = CalcHoleShape(holeTemplateImage); // 生成凹槽抠图 holeMattingImage.Mutate(x =&gt; {     // 可以这样理解：     //   将holeShape想象成一幅110X110的图片     //   p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)则表示     //   从holeShape的-randomX, -randomY开始绘制backgroundImage2(相当于backgroundImage2左移randomX，上移randomY)     //   然后将holeShape绘制结果叠加到holeMattingImage上     x.Clip(holeShape, p =&gt; p.DrawImage(backgroundImage2, new Point(-randomX, -randomY), 1)); }); holeMattingImage.SaveAsJpegAsync("out_holeMatting.jpg");  // 叠加拖块模板 holeMattingImage.Mutate(x =&gt; x.DrawImage(sliderTemplateImage, new Point(0, 0), 1)); holeMattingImage.SaveAsJpegAsync("out_holeMatting2.jpg");  using var sliderBarImage = new Image&lt;Rgba32&gt;(sliderTemplateImage.Width, backgroundImage2.Height); // 绘制拖块条 sliderBarImage.Mutate(x =&gt; x.DrawImage(holeMattingImage, new Point(0, randomY), 1)); sliderBarImage.SaveAsJpegAsync("out_slider.jpg");</code></pre> <h2 id="最后"></h2> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39706.htm">猫咪抓伤出血伤口红肿怎么办（猫咪抓伤后伤口红肿）</a></p>
+                                        <p>下一个：<a href="/news/article-40201.htm">实现宠物领养功能的途径（实现领养宠物的功能对象）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-high-speed-nodes.htm" title="「12月18日」最高速度19.4M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「12月18日」最高速度19.4M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-clash-node-github.htm" title="「12月13日」最高速度19.1M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「12月13日」最高速度19.1M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18761.htm" title="南京宠物领养吧百度贴吧论坛（南京领养宠物都要做什么条件）">南京宠物领养吧百度贴吧论坛（南京领养宠物都要做什么条件）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-19-latest-clash-node.htm" title="「10月19日」最高速度22.2M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接">「10月19日」最高速度22.2M/S，2024年SSR/Shadowrocket/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24949.htm" title="武汉哪个宠物医院收费便宜（武汉宠物医院排名第一）">武汉哪个宠物医院收费便宜（武汉宠物医院排名第一）</a></li>
+                        <li class="py-2"><a href="/news/article-38214.htm" title="开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）">开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）</a></li>
+                        <li class="py-2"><a href="/news/article-23104.htm" title="如何给新开的宠物店宣传（新开宠物店宣传语）">如何给新开的宠物店宣传（新开宠物店宣传语）</a></li>
+                        <li class="py-2"><a href="/news/article-24244.htm" title="docker故障大全">docker故障大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-shadowrocket-node.htm" title="「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-22-free-clash-subscribe.htm" title="「10月22日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「10月22日」最高速度20.6M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
