@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-42683.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>springMVC拦截器从Request中获取Json格式并解决request的请求流只能读取一次的问题</title>
+        <meta name="description" content="背景  在使用SSM（你问我什么叫SSM，我一拳锤爆你的狗头）做开发的时候，经常会使用@RequestBody注解，这个注解是非常的好用。但是如果你想在请求参数传到后台的时候做一个参数检验，当然可以！" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-42683.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="springMVC拦截器从Request中获取Json格式并解决request的请求流只能读取一次的问题" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/39c277d649cb600e36fe5a36a7e9f6b6.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:15:50" />
+    <meta property="og:updated_time" content="2025-01-18T07:15:50" />
+        <meta property="og:description" content="背景  在使用SSM（你问我什么叫SSM，我一拳锤爆你的狗头）做开发的时候，经常会使用@RequestBody注解，这个注解是非常的好用。但是如果你想在请求参数传到后台的时候做一个参数检验，当然可以！" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">springMVC拦截器从Request中获取Json格式并解决request的请求流只能读取一次的问题</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <h5 id="背景">背景</h5> <blockquote> <p>在使用SSM（你问我什么叫SSM，我一拳锤爆你的狗头）做开发的时候，经常会使用@RequestBody注解，这个注解是非常的好用。但是如果你想在请求参数传到后台的时候做一个参数检验，当然可以！使用SpringMVC的拦截器，在拦截器里把request的数据读取出来不就行了！！，但是在使用了拦截器的时候会出现一个问题！！！！你在拦截器读取了request的数据，在Controller里面@RequestBody注解获取Json就会失败就读取不到数据！！！！那就是RequestBody是流的形式读取的，流读取一次就没有了！！</p> </blockquote> <h5 id="为什么使用requestbody只能读取一遍请求数据流">为什么使用RequestBody只能读取一遍请求数据流？</h5> <blockquote> <p>那是因为流对应的是数据，数据放在内存中，有的是部分放在内存中。read 一次标记一次当前位置（mark position），第二次read就从标记位置继续读（从内存中copy）数据。 所以这就是为什么读了一次第二次是空了。 怎么让它不为空呢？只要inputstream 中的pos 变成0就可以重写读取当前内存中的数据。javaAPI中有一个方法<strong><em>public void reset()</em></strong> 这个方法就是可以重置pos为起始位置，但是不是所有的IO读取流都可以调用该方法！ServletInputStream是不能调用reset方法，这就导致了只能调用一次getInputStream()。</p> </blockquote> <h5 id="解决办法重写httpservletrequestwrapper方法">解决办法：重写HttpServletRequestWrapper方法</h5> <blockquote> <p>这种方法就是通过重写HttpServletRequestWrapper把request的保存下来，然后通过过滤器保存下来的request在填充进去，这样就可以多次读取request了</p> </blockquote> <p>1.重写HttpServletRequestWrapper方法</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RequestWrapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServletRequestWrapper</span> {<!-- --></span>     <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String body;     <span class="hljs-keyword">public</span> <span class="hljs-title">RequestWrapper</span>(HttpServletRequest request) <span class="hljs-keyword">throws</span> IOException {         <span class="hljs-keyword">super</span>(request);         StringBuilder stringBuilder = <span class="hljs-keyword">new</span> StringBuilder();         BufferedReader bufferedReader = <span class="hljs-keyword">null</span>;         <span class="hljs-keyword">try</span> {             InputStream inputStream = request.getInputStream();             <span class="hljs-keyword">if</span> (inputStream != <span class="hljs-keyword">null</span>) {                 bufferedReader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(inputStream));                 <span class="hljs-keyword">char</span>[] charBuffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">128</span>];                 <span class="hljs-keyword">int</span> bytesRead = -<span class="hljs-number">1</span>;                 <span class="hljs-keyword">while</span> ((bytesRead = bufferedReader.read(charBuffer)) &gt; <span class="hljs-number">0</span>) {                     stringBuilder.append(charBuffer, <span class="hljs-number">0</span>, bytesRead);                 }             } <span class="hljs-keyword">else</span> {                 stringBuilder.append(<span class="hljs-string">""</span>);             }         } <span class="hljs-keyword">catch</span> (IOException ex) {             <span class="hljs-keyword">throw</span> ex;         } <span class="hljs-keyword">finally</span> {             <span class="hljs-keyword">if</span> (bufferedReader != <span class="hljs-keyword">null</span>) {                 <span class="hljs-keyword">try</span> {                     bufferedReader.close();                 } <span class="hljs-keyword">catch</span> (IOException ex) {                     <span class="hljs-keyword">throw</span> ex;                 }             }         }         body = stringBuilder.toString();     }      <span class="hljs-annotation">@Override</span>     <span class="hljs-keyword">public</span> ServletInputStream <span class="hljs-title">getInputStream</span>() <span class="hljs-keyword">throws</span> IOException {         <span class="hljs-keyword">final</span> ByteArrayInputStream byteArrayInputStream = <span class="hljs-keyword">new</span> ByteArrayInputStream(body.getBytes());         ServletInputStream servletInputStream = <span class="hljs-keyword">new</span> ServletInputStream() {             <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isFinished</span>() {                 <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;             }             <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isReady</span>() {                 <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;             }             <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setReadListener</span>(ReadListener readListener) {}             <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span>() <span class="hljs-keyword">throws</span> IOException {                 <span class="hljs-keyword">return</span> byteArrayInputStream.read();             }         };         <span class="hljs-keyword">return</span> servletInputStream;      }     <span class="hljs-annotation">@Override</span>     <span class="hljs-keyword">public</span> BufferedReader <span class="hljs-title">getReader</span>() <span class="hljs-keyword">throws</span> IOException {         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(<span class="hljs-keyword">this</span>.getInputStream()));     }     <span class="hljs-keyword">public</span> String <span class="hljs-title">getBody</span>() {         <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.body;     }  }</code></pre> <p>2.拦截器CommonInterceptor</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommonInterceptor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HandlerInterceptorAdapter</span> {<!-- --></span>     <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Log log = LogFactory.getLog(CommonInterceptor.class);     <span class="hljs-keyword">public</span> <span class="hljs-title">CommonInterceptor</span>() {     }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">preHandle</span>(HttpServletRequest request, HttpServletResponse response, Object handler) <span class="hljs-keyword">throws</span> Exception {         RequestWrapper myRequestWrapper = <span class="hljs-keyword">new</span> RequestWrapper((HttpServletRequest) request);         String body = myRequestWrapper.getBody();         System.out.println(<span class="hljs-string">"我是拦截器："</span>+body);         <span class="hljs-comment">// do something</span>         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;      }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postHandle</span>(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) <span class="hljs-keyword">throws</span> Exception {         <span class="hljs-keyword">super</span>.postHandle(request, response, handler, modelAndView);     }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterCompletion</span>(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) <span class="hljs-keyword">throws</span> Exception {         <span class="hljs-keyword">super</span>.afterCompletion(request, response, handler, ex);     }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterConcurrentHandlingStarted</span>(HttpServletRequest request, HttpServletResponse response, Object handler) <span class="hljs-keyword">throws</span> Exception {         <span class="hljs-keyword">super</span>.afterConcurrentHandlingStarted(request, response, handler);     } }</code></pre> <p>3.在spring-mvc.xml声明springMVC的拦截器</p> <pre class="prettyprint"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">mvc:interceptors</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">mvc:interceptor</span>&gt;</span>         <span class="hljs-tag">&lt;<span class="hljs-title">mvc:mapping</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/**"</span>/&gt;</span>         <span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"com.sdut.platform.core.CommonInterceptor"</span>/&gt;</span>     <span class="hljs-tag">&lt;/<span class="hljs-title">mvc:interceptor</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">mvc:interceptors</span>&gt;</span></code></pre> <p>4.过滤器HttpServletFilter类</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpServletFilter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Filter</span> {<!-- --></span>      <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span>(FilterConfig filterConfig) <span class="hljs-keyword">throws</span> ServletException {     }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doFilter</span>(ServletRequest request, ServletResponse response, FilterChain chain) <span class="hljs-keyword">throws</span> IOException, ServletException {         ServletRequest requestWrapper = <span class="hljs-keyword">null</span>;         System.out.println(<span class="hljs-string">"我是过滤器"</span>);         <span class="hljs-keyword">if</span>(request <span class="hljs-keyword">instanceof</span> HttpServletRequest) {             requestWrapper = <span class="hljs-keyword">new</span> RequestWrapper((HttpServletRequest) request);         }         <span class="hljs-keyword">if</span>(requestWrapper == <span class="hljs-keyword">null</span>) {             chain.doFilter(request, response);         } <span class="hljs-keyword">else</span> {             chain.doFilter(requestWrapper, response);         }     }     <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span>() {      } }</code></pre> <p>5.在web.xml中注册过滤器</p> <pre class="prettyprint"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">filter</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">filter-name</span>&gt;</span>requestFilter<span class="hljs-tag">&lt;/<span class="hljs-title">filter-name</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">filter-class</span>&gt;</span>com.sdut.platform.core.HttpServletFilter<span class="hljs-tag">&lt;/<span class="hljs-title">filter-class</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">filter</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">filter-mapping</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">filter-name</span>&gt;</span>requestFilter<span class="hljs-tag">&lt;/<span class="hljs-title">filter-name</span>&gt;</span>     <span class="hljs-tag">&lt;<span class="hljs-title">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-title">url-pattern</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">filter-mapping</span>&gt;</span></code></pre> <p>经过测试完全可以并且不出现其他错误。</p> <h5 id="解决办法aop切面获取request一般做日志管理会经常使用这种办法">解决办法：AOP切面获取request(一般做日志管理会经常使用这种办法)</h5> <p>这个办法我还没做测试 </p> <pre class="prettyprint"><code class="hljs avrasm">HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder<span class="hljs-preprocessor">.currentRequestAttributes</span>())<span class="hljs-preprocessor">.getRequest</span>()<span class="hljs-comment">;</span> HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder<span class="hljs-preprocessor">.currentRequestAttributes</span>())<span class="hljs-preprocessor">.getResponse</span>()<span class="hljs-comment">;</span></code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-42184.htm">益沣动物医院怎么样啊好吗（益沣新材料）</a></p>
+                                        <p>下一个：<a href="/news/article-42685.htm">动物医院个人总结2000字（动物医院总结报告）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35972.htm" title="寄养宠物合同怎么写（宠物寄养合同有没有法律效应）">寄养宠物合同怎么写（宠物寄养合同有没有法律效应）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-subscribe-node.htm" title="「11月8日」最高速度22.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月8日」最高速度22.7M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-latest-clash-node.htm" title="「12月23日」最高速度18.5M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址">「12月23日」最高速度18.5M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-node-subscribe-links.htm" title="「11月22日」最高速度21.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「11月22日」最高速度21.3M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-clash-node.htm" title="「12月29日」最高速度19M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址">「12月29日」最高速度19M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-ssr-subscribe.htm" title="「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址">「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-clash.htm" title="「1月13日」最高速度21.5M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「1月13日」最高速度21.5M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33887.htm" title="女人养猫会怎么样呢（女人养猫咪会命不好吗）">女人养猫会怎么样呢（女人养猫咪会命不好吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-windows-clash-node.htm" title="「12月7日」最高速度21.7M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接">「12月7日」最高速度21.7M/S，2024年V2ray/Clash/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-windows-clash-node.htm" title="「10月7日」最高速度19.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「10月7日」最高速度19.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
