@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-43672.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>java实现机械表</title>
+        <meta name="description" content="package thread;  import java.awt.*; import java.awt.event.WindowAdapter; import java.awt.event.Windo" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-43672.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="java实现机械表" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/26536a4c9fe926044d1c4d0e63158a10.webp" />
+        <meta property="og:release_date" content="2025-01-20T07:13:03" />
+    <meta property="og:updated_time" content="2025-01-20T07:13:03" />
+        <meta property="og:description" content="package thread;  import java.awt.*; import java.awt.event.WindowAdapter; import java.awt.event.Windo" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java实现机械表">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">java实现机械表</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <pre><code>package thread;  import java.awt.*; import java.awt.event.WindowAdapter; import java.awt.event.WindowEvent; import javax.swing.*; import java.util.Date; import java.awt.*;   class T extends JFrame implements Runnable {     Thread t2 =new Thread();      	public void run()  	{   		t2.start(); 		 		Frame f=new Frame("机械表");        f.setSize(600,300);        f.setLocation(300,300);         f.setVisible(true); 	           f.add(new Paint());                 f.addWindowListener         (new WindowAdapter() {         public void windowClosing(WindowEvent e) {         f.dispose();         }  } );         //关闭窗口                     		while(t2!=null) 		{ 			f.repaint(); 			try { 				Thread.sleep(1000); 			} catch (InterruptedException e) { 				// TODO Auto-generated catch block 				e.printStackTrace(); 			} 		} 	} } class Paint extends JPanel { 	  	  	  	public void paint (Graphics g) 	{   		int radius,ybase,xbase;  	    Date date=new Date(); 	    int hour=date.getHours();      	int minute=date.getMinutes(); 	    int s=date.getSeconds();  		radius=ybase=xbase=150/2;	 		g.drawOval(10, 10, 150, 150);  		for (int i = 1; i &lt;= 12; i++) { 			g.drawString(new String(i+""), (int)(10+xbase+Math.sin(Math.PI/6*i)*radius), (int)(10+ybase-Math.cos(Math.PI/6*i)*radius)); 		} 		 		 		/* 		 * 圆心坐标：(x0,y0)  半径：r  角度：a   圆周率： PI   则圆上任一点为：（x1,y1）  x1   =   x0   +   r   *   cos(a   *   PI   /180   )  y1   =   y0   +   r   *   sin(a   *   PI  /180   )  		 */ 	 	 		g.setColor(Color.blue); 		g.drawLine(xbase+10, ybase+10, (int)(10+xbase+(Math.cos((s*Math.PI/30)-Math.PI/2)*radius)), (int)(10+ybase+(Math.sin((s*Math.PI/30-Math.PI/2))*radius))); 		 		g.setColor(Color.green); 		g.drawLine(xbase+10, ybase+10, (int)(10+xbase+(Math.cos((minute*Math.PI/30-Math.PI/2))*radius)), (int)(10+ybase+(Math.sin((minute*Math.PI/30-Math.PI/2))*radius)));  		g.setColor(Color.red); 		g.drawLine(xbase+10, ybase+10, (int)(10+xbase+(Math.cos((hour*Math.PI/6-Math.PI/2))*radius)), (int)(10+ybase+((Math.sin(hour*Math.PI/6-Math.PI/2))*radius))); 		 		 g.setFont(new Font("宋体", Font.BOLD,20)); 		 g.setColor(Color.black); 		  	     g.drawString(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(),200,100); 	     g.drawString("北京时间",200,50); 		 	} 	      }  public  class time { 	public static void main(String args[]) 	{             T t1=new T(); 	        t1.run();       	} 	 } </code></pre> <p>运行图<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/fd625d432ca0707af56f13dacce30e12.jpg" alt="java实现机械表"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-43175.htm">宠物领养协议押金 宠物领养协议押金多少</a></p>
+                                        <p>下一个：<a href="/news/article-43673.htm">九龙坡景点哪些景区好玩(九龙坡景点哪些景区可以玩)</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21691.htm" title="Web前端：JavaScript和Nodejs有什么不同?">Web前端：JavaScript和Nodejs有什么不同?</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node.htm" title="「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-34843.htm" title="狗粮牌子图片（狗粮品牌logo）">狗粮牌子图片（狗粮品牌logo）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-shadowrocket-node.htm" title="「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月30日」最高速度18.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-v2ray.htm" title="「10月30日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「10月30日」最高速度19.4M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22644.htm" title="专门卖宠物用品的app有哪些（卖宠物用品在哪个平台好卖）">专门卖宠物用品的app有哪些（卖宠物用品在哪个平台好卖）</a></li>
+                        <li class="py-2"><a href="/news/article-21268.htm" title="Java中的多线程你只要看这一篇就够了">Java中的多线程你只要看这一篇就够了</a></li>
+                        <li class="py-2"><a href="/news/article-25417.htm" title="elemen-ui表格默认样式的修改">elemen-ui表格默认样式的修改</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-windows-clash-node.htm" title="「11月21日」最高速度19.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「11月21日」最高速度19.6M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-ssr-subscribe.htm" title="「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址">「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
