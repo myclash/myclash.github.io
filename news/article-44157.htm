@@ -168,6 +168,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <p>任何编程语言函数都是非常重要的一部分，而在进行函数调用时，了解函数的参数传递方式是非常有必要的。Python中支持哪些传参方式呢？</p> <p>&nbsp;</p> <p>Python中的传参方式是比较灵活的，主要包括以下六种：</p> <p>&nbsp;</p> <ul> <li> <p>按照位置传参</p> </li> <li> <p>按照关键字传参</p> </li> <li> <p>默认参数</p> </li> <li> <p>元组传参</p> </li> <li> <p>字典传参</p> </li> <li> <p>综合传参</p> </li> </ul> <p>&nbsp;</p> <p><strong>按照位置传参</strong></p> <p>更多Python视频、源码、资料加群683380553免费获取</p> <p>顾名思义，实参与形参数目一致，并且是按照位置一一对应的。</p> <pre class="has"><code>def func(a, b):  &nbsp; &nbsp;return a+b*2</code></pre> <p>当调用函数func(1,2)时，则按照a=1，b=2的方式形参与实参对应，返回结果为5。</p> <p>&nbsp;</p> <p><strong>按照关键字传参</strong></p> <p>&nbsp;</p> <p>这种方式在调用函数时既传实参，也传形参。因而，不需要根据位置对应了，位置可以颠倒：</p> <pre class="has"><code>def func(a, b):  &nbsp; &nbsp;return a+b*2</code></pre> <p>当调用函数func(b=1,a=2)时，则按照b=1，a=2的方式形参与实参对应，匹配的方式是关键字而非位置，返回结果为4。</p> <p>&nbsp;</p> <p><strong>默认参数</strong></p> <p>&nbsp;</p> <p>默认参数必须放在前两类参数之后，在调用函数的时候可以传参，也可以不传。不传则采用默认的参数值。</p> <pre class="has"><code>def func(a, b, c = 3):  &nbsp; &nbsp;return a+b*2+c</code></pre> <p>其中，c为默认参数。当通过func(1,2)调用函数时，c的取值为默认值3，函数的执行结果为8；当通过func(1,2,5)调用函数时，c的取值为实参值5，函数的执行结果为10。</p> <p>&nbsp;</p> <p><strong>元组传参</strong></p> <p>&nbsp;</p> <p>传入的参数以元组的形式呈现，长度不限，可以通过元组的访问方式依次访问各个入参：</p> <pre class="has"><code>def func(*args):  &nbsp; &nbsp;for eacharg in args:  &nbsp; &nbsp; &nbsp; &nbsp;print ('tuple arg:', eacharg)</code></pre> <p>调用方式如下：func('I', 'Love', 'PythonSomething')</p> <p>更多Python视频、源码、资料加群683380553免费获取</p> <p>调用结果为：</p> <pre class="has"><code>tuple arg: I tuple arg: Love tuple arg: PythonSomething</code></pre> <p><strong>字典传参</strong></p> <p>&nbsp;</p> <p>传入的参数以字典的形式呈现，长度不限，可以通过字典的访问方式依次访问各个入参：</p> <pre class="has"><code>def func(**kwargs):  &nbsp; &nbsp;for eachkwarg in kwargs.keys():  &nbsp; &nbsp; &nbsp; &nbsp;print('Dict Arg', eachkwarg, ':', kwargs[eachkwarg])</code></pre> <p>调用方式如下：</p> <p>func(English_name = 'PythonSomething', &nbsp;Chinese_name= 'Python那些事')</p> <p>&nbsp;</p> <p>调用结果为：</p> <pre class="has"><code>Dict Arg English_name : PythonSomething Dict Arg Chinese_name : Python那些事</code></pre> <p><strong>综合传参</strong></p> <p>&nbsp;</p> <p>是以上几种传参方式的综合。实际上，大家从上面的例子也可以发现，元组传参和字典传参已经能够满足大部分传参场景。所以，通常所的综合传参指的是这两种的组合，大家在源码中也经常会发现它们的身影：</p> <pre class="has"><code>def func(*args,**kwargs):  &nbsp; &nbsp;for eacharg in args:  &nbsp; &nbsp; &nbsp; &nbsp;print('tuple arg:', eacharg)   &nbsp; &nbsp;for eachkwarg in kwargs.keys():  &nbsp; &nbsp; &nbsp; &nbsp;print('Dict Arg', eachkwarg, ':', kwargs[eachkwarg])</code></pre> <p>调用示例为：</p> <p>func('I', 'Love', 'PythonSomething', English_name = 'PythonSomething', &nbsp;Chinese_name= 'Python那些事')</p> <p>&nbsp;</p> <p>调用结果为：</p> <pre class="has"><code>tuple arg: I tuple arg: Love tuple arg: PythonSomething Dict Arg Chinese_name : Python那些事 Dict Arg English_name : PythonSomething</code></pre> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-44156.htm">井字棋 C++</a></p>
+                                        <p>下一个：<a href="/news/article-44683.htm">动物疫苗使用时的注意事项有哪些呢 动物疫苗使用时的注意事项有哪些呢英语</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -177,16 +178,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-19438.htm" title="天宫院宠物医院怎么样（天宫院附近医院）">天宫院宠物医院怎么样（天宫院附近医院）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-3-clash-node.htm" title="「12月3日」最高速度22.8M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「12月3日」最高速度22.8M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-31027.htm" title="C++ 函数模板">C++ 函数模板</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-19-clash-node-daily-updates.htm" title="「12月19日」最高速度22.7M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月19日」最高速度22.7M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-27-clash-node-daily-updates.htm" title="「12月27日」最高速度22.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址">「12月27日」最高速度22.5M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-40703.htm" title="怎么看幼猫性格好坏（怎么消除小猫刚到家的恐惧感）">怎么看幼猫性格好坏（怎么消除小猫刚到家的恐惧感）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-clash.htm" title="「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-free-v2ray-subscribe.htm" title="「10月23日」最高速度21M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接">「10月23日」最高速度21M/S，2024年Clash/Shadowrocket/V2ray/SSR每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-20-clash-windows.htm" title="「1月20日」最高速度18.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址">「1月20日」最高速度18.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-34981.htm" title="给动物打疫苗要多少钱一针呀（给动物打的疫苗是什么）">给动物打疫苗要多少钱一针呀（给动物打的疫苗是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-clash.htm" title="「11月18日」最高速度18.9M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「11月18日」最高速度18.9M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19438.htm" title="天宫院宠物医院怎么样（天宫院附近医院）">天宫院宠物医院怎么样（天宫院附近医院）</a></li>
+                        <li class="py-2"><a href="/news/article-38214.htm" title="开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）">开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）</a></li>
+                        <li class="py-2"><a href="/news/article-28673.htm" title="vue中Element UI表格分页功能的实现">vue中Element UI表格分页功能的实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-clash-node.htm" title="「11月6日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月6日」最高速度22M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-clash-node.htm" title="「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「11月7日」最高速度21.6M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32932.htm" title="面试题目:手写一个LRU算法实现">面试题目:手写一个LRU算法实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-clash-node-github.htm" title="「10月27日」最高速度20.5M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接">「10月27日」最高速度20.5M/S，2024年Shadowrocket/SSR/Clash/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-windows-clash-node.htm" title="「12月8日」最高速度18.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接">「12月8日」最高速度18.1M/S，2024年V2ray/SSR/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -198,7 +199,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
