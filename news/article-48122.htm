@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-48122.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Kafka架构及基本原理简析</title>
+        <meta name="description" content="&nbsp;Kafka简介 Kafka是一个由Scala和Java编写的企业级的消息发布和订阅系统，最早是由Linkedin公司开发，最终开源到Apache软件基金会的项目。Kafka是一个分布式的，" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-48122.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="Kafka架构及基本原理简析" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/1a41b3ed684cb5bc399fb1edb028f194.webp" />
+        <meta property="og:release_date" content="2025-01-29T10:29:40" />
+    <meta property="og:updated_time" content="2025-01-29T10:29:40" />
+        <meta property="og:description" content="&nbsp;Kafka简介 Kafka是一个由Scala和Java编写的企业级的消息发布和订阅系统，最早是由Linkedin公司开发，最终开源到Apache软件基金会的项目。Kafka是一个分布式的，" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Kafka架构及基本原理简析">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="/">
+                                    My Clash
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Kafka架构及基本原理简析</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>&nbsp;Kafka简介</strong><br /> Kafka是一个由Scala和Java编写的企业级的消息发布和订阅系统，最早是由Linkedin公司开发，最终开源到Apache软件基金会的项目。Kafka是一个分布式的，支持分区的，多副本的和多订阅者的高吞吐量的消息系统，被广泛应用在应用解耦、异步处理、限流削峰和消息驱动等场景。本文将针对Kafka的架构和相关组件进行简单的介绍。在介绍Kafka的架构之前，我们先了解一下Kafk的核心概念。</p> <p><strong>Kafka核心概念</strong><br /> 在详细介绍Kafka的架构和基本组件之前，需要先了解一下Kafka的一些核心概念。<br /> Producer：消息的生产者，负责往Kafka集群中发送消息；<br /> Consumer：消息的消费者，主动从Kafka集群中拉取消息。<br /> Consumer Group：每个Consumer属于一个特定的Consumer Group，新建Consumer的时候需要指定对应的Consumer Group ID。<br /> Broker：Kafka集群中的服务实例，也称之为节点，每个Kafka集群包含一个或者多个Broker（一个Broker就是一个服务器或节点）。<br /> Message：通过Kafka集群进行传递的对象实体，存储需要传送的信息。<br /> Topic：消息的类别，主要用于对消息进行逻辑上的区分，每条发送到Kafka集群的消息都需要有一个指定的Topic，消费者根据Topic对指定的消息进行消费。<br /> Partition：消息的分区，Partition是一个物理上的概念，相当于一个文件夹，Kafka会为每个topic的每个分区创建一个文件夹，一个Topic的消息会存储在一个或者多个Partition中。<br /> Segment：一个partition当中存在多个segment文件段（分段存储），每个Segment分为两部分，.log文件和 .index 文件，其中 .index 文件是索引文件，主要用于快速查询.log 文件当中数据的偏移量位置；<br /> .log文件：存放Message的数据文件，在Kafka中把数据文件就叫做日志文件。一个分区下面默认有n多个.log文件（分段存储）。一个.log文件大默认1G，消息会不断追加在.log文件中，当.log文件的大小超过1G的时候，会自动新建一个新的.log文件。<br /> .index文件：存放.log文件的索引数据，每个.index文件有一个对应同名的.log文件。</p> <p>后面我们会对上面的一些核心概念进行更深入的介绍。在介绍完Kafka的核心概念之后，我们来看一下Kafka的对外提供的基本功能，组件及架构设计。</p> <p><strong>Kafka API</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/bd4c65a6685d986658da2d293ba19a39.jpg"></p> <p>如上图所示，Kafka主要包含四个主要的API组件：</p> <p><strong>1. Producer API</strong><br /> 应用程序通过Producer API向Kafka集群发送一个或多个Topic的消息。</p> <p><strong>2. Consumer API</strong><br /> 应用程序通过Consumer API，向Kafka集群订阅一个或多个Topic的消息，并处理这些Topic下接收到的消息。</p> <p><strong>3. Streams API</strong><br /> 应用程序通过使用Streams API充当流处理器（Stream Processor），从一个或者多个Topic获取输入流，并生产一个输出流到一个或者多个Topic，能够有效地将输入流进行转变后变成输出流输出到Kafka集群。</p> <p><strong>4. Connect API</strong><br /> 允许应用程序通过Connect API构建和运行可重用的生产者或者消费者，能够把kafka主题连接到现有的应用程序或数据系统。Connect实际上就做了两件事情：使用Source Connector从数据源（如：DB）中读取数据写入到Topic中，然后再通过Sink Connector读取Topic中的数据输出到另一端（如：DB），以实现消息数据在外部存储和Kafka集群之间的传输。</p> <p><strong>Kafka架构</strong></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/090f813ae8129233ac6cdac62ced5411.jpg"></p> <p>接下来我们将从Kafka的架构出发，重点介绍Kafka的主要组件及实现原理。Kafka支持消息持久化，消费端是通过主动拉取消息进行消息消费的，订阅状态和订阅关系由客户端负责维护，消息消费完后不会立刻删除，会保留历史消息，一般默认保留7天，因此可以通过在支持多订阅者时，消息无需复制多分，只需要存储一份就可以。下面将详细介绍每个组件的实现原理。</p> <p><strong>1. Producer</strong><br /> Producer是Kafka中的消息生产者，主要用于生产带有特定Topic的消息，生产者生产的消息通过Topic进行归类，保存在Kafka 集群的Broker上，具体的是保存在指定的partition 的目录下，以Segment的方式（.log文件和.index文件）进行存储。</p> <p><strong>2. Consumer</strong><br /> Consumer是Kafka中的消费者，主要用于消费指定Topic的消息，Consumer是通过主动拉取的方式从Kafka集群中消费消息，消费者一定属于某一个特定的消费组。</p> <p><strong>3. Topic</strong><br /> Kafka中的消息是根据Topic进行分类的，Topic是支持多订阅的，一个Topic可以有多个不同的订阅消息的消费者。Kafka集群Topic的数量没有限制，同一个Topic的数据会被划分在同一个目录下，一个Topic可以包含1至多个分区，所有分区的消息加在一起就是一个Topic的所有消息。</p> <p><strong>4. Partition</strong><br /> 在Kafka中，为了提升消息的消费速度，可以为每个Topic分配多个Partition，这也是就之前我们说到的，Kafka是支持多分区的。默认情况下，一个Topic的消息只存放在一个分区中。Topic的所有分区的消息合并起来，就是一个Topic下的所有消息。每个分区都有一个从0开始的编号，每个分区内的数据都是有序的，但是不同分区直接的数据是不能保证有序的，因为不同的分区需要不同的Consumer去消费，每个Partition只能分配一个Consumer，但是一个Consumer可以同时一个Topic的多个Partition。</p> <p><strong>5. Consumer Group</strong><br /> Kafka中的每一个Consumer都归属于一个特定的Consumer Group，如果不指定，那么所有的Consumer都属于同一个默认的Consumer Group。Consumer Group由一个或多个Consumer组成，同一个Consumer Group中的Consumer对同一条消息只消费一次。每个Consumer Group都有一个唯一的ID，即Group ID，也称之为Group Name。Consumer Group内的所有Consumer协调在一起订阅一个Topic的所有Partition，且每个Partition只能由一个Consuemr Group中的一个Consumer进行消费，但是可以由不同的Consumer Group中的一个Consumer进行消费。如下图所示：</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/dbb66a9f617239421db9ec5142599b5b.jpg"></p> <p>在层级关系上来说Consumer好比是跟Topic对应的，而Consumer就对应于Topic下的Partition。Consumer Group中的Consumer数量和Topic下的Partition数量共同决定了消息消费的并发量，且Partition数量决定了最终并发量，因为一个Partition只能由一个Consumer进行消费。当一个Consumer Group中Consumer数量超过订阅的Topic下的Partition数量时，Kafka会为每个Partition分配一个Consumer，多出来的Consumer会处于空闲状态。当Consumer Group中Consumer数量少于当前定于的Topic中的Partition数量是，单个Consumer将承担多个Partition的消费工作。如上图所示，Consumer Group B中的每个Consumer需要消费两个Partition中的数据，而Consumer Group C中会多出来一个空闲的Consumer4。总结下来就是：同一个Topic下的Partition数量越多，同一时间可以有越多的Consumer进行消费，消费的速度就会越快，吞吐量就越高。同时，Consumer Group中的Consumer数量需要控制为小于等于Partition数量，且最好是整数倍：如1，2，4等。</p> <p><strong>6. Segment</strong><br /> 考虑到消息消费的性能，Kafka中的消息在每个Partition中是以分段的形式进行存储的，即每1G消息新建一个Segment，每个Segment包含两个文件：.log文件和.index文件。之前我们已经说过，.log文件就是Kafka实际存储Producer生产的消息，而.index文件采用稀疏索引的方式存储.log文件中对应消息的逻辑编号和物理偏移地址（offset），以便于加快数据的查询速度。.log文件和.index文件是一一对应，成对出现的。下图展示了.log文件和.index文件在Partition中的存在方式。</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/e1cd3f37b334377ea2ec3903934d7459.jpg"></p> <p>Kafka里面每一条消息都有自己的逻辑offset（相对偏移量）以及存在物理磁盘上面实际的物理地址便宜量Position，也就是说在Kafka中一条消息有两个位置：offset（相对偏移量）和position（磁盘物理偏移地址）。在kafka的设计中，将消息的offset作为了Segment文件名的一部分。Segment文件命名规则为：Partition全局的第一个Segment从0开始，后续每个segment文件名为上一个Partition的最大offset（Message的offset，非实际物理地偏移地址，实际物理地址需映射到.log中，后面会详细介绍在.log文件中查询消息的原理）。数值最大为64位long大小，由20位数字表示，前置用0填充。</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/a02e9a7c1446a2040e7d559b12ce9126.jpg"></p> <p>上图展示了.index文件和.log文件直接的映射关系，通过上图，我们可以简单介绍一下Kafka在Segment中查找Message的过程：<br /> 1.根据需要消费的下一个消息的offset，这里假设是7，使用二分查找在Partition中查找到文件名小于（一定要小于，因为文件名编号等于当前offset的文件里存的都是大于当前offset的消息）当前offset的最大编号的.index文件，这里自然是查找到了00000000000000000000.index。<br /> 2.在.index文件中，使用二分查找，找到offset小于或者等于指定offset（这里假设是7）的最大的offset，这里查到的是6，然后获取到index文件中offset为6指向的Position（物理偏移地址）为258。<br /> 3.在.log文件中，从磁盘位置258开始顺序扫描，直到找到offset为7的Message。<br /> 至此，我们就简单介绍完了Segment的基本组件.index文件和.log文件的存储和查询原理。但是我们会发现一个问题：.index文件中的offset并不是按顺序连续存储的，为什么Kafka要将索引文件设计成这种不连续的样子？这种不连续的索引设计方式称之为稀疏索引，Kafka中采用了稀疏索引的方式读取索引，kafka每当.log中写入了4k大小的数据，就往.index里以追加的写入一条索引记录。使用稀疏索引主要有以下原因：<br /> (1)索引稀疏存储，可以大幅降低.index文件占用存储空间大小。<br /> (2)稀疏索引文件较小，可以全部读取到内存中，可以避免读取索引的时候进行频繁的IO磁盘操作，以便通过索引快速地定位到.log文件中的Message。</p> <p><strong>7. Message</strong><br /> Message是实际发送和订阅的信息是实际载体，Producer发送到Kafka集群中的每条消息，都被Kafka包装成了一个Message对象，之后再存储在磁盘中，而不是直接存储的。Message在磁盘中的物理结构如下所示。</p> <pre><code class="language-java">On-disk format of a message  offset         : 8 bytes  message length : 4 bytes (value: 4 + 1 + 1 + 8(if magic value &gt; 0) + 4 + K + 4 + V) crc            : 4 bytes magic value    : 1 byte attributes     : 1 byte timestamp      : 8 bytes (Only exists when magic value is greater than zero) key length     : 4 bytes key            : K bytes value length   : 4 bytes value          : V bytes</code></pre> <p>其中key和value存储的是实际的Message内容，长度不固定，而其他都是对Message内容的统计和描述，长度固定。因此在查找实际Message过程中，磁盘指针会根据Message的offset和message length计算移动位数，以加速Message的查找过程。之所以可以这样加速，因为Kafka的.log文件都是顺序写的，往磁盘上写数据时，就是追加数据，没有随机写的操作。</p> <p><strong>8.Partition Replicas</strong><br /> 最后我们简单聊一下Kafka中的Partition Replicas（分区副本）机制，0.8版本以前的Kafka是没有副本机制的。创建Topic时，可以为Topic指定分区，也可以指定副本个数。kafka 中的分区副本如下图所示：</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/06f2a35fcafffe768376a92e604e1039.jpg"></p> <p>Kafka通过副本因子（replication-factor）控制消息副本保存在几个Broker（服务器）上，一般情况下副本数等于Broker的个数，且同一个副本因子不能放在同一个Broker中。副本因子是以分区为单位且区分角色；主副本称之为Leader（任何时刻只有一个），从副本称之为 Follower（可以有多个），处于同步状态的副本叫做in-sync-replicas(ISR)。Leader负责读写数据，Follower不负责对外提供数据读写，只从Leader同步数据，消费者和生产者都是从leader读写数据，不与follower交互，因此Kafka并不是读写分离的。同时使用Leader进行读写的好处是，降低了数据同步带来的数据读取延迟，因为Follower只能从Leader同步完数据之后才能对外提供读取服务。</p> <p>如果一个分区有三个副本因子，就算其中一个挂掉，那么只会剩下的两个中，选择一个leader，如下图所示。但不会在其他的broker中，另启动一个副本（因为在另一台启动的话，必然存在数据拷贝和传输，会长时间占用网络IO，Kafka是一个高吞吐量的消息系统，这个情况不允许发生）。如果指定分区的所有副本都挂了，Consumer如果发送数据到指定分区的话，将写入不成功。Consumer发送到指定Partition的消息，会首先写入到Leader Partition中，写完后还需要把消息写入到ISR列表里面的其它分区副本中，写完之后这个消息才能提交offset。</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220902/bc16401387761338c63e07b10785d34f.jpg"></p> <p>到这里，差不多把Kafka的架构和基本原理简单介绍完了。Kafka为了实现高吞吐量和容错，还引入了很多优秀的设计思路，如零拷贝，高并发网络设计，顺序存储，以后有时间再说。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48121.htm">C语言数据结构、十字链表的分析及实现</a></p>
+                                        <p>下一个：<a href="/news/article-48469.htm">java中Date与LocalDate、LocalDate、LocalDateTime互相转化</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-28202.htm" title="vue简单实现骨架屏">vue简单实现骨架屏</a></li>
+                        <li class="py-2"><a href="/news/article-23104.htm" title="如何给新开的宠物店宣传（新开宠物店宣传语）">如何给新开的宠物店宣传（新开宠物店宣传语）</a></li>
+                        <li class="py-2"><a href="/news/article-30557.htm" title="检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？">检索存储在INT列中作为MySQL TIMESTAMP的值的正确方法是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-24019.htm" title="叫猫过来的手势（叫猫过来的手势 视频）">叫猫过来的手势（叫猫过来的手势 视频）</a></li>
+                        <li class="py-2"><a href="/news/article-19438.htm" title="天宫院宠物医院怎么样（天宫院附近医院）">天宫院宠物医院怎么样（天宫院附近医院）</a></li>
+                        <li class="py-2"><a href="/news/article-27281.htm" title="狗粮排行榜简析十大狗粮品牌 狗粮排名前十品牌大全">狗粮排行榜简析十大狗粮品牌 狗粮排名前十品牌大全</a></li>
+                        <li class="py-2"><a href="/news/article-40702.htm" title="Spring源码分析Spring BeanFactory 是怎么创建的？">Spring源码分析Spring BeanFactory 是怎么创建的？</a></li>
+                        <li class="py-2"><a href="/news/article-21693.htm" title="VSCode插件离线安装">VSCode插件离线安装</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-today-clash-node.htm" title="「10月25日」最高速度22.1M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接">「10月25日」最高速度22.1M/S，2024年SSR/Clash/Shadowrocket/V2ray每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-35972.htm" title="寄养宠物合同怎么写（宠物寄养合同有没有法律效应）">寄养宠物合同怎么写（宠物寄养合同有没有法律效应）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
