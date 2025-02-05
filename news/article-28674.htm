@@ -8,7 +8,35 @@
     <title>6-10java8中关于接口的新特性</title>
         <meta name="description" content="Java 8中，你可以为接口添加静态方法和默认方法。从技术角度来说，这是完全合法的，只是它看起来违反了接口作为一个抽象定义的理念。   静态方法：使用static关键字修饰。可以通过接口直接调用静态方" />
         <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-28674.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="6-10java8中关于接口的新特性" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/52b484bc8bd1634a8b23136313f0bbaa.webp" />
+        <meta property="og:release_date" content="2024-12-20T09:37:43" />
+    <meta property="og:updated_time" content="2024-12-20T09:37:43" />
+        <meta property="og:description" content="Java 8中，你可以为接口添加静态方法和默认方法。从技术角度来说，这是完全合法的，只是它看起来违反了接口作为一个抽象定义的理念。   静态方法：使用static关键字修饰。可以通过接口直接调用静态方" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="6-10java8中关于接口的新特性">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Place favicon.ico in the root directory -->
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
@@ -121,8 +149,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="hero-image">
-                            <img href="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
-                            <img href="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
                         </div>
                     </div>
                 </div>
@@ -150,16 +178,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-27281.htm" title="狗粮排行榜简析十大狗粮品牌 狗粮排名前十品牌大全">狗粮排行榜简析十大狗粮品牌 狗粮排名前十品牌大全</a></li>
-                        <li class="py-2"><a href="/news/article-29135.htm" title="38岁学美容晚不晚（34岁学美容一般学多久）">38岁学美容晚不晚（34岁学美容一般学多久）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-11-shadowrocket-node.htm" title="「10月11日」最高速度21.9M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「10月11日」最高速度21.9M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-12-clash-node.htm" title="「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接">「7月12日」最高速度21.9M/S，2024年SSR/V2ray/Clash/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19438.htm" title="天宫院宠物医院怎么样（天宫院附近医院）">天宫院宠物医院怎么样（天宫院附近医院）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-25-free-v2ray-subscribe.htm" title="「9月25日」最高速度19.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接">「9月25日」最高速度19.8M/S，2024年SSR/V2ray/Shadowrocket/Clash每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20352.htm" title="让猫挠了轻微出血需要打针吗多少钱（让猫挠了轻微出血,打几针?）">让猫挠了轻微出血需要打针吗多少钱（让猫挠了轻微出血,打几针?）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-23-linux-clash-github.htm" title="「9月23日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接">「9月23日」最高速度22.4M/S，2024年Clash/SSR/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-30-today-clash-node.htm" title="「12月30日」最高速度21.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点链接地址">「12月30日」最高速度21.8M/S，2024年Clash/SSR/Shadowrocket/V2ray每天更新免费节点链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-21-free-v2ray-subscribe.htm" title="「12月21日」最高速度21.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址">「12月21日」最高速度21.4M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-v2ray-ss-ssr.htm" title="「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24019.htm" title="叫猫过来的手势（叫猫过来的手势 视频）">叫猫过来的手势（叫猫过来的手势 视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-ssr-subscribe.htm" title="「12月4日」最高速度23M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接">「12月4日」最高速度23M/S，2024年V2ray/Shadowrocket/Clash/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-shadowrocket-node.htm" title="「1月22日」最高速度19.8M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址">「1月22日」最高速度19.8M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38214.htm" title="开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）">开个宠物医院需要什么条件才能开（开个宠物医院需要什么条件才能开呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-clash-node.htm" title="「1月27日」最高速度19.1M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点链接地址">「1月27日」最高速度19.1M/S，2025年Clash/SSR/Shadowrocket/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50150.htm" title="中国宠物用品批发市场在哪里（国内宠物批发市场）">中国宠物用品批发市场在哪里（国内宠物批发市场）</a></li>
+                        <li class="py-2"><a href="/news/article-36757.htm" title="go语言实战&#8212;&#8211;28&#8212;&#8211;Gin、rest full api和mysql实现增删改查">go语言实战&#8212;&#8211;28&#8212;&#8211;Gin、rest full api和mysql实现增删改查</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-shadowrocket-node.htm" title="「11月20日」最高速度22M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接">「11月20日」最高速度22M/S，2024年V2ray/Clash/SSR/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45178.htm" title="java序列回显学习">java序列回显学习</a></li>
                     </ul>
     </div>
 </div>
@@ -171,25 +199,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
