@@ -55,3 +55,7 @@
 .header.header-2 .navbar-brand {font-size: 2rem;font-weight: bold;}
 .hero-section-wrapper-2 .hero-style-2 .hero-image {margin-bottom: 0;}
 .hero-content-wrapper h1 {font-size: 2rem;}
+
+.xcblog-blog-logo h1, .xcblog-blog-logo span {font-size: 2.0rem;font-weight: bold;}
+.xcblog-blog-list .item {margin-bottom: 1.5rem;}
+.xcblog-blog-list .item h3 {font-size: 1.5rem;}
