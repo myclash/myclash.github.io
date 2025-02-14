@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-56068.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>PHP可见性模式</title>
+        <meta name="description" content="介绍 在PHP中，可以使用class关键字具有用户定义的compund数据类型。类的新实例是一个对象。对象的特性按照类的定义，可以包含属性，常量和方法成员。 类成员的可访问性（也称为可见性）取决于其定" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-56068.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="PHP可见性模式" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/b44646e4207c8ab8d9033d739cb0dfc1.webp" />
+        <meta property="og:release_date" content="2025-02-13T03:11:24" />
+    <meta property="og:updated_time" content="2025-02-13T03:11:24" />
+        <meta property="og:description" content="介绍 在PHP中，可以使用class关键字具有用户定义的compund数据类型。类的新实例是一个对象。对象的特性按照类的定义，可以包含属性，常量和方法成员。 类成员的可访问性（也称为可见性）取决于其定" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP可见性模式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">PHP可见性模式</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2>介绍</h2> <p>在PHP中，可以使用<strong>class</strong>关键字具有用户定义的compund数据类型。类的新实例是一个对象。对象的特性按照类的定义，可以包含属性，常量和方法成员。</p> <p>类成员的可访问性（也称为可见性）取决于其定义中附加的可见性前缀关键字。PHP具有三个可见性关键字<strong>-public</strong>，<strong>private</strong>和<strong>protected</strong>。任何地方都可以访问用public关键字声明的类成员。受保护的成员可以从其类内部或通过继承类进行访问。另一方面，私有成员只能由定义了私有成员的同一个类访问，并且外部的任何成员都不可见。</p> <h2>属性可见度</h2> <p>属性是类实例的属性。它可以是实例属性（每个对象具有不同的值）或类属性，每个对象具有相同的值。属性可以是任何有效的PHP数据类型。默认情况下，属性具有公共可见性。如果使用var关键字定义了属性（现已弃用），则将其视为public。</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;public&nbsp;$fname="Ajay"; &nbsp;&nbsp;&nbsp;var&nbsp;$lname;&nbsp;//treated&nbsp;as&nbsp;public &nbsp;&nbsp;&nbsp;private&nbsp;$marks=100; &nbsp;&nbsp;&nbsp;protected&nbsp;$age=20; } $obj=new&nbsp;myclass(); echo&nbsp;"$obj-&gt;fname\n"; $obj-&gt;lname="Diwan"; echo&nbsp;"$obj-&gt;marks\n"; $obj-&gt;age=21; ?&gt;</pre> <p>输出结果</p> <p>以下输出显示可以在类外访问公共属性，而私有属性和受保护的属性则会引发未捕获的错误</p> <pre>Ajay PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Cannot&nbsp;access&nbsp;private&nbsp;property&nbsp;myclass::$marks PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Cannot&nbsp;access&nbsp;protected&nbsp;property&nbsp;myclass::$age</pre> <p>但是，可以在同一类的函数内部使用私有和受保护的属性</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;public&nbsp;$fname="Ajay"; &nbsp;&nbsp;&nbsp;var&nbsp;$lname; &nbsp;&nbsp;&nbsp;private&nbsp;$marks=100; &nbsp;&nbsp;&nbsp;protected&nbsp;$age=20; &nbsp;&nbsp;&nbsp;function&nbsp;displaydata(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;lname="Diwan"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"$this-&gt;fname&nbsp;$this-&gt;lname\n"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"marks=$this-&gt;marks&nbsp;age=$this-&gt;age"; &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;myclass(); $obj-&gt;displaydata(); ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果。-</p> <pre>Ajay&nbsp;Diwan marks=100&nbsp;age=20</pre> <h2>方法可见性</h2> <p>像类属性一样，还可以使用公共，私有和受保护的关键字为类方法分配可见性。默认情况下，方法也被视为公共方法。</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;public&nbsp;$fname="Ajay"; &nbsp;&nbsp;&nbsp;var&nbsp;$lname; &nbsp;&nbsp;&nbsp;private&nbsp;$marks=100; &nbsp;&nbsp;&nbsp;protected&nbsp;$age=20; &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;setname(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;fname="Anil"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;lname="Dave"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"name&nbsp;changed\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;setmarks(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;marks=90; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;setage(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;age=21; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;setdata(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;setname(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;setmarks(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;setage(); &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;displaydata(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;lname="Diwan"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"$this-&gt;fname&nbsp;$this-&gt;lname\n"; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"marks=$this-&gt;marks&nbsp;age=$this-&gt;age"; &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;myclass(); $obj-&gt;setname();//works $obj-&gt;setmarks();//error $obj-&gt;setage();/error $obj-&gt;setdata();&nbsp;//private&nbsp;and&nbsp;protected&nbsp;methods&nbsp;called&nbsp;withing&nbsp;public&nbsp;method $obj-&gt;displaydata(); ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果。-</p> <pre>name&nbsp;changed PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Call&nbsp;to&nbsp;private&nbsp;method&nbsp;myclass::setmarks()&nbsp;from&nbsp;context&nbsp;'' PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Call&nbsp;to&nbsp;protected&nbsp;method&nbsp;myclass::setage()&nbsp;from&nbsp;context&nbsp;'' Anil&nbsp;Dave marks=90&nbsp;age=21</pre> <h2>继承中的方法可见性</h2> <p><strong>父</strong>类方法可以在<strong>子</strong>类定义中覆盖。父类的私有方法和受保护方法不适用于子类的对象。但是，可以在子类方法中使用在父级中受保护的方法</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;testclass{ &nbsp;&nbsp;&nbsp;public&nbsp;$x=10; &nbsp;&nbsp;&nbsp;private&nbsp;$y=20; &nbsp;&nbsp;&nbsp;protected&nbsp;$z=30; &nbsp;&nbsp;&nbsp;private&nbsp;function&nbsp;test(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"testclass&nbsp;private&nbsp;method\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;test1(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"testclass&nbsp;public&nbsp;method\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;test2(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"testclass&nbsp;protected&nbsp;method\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;function&nbsp;test3(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"x=$this-&gt;x&nbsp;y=$this-&gt;y&nbsp;z=$this-&gt;z\n"; &nbsp;&nbsp;&nbsp;} } class&nbsp;newclass&nbsp;extends&nbsp;testclass{ &nbsp;&nbsp;&nbsp;function&nbsp;test1(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"newclass&nbsp;public&nbsp;method\n"; &nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;test4(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;test(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;test1(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;test2(); &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;newclass(); echo&nbsp;$obj-&gt;test1(); echo&nbsp;$obj-&gt;test3(); echo&nbsp;$obj-&gt;test4(); ?&gt;</pre> <p>输出结果</p> <p>这将显示以下结果</p> <pre>newclass&nbsp;public&nbsp;method x=10&nbsp;y=20&nbsp;z=30 PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Call&nbsp;to&nbsp;private&nbsp;method&nbsp;testclass::test()&nbsp;from&nbsp;context&nbsp;'newclass'</pre> <h2>持续可见</h2> <p>从PHP 7.1开始，可见性模式可以与constaants一起使用。常量的默认可见性是public</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;testclass{ &nbsp;&nbsp;&nbsp;public&nbsp;const&nbsp;X=10; &nbsp;&nbsp;&nbsp;private&nbsp;const&nbsp;Y=20; &nbsp;&nbsp;&nbsp;protected&nbsp;const&nbsp;Z=30; &nbsp;&nbsp;&nbsp;function&nbsp;showconst(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"x="&nbsp;.&nbsp;self::X&nbsp;; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"y="&nbsp;.&nbsp;self::Y; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"z="&nbsp;.&nbsp;self::Z&nbsp;; &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;testclass(); $obj-&gt;showconst(); echo&nbsp;testclass::Y&nbsp;.&nbsp;"\n"; echo&nbsp;testclass::Z&nbsp;.&nbsp;"\n"; ?&gt;</pre> <p>输出结果</p> <p>这将显示以下结果</p> <pre>x=10y=20z=30 PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Cannot&nbsp;access&nbsp;private&nbsp;const&nbsp;testclass::Y PHP&nbsp;Fatal&nbsp;error:&nbsp;Uncaught&nbsp;Error:&nbsp;Cannot&nbsp;access&nbsp;protected&nbsp;const&nbsp;testclass::Z</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55515.htm">1970年农历四月二十七是什么星座呢女生婚姻（1970年农历四月二十七是什么星座呢女生婚姻如何）</a></p>
+                                        <p>下一个：<a href="/news/article-56070.htm">【PyTorch】Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-31028.htm" title="芭比堂宠物医院（芭比堂宠物医院眼科中心）">芭比堂宠物医院（芭比堂宠物医院眼科中心）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-clash-node-daily-updates.htm" title="「11月9日」最高速度22.1M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月9日」最高速度22.1M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18761.htm" title="南京宠物领养吧百度贴吧论坛（南京领养宠物都要做什么条件）">南京宠物领养吧百度贴吧论坛（南京领养宠物都要做什么条件）</a></li>
+                        <li class="py-2"><a href="/news/article-47632.htm" title="狗粮厂怎么生产（狗粮厂怎么生产出来的）">狗粮厂怎么生产（狗粮厂怎么生产出来的）</a></li>
+                        <li class="py-2"><a href="/news/article-50668.htm" title="畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）">畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/news/article-27742.htm" title="宠物店一般卖几个月的猫比较好（宠物店一般卖几个月的猫比较好呢）">宠物店一般卖几个月的猫比较好（宠物店一般卖几个月的猫比较好呢）</a></li>
+                        <li class="py-2"><a href="/news/article-32935.htm" title="python自动化测试工具selenium使用指南">python自动化测试工具selenium使用指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-clash.htm" title="「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接">「11月16日」最高速度21.4M/S，2024年Shadowrocket/V2ray/SSR/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-46660.htm" title="Vue滑块验证码组件anji-captcha的使用">Vue滑块验证码组件anji-captcha的使用</a></li>
+                        <li class="py-2"><a href="/news/article-28203.htm" title="猫为什么不可以打（猫为什么不能打狂犬疫苗）">猫为什么不可以打（猫为什么不能打狂犬疫苗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
