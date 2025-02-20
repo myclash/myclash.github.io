@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-58521.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>vue3及与vue2的区别总结（部分）</title>
+        <meta name="description" content="1.生命周期的变化：3.x(上） 2.x（下）  不难看出，vue3.0与vue2.0之间生命周期函数在销毁的时候有变化： beforeDestroy --&gt; beforeUnmount des" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-58521.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="vue3及与vue2的区别总结（部分）" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/045abda5525e98c95fd70a26b7919915.webp" />
+        <meta property="og:release_date" content="2025-02-18T00:40:21" />
+    <meta property="og:updated_time" content="2025-02-18T00:40:21" />
+        <meta property="og:description" content="1.生命周期的变化：3.x(上） 2.x（下）  不难看出，vue3.0与vue2.0之间生命周期函数在销毁的时候有变化： beforeDestroy --&gt; beforeUnmount des" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue3及与vue2的区别总结（部分）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">vue3及与vue2的区别总结（部分）</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="13x_2x_2" rel="nofollow"></a>1.生命周期的变化：3.x(上） 2.x（下）</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/a9bc2ab15b78f9f9a85e82356bb5f3d3.jpg" alt="vue3及与vue2的区别总结（部分）"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/14ec5a217807b8e6d121a8812af0476d.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <p>不难看出，vue3.0与vue2.0之间生命周期函数在销毁的时候有变化：</p> <pre><code>beforeDestroy --&gt; beforeUnmount destroyed --&gt; unmounted   其他的区别主要在于书写使用的语言上的差别 在ts中使用 class 类组件书写可以 参考 vue-class-component 或者 vue-property-decorator 书写的风格和vue2.0的选项式区别不大。 如果使用js书写代码 则应当使用组合式。 </code></pre> <p>具体变化带来的问题，会在下面的组合式写法中讲解。</p> <h3> <a id="2_21" rel="nofollow"></a>2.定义全局变量的方法变化</h3> <pre><code>// 之前(Vue 2.x) Vue.prototype.$http = () =&gt; {} Vue.prototype.url= 'http://123' // 之后(Vue 3.x) const app = createApp({}) app.config.globalProperties.$http = () =&gt; {} app.config.globalProperties.url= 'http://123' </code></pre> <h3> <a id="3vue_32" rel="nofollow"></a>3.创建vue实例变化</h3> <pre><code>//=======vue3.x //使用createApp函数来实例化vue， //该函数接收一个根组件选项对象作为第一个参数 //使用第二个参数，我们可以将根 prop 传递给应用程序 import { createApp } from 'vue' import App from './App.vue' import router from './router' import store from './store' createApp(App,{ userName: "blackLieo" }) .use(store) .use(router) .mount('#app')   //由于 createApp 方法返回应用实例本身，因此可以在其后链式调用其它方法，这些方法可以在以下部分中找到。  //=======vue2.x import Vue from 'vue' import App from './App.vue' import router from './router' import store from './store'  Vue({   router,   store,   render: h =&gt; h(App) }).$mount('#app') </code></pre> <h3> <a id="4_60" rel="nofollow"></a>4.插槽使用变化</h3> <pre><code>//================vue2.0使用插槽基本上直接使用slot进行操作 //其中vue2.0经历了两次更迭，2.6.0版本slot升级为v-slot &lt;div&gt;     &lt;slot :current="toolTipData" name="test"&gt;&lt;/slot&gt; // 具名 作用域插槽     &lt;slot&gt;&lt;/slot&gt; //默认插槽 &lt;/div&gt; //父组件调用该组件 &lt;test&gt;     &lt;template&gt;        &lt;div&gt;默认插槽&lt;/div&gt;     &lt;/template&gt;     // 作用域插槽     &lt;template slot-scope="{ current }" slot="test"&gt;        &lt;el-form label-width="80px" :model="current"&gt;          &lt;el-form-item label="id："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.id }}&lt;/el-link&gt;          &lt;/el-form-item&gt;          &lt;el-form-item label="name："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.name }}&lt;/el-link&gt;          &lt;/el-form-item&gt;          &lt;el-form-item label="label："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.label }}&lt;/el-link&gt;          &lt;/el-form-item&gt;          &lt;el-form-item label="group："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.group }}&lt;/el-link&gt;          &lt;/el-form-item&gt;          &lt;el-form-item label="runtime："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.runtime }}&lt;/el-link&gt;          &lt;/el-form-item&gt;          &lt;el-form-item label="category："&gt;            &lt;el-link type="info"&gt;{<!-- -->{ current.category }}&lt;/el-link&gt;          &lt;/el-form-item&gt;        &lt;/el-form&gt;      &lt;/template&gt;  &lt;/test&gt;     //==============vue3.0使用插槽 //在vue3.0中，插槽使用v-slot 简写用# &lt;div&gt;	    &lt;slot name="test" :newData="slotsData"&gt;&lt;/slot&gt;    &lt;slot&gt;&lt;/slot&gt; &lt;/div&gt; &lt;HelloWorld msg="Welcome to Your Vue.js + TypeScript App"&gt;     &lt;template #default&gt; // 可以写为v-slot:default  #后面跟的是插槽名称        &lt;div&gt;默认插槽&lt;/div&gt;     &lt;/template&gt;     //作用域插槽     &lt;template #test="{ newData }"&gt; // 可以写为v-slot:test="newData"       &lt;p&gt;{<!-- -->{ newData.aa }}&lt;/p&gt;       &lt;p&gt;{<!-- -->{ newData.bb }}&lt;/p&gt;     &lt;/template&gt; &lt;/HelloWorld&gt; //一个组件里面具有多个插槽时，一定要带上名称，否则可能会导致作用域错乱 </code></pre> <h3> <a id="5_118" rel="nofollow"></a>5.自定义指令</h3> <p>在 Vue 2 中实现一个自定义指令：</p> <pre><code>// 注册一个全局自定义指令 `v-focus` Vue.directive('focus', {   // 当被绑定的元素插入到 DOM 中时……   inserted: function (el) {     // 聚焦元素     el.focus()   } }) </code></pre> <p>在 Vue 2 中， 自定义指令通过以下几个可选钩子创建：</p> <blockquote> <ul> <li>bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</li> <li>inserted：被绑定元素插入父节点时调用(仅保证父节点存在，但不一定已被插入文档中)。</li> <li>update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新 (详细的钩子函数参数见下)。</li> <li>componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</li> <li>unbind：只调用一次，指令与元素解绑时调用。</li> </ul> </blockquote> <p>在 Vue 3 中对自定义指令的 API 进行了更加语义化的修改， 就如组件生命周期变更一样， 都是为了更好的语义化， 变更如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/c96433051f5246b08f997c0582170d31.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <p>所以在 Vue3 中， 可以这样来自定义指令：</p> <pre><code>const { createApp } from "vue"  const app = createApp({}) app.directive('focus', {     mounted(el) {         el.focus()     } }) </code></pre> <p>然后可以在模板中任何元素上使用新的 v-focus指令， 如下：</p> <pre><code>&lt;input v-focus /&gt; </code></pre> <h3> <a id="6vmodel__160" rel="nofollow"></a>6.v-model 升级</h3> <p>Vue 3 中 v-model 发生了很大的变化：</p> <pre><code>变更：在自定义组件上使用v-model时， 属性以及事件的默认名称变了 变更：v-bind的.sync修饰符在 Vue 3 中又被去掉了, 合并到了v-model里 新增：同一组件可以同时设置多个 v-model 新增：开发者可以自定义 v-model修饰符 </code></pre> <p>我们来详细了解一下，并对比一下vue2与vue3 在组件上使用 v-model，<br /> 例如：<br /> vue2 的输入框的双向绑定，其实就相当于传递了value属性， 并触发了input事件：</p> <pre><code>&lt;!-- Vue 2 --&gt; &lt;input v-model="searchValue"&gt;&lt;input&gt;  &lt;!-- 相当于 --&gt; &lt;input :value="searchValue" @input="searchValue=$event"&gt;&lt;input&gt; </code></pre> <p>这时v-model只能绑定在组件的value属性上，那如果我们要给自己的组件用一个别的属性，并且我们不想通过触发input来更新值。</p> <pre><code>但是在实际开发中，有些场景我们可能需要对一个 prop 进行 “双向绑定”， 这里以最常见的 dialog 为例子：dialog 挺合适属性双向绑定的， 外部可以控制组件的visible显示或者隐藏，组件内部关闭可以控制 visible属性隐藏，同时 visible 属性同步传输到外部。组件内部，  当我们关闭dialog时, 在子组件中以 update:PropName 模式触发事件。 </code></pre> <p>事件为</p> <pre><code>this.$emit('update:visible', false) </code></pre> <p>然后在父组件中可以监听这个事件进行数据更新：</p> <pre><code>&lt;el-dialog :visible="isVisible" @update:visible="isVisible = $event"&gt;&lt;/el-dialog&gt; </code></pre> <p>在vue2的开发中，我们实际会发现一个新的东西<code>sync</code>，所以也可以使用<code>v-bind.sync</code>来简化实现：</p> <pre><code>&lt;el-dialog :visible.sync="isVisible"&gt;&lt;/el-dialog&gt; </code></pre> <p>上面说了 Vue2 中<code>v-model</code>实现以及组件属性的双向绑定，那么在 Vue 3 中应该怎样实现的呢？<br /> 在 Vue3 中, 在自定义组件上使用v-model, 相当于传递一个<code>modelValue</code> 属性， 同时触发一个<code>update:modelValue</code>事件：</p> <pre><code>&lt;el-dialog v-model="isVisible"&gt;&lt;/el-dialog&gt; &lt;!-- 相当于 --&gt; &lt;el-dialog :modelValue="isVisible" @update:modelValue="isVisible = $event"&gt;&lt;/el-dialog&gt; </code></pre> <p>如果要绑定属性名， 只需要给<code>v-model</code>传递一个参数就行, 同时可以绑定多个<code>v-model</code>：</p> <pre><code>&lt;el-dialog v-model:visible="isVisible" v-model:content="content"&gt;&lt;/el-dialog&gt;  &lt;!-- 相当于 --&gt; &lt;el-dialog     :visible="isVisible"     :content="content"     @update:visible="isVisible"     @update:content="content" &gt;&lt;/el-dialog&gt; </code></pre> <p>这个写法完全没有.sync什么事儿了， Vue 3 中抛弃了.sync写法， 统一使用v-model。</p> <h3> <a id="7_226" rel="nofollow"></a>7.异步组件的使用</h3> <p>Vue3 中 使用 defineAsyncComponent 定义异步组件，配置选项 component 替换为 loader ,Loader 函数本身不再接收 resolve 和 reject 参数，且必须返回一个 Promise，用法如下：</p> <pre><code>&lt;template&gt;   &lt;!-- 异步组件的使用 --&gt;   &lt;AsyncPage /&gt; &lt;/tempate&gt;  &lt;script&gt; import { defineAsyncComponent } from "vue";  export default {   components: {     // 无配置项异步组件     AsyncPage: defineAsyncComponent(() =&gt; import("./NextPage.vue")),      // 有配置项异步组件     AsyncPageWithOptions: defineAsyncComponent({    loader: () =&gt; import("./NextPage.vue"),    delay: 200,    timeout: 3000,    errorComponent: () =&gt; import("./ErrorComponent.vue"),    loadingComponent: () =&gt; import("./LoadingComponent.vue"),  })   }, } &lt;/script&gt; </code></pre> <h3> <a id="8Composition_API_256" rel="nofollow"></a>8.Composition API</h3> <pre><code>   使用Composition API 解决我们在完成功能时，在 data、methods、computed 以及 mounted 中反复的跳转，他将零散分布的    逻辑组合在一起维护，并可以将单独的逻辑再分为单独的文件 </code></pre> <p>如果想要了解<code>&lt;script setup&gt;&lt;/script&gt;</code>语法糖,请移步 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_44571638/article/details/121861400spm=1001.2014.3001.5501"  rel="nofollow">vue3 setup语法糖（部分总结）</a></p> <p>我们先来了解一下Composition具有的API<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/ebb81e03863aaba6f423b6b44d9aefb1.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <ul> <li><strong>setup</strong></li> </ul> <p>setup 是 Vue3.x 新增的一个选项， 他是组件内使用 Composition API的入口。</p> <p>setup 执行时机<br /> 通过一段代码 我们可以知道：</p> <pre><code>&lt;script&gt; import { defineComponent, reactive } from "vue"; export default defineComponent({   beforeCreate() {     console.log("----beforeCreate----");   },   created() {     console.log("----created----");   },   setup() {     const state = reactive({ count: 0 });     console.log("----setup----");     return {       state,     };   }, }); &lt;/script&gt; </code></pre> <p>会出现如下所示的输出结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/cf3683b9e27306e9bc12a14d751dbca1.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <p><code>setup</code> 执行时机是在 <code>beforeCreate</code> 之前执行，详细的可以看后面生命周期讲解。</p> <ol> <li><strong>setup 参数</strong></li> </ol> <p>使用setup时，它接受两个参数：</p> <blockquote> <ul> <li>props: 组件传入的属性</li> <li>context</li> </ul> </blockquote> <p><code>setup</code> 中接受的<code>props</code>是响应式的， 当传入新的 <code>props</code> 时，会及时被更新。<br /> 由于是响应式的， 所以不可以使用 ES6 解构，解构会消除它的响应式。<br /> 错误代码示例， 这段代码会让 <code>props</code> 不再支持响应式：</p> <pre><code>setup(props) {     const { name } = props;     console.log(name);     const state = reactive({ count: 0 });     return {       state,     };   }, </code></pre> <p>对于以上的的问题，我们可以在后面的toRefs进行解释。<br /> 现在我们就来讲一下：</p> <ol start="2"> <li><strong>reactive、ref、toRefs、readonly</strong></li> </ol> <p>在 vue2.x 中， 定义数据都是在<code>data</code>中。<br /> 但是 Vue3.x 可以使用<code>reactive</code>和<code>ref</code>来进行数据定义。<br /> 那么ref和reactive他们有什么区别呢</p> <pre><code>reactive用于处理对象的双向绑定，ref处理 js 基础类型或者处理对象的双向绑定。 注意refs 它接受一个内部值并返回一个响应式且可变的 ref 对象。ref 对象具有指向内部值的单个 property.value。   &lt;template&gt;   &lt;div&gt;     &lt;p&gt;计数：{<!-- -->{ num }}s&lt;/p&gt;     &lt;p&gt;主人年龄：{<!-- -->{ person.age }}&lt;/p&gt;     &lt;p&gt;主人姓名：{<!-- -->{ person.name }}&lt;/p&gt;     &lt;p&gt;动物类别：{<!-- -->{ animal.type }}&lt;/p&gt;     &lt;p&gt;动物名称：{<!-- -->{ animal.name }}&lt;/p&gt;     &lt;p&gt;动物年龄：{<!-- -->{ animal.age }}&lt;/p&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import { defineComponent, reactive, ref } from "vue"; export default defineComponent({   setup() {     //使用ref声明基本类型     const num = ref(0);     //使用ref声明对象     const person = ref({ age: 20, name: "张三" });     //使用reactive声明对象     const animal = reactive({ type: "猫", name: "小花", age: 5 });     setTimeout(() =&gt; {       person.value.age = person.value.age + 1;       person.value.name = "李四";       animal.age++;     }, 1000);     setInterval(() =&gt; {       num.value++;     }, 1000);     return {       num,       animal,       person,     };   }, }); &lt;/script&gt; </code></pre> <p>我们绑定到页面是通过<code>user.name,user.age</code>；这样写感觉很繁琐，我们能不能直接将user中的属性解构出来使用呢<br /> 答案是不能直接对<code>user</code>进行结构， 这样会消除它的响应式， 这里就和上面我们说props不能使用 ES6 直接解构就呼应上了。<br /> 那我们就想使用解构后的数据怎么办，解决办法就是使用<code>toRefs</code>。<br /><code>toRefs</code> 用于将一个 <code>reactive</code> 对象转化为属性全部为 <code>ref</code> 对象的普通对象。具体使用方式如下：</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;p&gt;计数：{<!-- -->{ num }}s&lt;/p&gt;     &lt;p&gt;主人年龄：{<!-- -->{ person.age }}&lt;/p&gt;     &lt;p&gt;主人姓名：{<!-- -->{ person.name }}&lt;/p&gt;     &lt;p&gt;动物类别：{<!-- -->{ atype }}&lt;/p&gt;     &lt;p&gt;动物名称：{<!-- -->{ aname }}&lt;/p&gt;     &lt;p&gt;动物年龄：{<!-- -->{ aage }}&lt;/p&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import { defineComponent, reactive, ref, toRefs } from "vue"; export default defineComponent({   setup() {     //使用ref声明基本类型     const num = ref(0);     //使用ref声明对象     const person = ref({ age: 20, name: "张三" });     //使用reactive声明对象     const animal = reactive({ atype: "猫", aname: "小花", aage: 5 });     setTimeout(() =&gt; {       person.value.age = person.value.age + 1;       person.value.name = "李四";       animal.aage++;     }, 1000);     setInterval(() =&gt; {       num.value++;     }, 1000);     return {       num,       person,       ...toRefs(animal),     };   }, }); &lt;/script&gt; </code></pre> <p>有时我们想跟踪响应式对象 <code>(ref 或 reactive)</code> 的变化，但我们也希望防止在应用程序的某个位置更改它，这时候，我们就需要<code>readonly</code>。<br /> 例如，当我们有一个被传递的响应式对象时，我们不想让它在传递的的时候被改变。为此，我们可以基于原始对象创建一个只读的 <code>proxy</code> 对象：</p> <pre><code>import { reactive, readonly } from 'vue'  const original = reactive({ count: 0 })  const copy = readonly(original)  // 通过 original 修改 count，将会触发依赖 copy 的侦听器  original.count++  // 通过 copy 修改 count，将导致失败并出现警告 copy.count++ // 警告: "Set operation on key 'count' failed: target is readonly." </code></pre> <ul> <li><strong>生命周期钩子</strong></li> </ul> <p>在最开始的时候，我们就看到了两张图，其中的变化我们可以总结一下</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/ef18ed0b187db960aa0e61025c9cc1f7.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <p>我们可以看到<code>beforeCreate</code>和<code>created</code>被<code>setup</code>替换了（但是 Vue3 中你仍然可以使用， 因为 Vue3 是向下兼容的， 也就是你实际使用的是 vue2 的）。<br /> 其次，钩子命名都增加了on; Vue3.x 还新增用于调试的钩子函数<code>onRenderTriggered</code>和<code>onRenderTricked</code><br /> 下面我们简单使用几个钩子， 方便大家学习如何使用，Vue3.x 中的钩子是需要从 vue 中导入的：</p> <pre><code>import {   defineComponent,   onBeforeMount,   onMounted,   onBeforeUpdate,   onUpdated,   onBeforeUnmount,   onUnmounted,   onErrorCaptured,   onRenderTracked,   onRenderTriggered, } from "vue"; export default defineComponent({   //beforeCreate和created是vue2的   beforeCreate() {     console.log("------beforeCreate-----");   },   created() {     console.log("------created-----");   },   setup() {     console.log("------setup-----");     // vue3.x生命周期写在setup中     onBeforeMount(() =&gt; {       console.log("------onBeforeMount-----");     });     onMounted(() =&gt; {       console.log("------onMounted-----");     });     onBeforeUpdate(() =&gt; {       console.log("------onBeforeUpdate-----");     });     onUpdated(() =&gt; {       console.log("------onUpdated-----");     });     onBeforeUnmount(() =&gt; {       console.log("------onBeforeUnmount-----");     });     onUnmounted(() =&gt; {       console.log("------onUnmounted-----");     });     onErrorCaptured(() =&gt; {       console.log("------onErrorCaptured-----");     });     onRenderTracked(() =&gt; {       console.log("------onRenderTracked-----");     });     // 调试哪些数据发生了变化     onRenderTriggered((event) =&gt; {       console.log("------onRenderTriggered-----", event);     });   }, }); </code></pre> <p>具体怎么使用，是干什么的请参考官方文档，这里就不一一赘述了。</p> <ul> <li><strong>watch 与 watchEffect 的用法</strong></li> </ul> <p><code>watch</code> 函数用来侦听特定的数据源，并在回调函数中执行副作用。默认情况是惰性的，也就是说仅在侦听的源数据变更时才执行回调。</p> <pre><code>watch(source, callback, [options]) </code></pre> <p>参数说明：</p> <blockquote> <ol> <li>source: 可以支持 string,Object,Function,Array;</li> <li>用于指定要侦听的响应式变量 callback:</li> <li>执行的回调函数 options：支持 deep、immediate 和 flush 选项。</li> </ol> </blockquote> <p>其实整体和原来的vue2.0有一定的相似性，基本参数没有发生大的改变。</p> <p>接下来我会分别介绍这个三个参数都是如何使用的， 如果你对 watch 的使用不明白的请往下看：</p> <pre><code>//监听reactive对象： watch(       () =&gt; animal.aage,       (curAge, preAge) =&gt; {         console.log("新值:", curAge, "老值:", preAge);       }     );  //监听ref变量  watch(num, (newVal, oldVal) =&gt; {       console.log("新值:", newVal, "老值:", oldVal);     });      //多个值的监听  watch([() =&gt; animal.aage, num], ([curAge, newVal], [preAge, oldVal]) =&gt; {       console.log("新值:", curAge, "老值:", preAge);       console.log("新值:", newVal, "老值:", oldVal);     });      //监听对象复杂时，请使用深度监听 让函数的第三个参数为deep：true watch(       () =&gt; state.animal,       (newType, oldType) =&gt; {         console.log("新值:", newType, "老值:", oldType);       },       { deep: true }     ); </code></pre> <p>默认情况下，<code>watch</code> 是惰性的, 那什么情况下不是惰性的， 可以立即执行回调函数呢？其实使用也很简单， 给第三个参数中设置<br /><code>immediate: true</code>即可。</p> <pre><code>//停止监听函数    const stopWatchRoom = watch(       () =&gt; state.animal,       (newType, oldType) =&gt; {         console.log("新值:", newType, "老值:", oldType);       },       { deep: true }     );     setTimeout(() =&gt; {       // 停止监听       stopWatchRoom();     }, 3000); </code></pre> <p>还有一个监听函数<code>watchEffect</code>，介绍一下<code>watchEffect</code>，看看它的使用和<code>watch</code>究竟有何不同，在上面代码的基础上，我们来编写。</p> <pre><code>watchEffect(() =&gt; {       console.log(num);     }); </code></pre> <p>执行结果首先打印一次<code>num</code>值；然后每隔一秒，打印<code>num</code>值。<br /> 从上面的代码可以看出， 并没有像watch一样需要先传入依赖，watchEffect会自动收集依赖, 只要指定一个回调函数。在组件初始化时， 会先执行一次来收集依赖， 然后当收集到的依赖中数据发生变化时， 就会再次执行回调函数。所以总结对比如下：</p> <blockquote> <ul> <li>watchEffect 不需要手动传入依赖</li> <li>watchEffect 会先执行一次用来自动收集依赖</li> <li>watchEffect无法获取到变化前的值， 只能获取变化后的值</li> </ul> </blockquote> <h3> <a id="9Hooks_576" rel="nofollow"></a>9.Hooks</h3> <p>在之前vue用的<code>mixin</code>，所谓的混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。<br /> 现在的vue3.0提供了一种新的东西 <code>vue-hooks</code>。具体的<code>vue-hooks</code>，请参考网上教程</p> <p>为什么产生了<code>hooks</code>？<br /> 首先从<code>class-component/vue-options</code>说起：</p> <blockquote> <ul> <li>跨组件代码难以复用</li> <li>大组件，维护困难，颗粒度不好控制，细粒度划分时，组件嵌套存层次太深影响性能</li> <li>类组件，this不可控，逻辑分散，不容易理解</li> <li>mixins具有副作用，逻辑互相嵌套，数据来源不明，且不能互相消费</li> </ul> </blockquote> <p>当一个模版依赖了很多<code>mixin</code>的时候，很容易出现数据来源不清或者命名冲突的问题，而且开发<code>mixins</code>的时候，逻辑及逻辑依赖的属性互相分散且<code>mixin</code>之间不可互相消费。这些都是开发中令人非常痛苦的点。<br /> hooks存在以下优势：</p> <blockquote> <ul> <li>允许hooks间相互传递值</li> <li>组件之间重用状态逻辑</li> <li>明确指出逻辑来自哪里</li> </ul> </blockquote> <p>我们先来封装一个hooks，假如这个hooks是一个实现年龄加减，获取双倍年龄的函数。用单独的文件存储 bus/useAge.ts</p> <pre><code>import { ref, Ref, computed } from "vue"; type CountResultProps = {   age: Ref&lt;number&gt;;   doubleAge: Ref&lt;number&gt;;   increase: (curAge?: number) =&gt; void;   decrease: (curAge?: number) =&gt; void; }; export default function useCount(initValue = 20): CountResultProps {   const age = ref(initValue);   const increase = (curAge?: number): void =&gt; {     if (typeof curAge !== "undefined") {       age.value += curAge;     } else {       age.value += 1;     }   };   const doubleAge = computed(() =&gt; age.value * 2);   const decrease = (curAge?: number): void =&gt; {     if (typeof curAge !== "undefined") {       age.value -= curAge;     } else {       age.value -= 1;     }   };   return {     age,     doubleAge,     increase,     decrease,   }; } </code></pre> <p>在组件里面调用该hooks</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;p&gt;计数：{<!-- -->{ num }}s&lt;/p&gt;     &lt;p&gt;主人年龄：{<!-- -->{ person.age }}&lt;/p&gt;     &lt;p&gt;主人姓名：{<!-- -->{ person.name }}&lt;/p&gt;     &lt;p&gt;动物类别：{<!-- -->{ atype }}&lt;/p&gt;     &lt;p&gt;动物名称：{<!-- -->{ aname }}&lt;/p&gt;     &lt;p&gt;动物年龄：{<!-- -->{ aage }}&lt;/p&gt;     &lt;p&gt;count: {<!-- -->{ age }}&lt;/p&gt;     &lt;p&gt;双倍年龄： {<!-- -->{ doubleAge }}&lt;/p&gt;     &lt;div&gt;       &lt;button @click="increase()"&gt;加1&lt;/button&gt;       &lt;button @click="decrease()"&gt;减一&lt;/button&gt;     &lt;/div&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import {   defineComponent,   reactive,   ref,   toRefs,   watch,   watchEffect, } from "vue"; import useAge from "../bus/useAge.ts"; export default defineComponent({   setup() {     //使用ref声明基本类型     const num = ref(0);     //使用ref声明对象     const person = ref({ age: 20, name: "张三" });     //使用reactive声明对象     const animal = reactive({ atype: "猫", aname: "小花", aage: 5 });     setTimeout(() =&gt; {       person.value.age = person.value.age + 1;       person.value.name = "李四";       animal.aage++;       animal.aname = "小橘";     }, 1000);     setInterval(() =&gt; {       num.value++;     }, 1000);     const { age, doubleAge, increase, decrease } = useAge(22);     return {       num,       person,       ...toRefs(animal),       age,       doubleAge,       increase,       decrease,     };   }, }); &lt;/script&gt; </code></pre> <h3> <a id="10vue2x_vue3x_691" rel="nofollow"></a>10.vue2.x 与vue3.x的响应式数据对比</h3> <p>在vue2.0中，应该很多人都使用了<code>$set</code>这个东西吧。<br /> 数据更新了，页面为什么不变化呢？什么时候我们用<code>$forceUpdate</code>强制更新呢？<br /> 在vue2.x中，实现数据监听使用的是<code>Object.defineProperty</code>。而vue3.x使用的是<code>Proxy</code></p> <ol> <li> <code>Object.defineProperty</code>只能劫持对象的属性， 而 <code>Proxy</code> 是直接代理对象</li> </ol> <blockquote> <p>由于<code>Object.defineProperty</code>只能劫持对象属性，需要遍历对象的每一个属性，如果属性值也是对象，就需要递归进行深度遍历。<br /> 但是<code>Proxy</code> 直接代理对象， 不需要遍历操作</p> </blockquote> <ol start="2"> <li> <code>Object.defineProperty</code>对新增属性需要手动进行<code>Observe</code> </li> </ol> <blockquote> <p>因为<code>Object.defineProperty</code>劫持的是对象的属性，所以新增属性时，需要重新遍历对象，<br /> 对其新增属性再次使用<code>Object.defineProperty</code>进行劫持。也就是 Vue2.x<br /> 中给数组和对象新增属性时，需要使用<code>$set</code>才能保证新增的属性也是响应式的,<br /> $set内部也是通过调用<code>Object.defineProperty</code>去处理的。</p> </blockquote> <ol start="3"> <li> <code>Proxy</code>有多种拦截方法，如<code>apply，deleteProperty</code>等等，是<code>Object.defineProperty()</code>不具备的。</li> <li> <code>Proxy</code>是返回值是一个对象，可以直接进行操作，而<code>defineProperty()</code>要先遍历所有对象属性值才能进行操作。<br /> 但是相对来说，<code>Object.defineProperty()</code>兼容性高一些。</li> </ol> <h3> <a id="11Teleport_713" rel="nofollow"></a>11.Teleport</h3> <p><code>Teleport</code> 是 Vue3.x 新推出的功能</p> <p><code>Teleport</code> 是什么呢？</p> <p><code>Teleport</code> 就像是哆啦 A 梦中的「任意门」，任意门的作用就是可以将人瞬间传送到另一个地方。有了这个认识，我们再来看一下为什么需要用到 <code>Teleport</code> 的特性呢，看一个小例子：</p> <blockquote> <p>例如我们在使用<code>Dialog</code>组件时，我们实际开发中经常会使用到 <code>Dialog</code>，此时<code>Dialog</code>就被渲染到一层层子组件内部，处理嵌套组件的定位、<code>z-index</code>和样式都变得困难。但是组件希望位于页面的最上方，这时候我们将<code>Dialog</code>组件挂载在<code>body</code>上面是最好控制的，我们能够很好的通过zIndex来控制<code>Dialog</code>的位置，当他嵌套在templat里面的时候就不那么容易了。简单来说就是,即希望继续在组件内部使用<code>Dialog</code>,又希望渲染的 <code>DOM</code> 结构不嵌套在组件内部的 <code>DOM</code> 中。</p> </blockquote> <p>此时就需要 <code>Teleport</code> 上场，我们可以用<code>&lt;Teleport&gt;</code>包裹<code>Dialog</code>, 此时就建立了一个传送门，可以将<code>Dialog</code>渲染的内容传送到任何指定的地方。</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;p&gt;计数：{<!-- -->{ num }}s&lt;/p&gt;     &lt;p&gt;主人年龄：{<!-- -->{ person.age }}&lt;/p&gt;     &lt;p&gt;主人姓名：{<!-- -->{ person.name }}&lt;/p&gt;     &lt;p&gt;动物类别：{<!-- -->{ atype }}&lt;/p&gt;     &lt;p&gt;动物名称：{<!-- -->{ aname }}&lt;/p&gt;     &lt;p&gt;动物年龄：{<!-- -->{ aage }}&lt;/p&gt;     &lt;p&gt;count: {<!-- -->{ age }}&lt;/p&gt;     &lt;p&gt;倍数： {<!-- -->{ doubleAge }}&lt;/p&gt;     &lt;div&gt;       &lt;button @click="increase()"&gt;加1&lt;/button&gt;       &lt;button @click="decrease()"&gt;减一&lt;/button&gt;     &lt;/div&gt;     &lt;el-button type="text" @click="dialogVisible = true"       &gt;点击打开 Dialog&lt;/el-button     &gt;     &lt;teleport to="#dialogLL"&gt;       &lt;el-dialog title="提示" v-model="dialogVisible" width="30%"&gt;         &lt;span&gt;这是一段信息&lt;/span&gt;         &lt;template #footer&gt;           &lt;span class="dialog-footer"&gt;             &lt;el-button @click="dialogVisible = false"&gt;取 消&lt;/el-button&gt;             &lt;el-button type="primary" @click="dialogVisible = false"               &gt;确 定&lt;/el-button             &gt;           &lt;/span&gt;         &lt;/template&gt;       &lt;/el-dialog&gt;     &lt;/teleport&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import {   defineComponent,   reactive,   ref,   toRefs, } from "vue"; export default defineComponent({   setup() {     //使用ref声明基本类型     const num = ref(0);     const dialogVisible = ref(false);     //使用ref声明对象     const person = ref({ age: 20, name: "张三" });     //使用reactive声明对象     const animal = reactive({ atype: "猫", aname: "小花", aage: 5 });     setTimeout(() =&gt; {       person.value.age = person.value.age + 1;       person.value.name = "李四";       animal.aage++;       animal.aname = "小橘";     }, 1000);     setInterval(() =&gt; {       num.value++;     }, 1000);      return {       dialogVisible,       num,       person,       ...toRefs(animal),     };   }, }); &lt;/script&gt; </code></pre> <p>我们可以很清楚的看到teleport上有一个to属性，这个属性是讲当前节点传送到制定位置去的。位置应该传送到哪里呢？<br /> 答案就是在index.html上面<br /> 下面是我们的首页 你会看到有一个div的ID名为dialogLL，teleport就将节点挂载在这里来了</p> <pre><code>&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt;   &lt;head&gt;     &lt;meta charset="UTF-8" /&gt;     &lt;link  href="/favicon.ico" /&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;     &lt;title&gt;Vite App&lt;/title&gt;   &lt;/head&gt;   &lt;body&gt;     &lt;div id="app"&gt;&lt;/div&gt;     &lt;div id="dialogLL"&gt;&lt;/div&gt;     &lt;script type="module" src="/src/main.js"&gt;&lt;/script&gt;   &lt;/body&gt; &lt;/html&gt; </code></pre> <p>如图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/8d25d08126bdb271912e959595e9e63e.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <h3> <a id="12Suspense_817" rel="nofollow"></a>12.Suspense</h3> <p><code>Suspense</code>是 Vue3.x 中新增的特性， 那它有什么用呢？我们通过 Vue2.x 中的一些场景来认识它的作用。 Vue2.x 中应该经常遇到这样的场景：</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;div v-if="!loading"&gt;...&lt;/div&gt;     &lt;div v-if="loading"&gt;加载中...&lt;/div&gt;   &lt;/div&gt; &lt;/template&gt; </code></pre> <p>在前后端交互获取数据时， 是一个异步过程，一般我们都会提供一个加载中的动画，当数据返回时配合<code>v-if</code>来控制数据显示。<br /> 它提供两个<code>template slot</code>, 刚开始会渲染一个 <code>fallback</code> 状态下的内容， 直到到达某个条件后才会渲染 <code>default</code> 状态的正式内容， 通过使用<br /><code>Suspense</code>组件进行展示异步渲染就更加的简单。<br /> 具体的使用，我们可以用下面的例子来表示：<br /> 这是需要等待取值完成的的组件：</p> <pre><code>&lt;template&gt;   &lt;h1&gt;{<!-- -->{ getData.result }}&lt;/h1&gt; &lt;/template&gt; &lt;script&gt; export default {   name: "NewModel",   async setup() {     let getData = await new Promise((resolve) =&gt; {       setTimeout(() =&gt; {         return resolve({ result: "OK" });       }, 3000);     });     return {       getData,     };   }, }; &lt;/script&gt; </code></pre> <p>在其他组件内调用它，当等待取值的组件取值完成后，会将loading状态变为OK状态</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;suspense&gt;       &lt;template #default&gt;         &lt;NewSuspense&gt;&lt;/NewSuspense&gt;       &lt;/template&gt;       &lt;template #fallback&gt;         &lt;h1&gt;Loadding...&lt;/h1&gt;       &lt;/template&gt;     &lt;/suspense&gt;   &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import NewSuspense from "./suspens.vue"; export default {   name: "AppMain",   components: {     NewSuspense,   }, }; &lt;/script&gt; &lt;style&gt; &lt;/style&gt; </code></pre> <p>效果如图：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/9f6e7a76953f6b13e19befdebac5ec5a.jpg" alt="vue3及与vue2的区别总结（部分）"></p> <h3> <a id="13Fragment_885" rel="nofollow"></a>13.片段（Fragment）</h3> <p>在 Vue2.x 中， <code>template</code>中只允许有一个根节点：</p> <pre><code>&lt;template&gt;     &lt;div&gt;         &lt;span&gt;&lt;/span&gt;         &lt;span&gt;&lt;/span&gt;     &lt;/div&gt; &lt;/template&gt; </code></pre> <p>但是在 Vue3.x 中，你可以直接写多个根节点：</p> <pre><code>&lt;template&gt;     &lt;span&gt;&lt;/span&gt;     &lt;span&gt;&lt;/span&gt; &lt;/template&gt; </code></pre> <h3> <a id="14TreeShaking_905" rel="nofollow"></a>14.Tree-Shaking变化</h3> <p>Vue3.x 在考虑到 <code>tree-shaking</code>的基础上重构了全局和内部 API, 表现结果就是现在的全局 API 需要通过 <code>ES Module</code>的引用方式进行具名引用， 比如在 Vue2.x 中，我们要使用 <code>nextTick</code>:</p> <pre><code>// vue2.x import Vue from "vue"  Vue.nextTick(()=&gt;{     ... }) 或者  this.nextTick(()=&gt;{     ... }) </code></pre> <p><code>Vue.nextTick()</code> 是一个从 Vue 对象直接暴露出来的全局 API，其实 <code>$nextTick()</code> 只是 <code>Vue.nextTick()</code> 的一个简易包装，只是为了方便而把后者的回调函数的 this 绑定到了当前的实例。<br /> 在 Vue3.x 中改写成这样：</p> <pre><code>import { nextTick } from "vue"  nextTick(() =&gt;{     ... }) </code></pre> <p>受影响的 API</p> <p>这是一个比较大的变化， 因为以前的全局 API 现在只能通过具名导入，这一更改会对以下 API 有影响：</p> <blockquote> <ol> <li>Vue.nextTick</li> <li>Vue.observable（用 Vue.reactive 替换）</li> <li>Vue.version</li> <li>Vue.compile（仅限完整版本时可用）</li> <li>Vue.set（仅在 2.x 兼容版本中可用）</li> <li>Vue.delete（与上同）</li> </ol> </blockquote> <h3> <a id="16filter_942" rel="nofollow"></a>16.移除filter（过滤器）</h3> <p>在2.x版本中，使用filter</p> <pre><code>&lt;template&gt;   &lt;p&gt;{<!-- -->{ time | currencyUSD }}&lt;/p&gt; &lt;/template&gt;  &lt;script&gt;   export default {     data(){         return{             time:new Date()                 }         }     filters: {       currencyUSD(value) {         return time       }     }   } &lt;/script&gt; </code></pre> <p>在vue3.x中，已经取消了filter1的使用，官方建议建议用方法调用或计算属性来替换它们<br /> 全局过滤器<br /> 如果在应用中全局注册了过滤器，那么在每个组件中用计算属性或方法调用来替换它可能就没那么方便了。<br /> 取而代之的是，你可以通过全局属性以让它能够被所有组件使用到：</p> <pre><code>// main.js const app = createApp(App)  app.config.globalProperties.$filters = {   currencyUSD(value) {     return '$' + value   } } </code></pre> <p>然后，可以通过这个 $filters 对象修正所有的模板，就像这样：</p> <pre><code>&lt;template&gt;   &lt;h1&gt;Bank Account Balance&lt;/h1&gt;   &lt;p&gt;{<!-- -->{ $filters.currencyUSD(accountBalance) }}&lt;/p&gt; &lt;/template&gt; </code></pre> <p>注意，这种方式只适用于方法，而不适用于计算属性，因为后者只有在单个组件的上下文中定义时才有意义。</p> <h3> <a id="17children_991" rel="nofollow"></a>17.移除$children</h3> <p>在 2.x 中，开发者可以使用 <code>this.$children</code> 访问当前实例的直接子组件<br /> 在 3.x 中，<code>$children property</code> 已被移除，且不再支持。如果你需要访问子组件实例，建议使用 <code>$refs</code>。</p> <h3> <a id="18listeners_996" rel="nofollow"></a>18.移除$listeners</h3> <p>在 Vue 2 中，你可以通过 <code>this.$attrs</code> 访问传递给组件的 attribute，以及通过 <code>this.$listeners</code> 访问传递给组件的事件监听器。结合 inheritAttrs: false，开发者可以将这些 attribute 和监听器应用到根元素之外的其它元素：</p> <pre><code>&lt;template&gt;   &lt;label&gt;     &lt;input type="text" v-bind="$attrs" v-on="$listeners" /&gt;   &lt;/label&gt; &lt;/template&gt; &lt;script&gt;   export default {     inheritAttrs: false   } &lt;/script&gt; 在vue3 中，移除了$listeners 并将其合并到$attrs中 &lt;template&gt;   &lt;label&gt;     &lt;input type="text" v-bind="$attrs" /&gt;   &lt;/label&gt; &lt;/template&gt; &lt;script&gt; export default {   inheritAttrs: false } &lt;/script&gt; </code></pre> <p>如果这个组件接收一个 attribute 和一个 v-on:close 监听器，那么 $attrs 对象现在将如下所示:</p> <pre><code>{   name: '组件传值',   onClose: () =&gt; console.log('close 事件被触发') } </code></pre> <h3> <a id="19vif__vfor__1031" rel="nofollow"></a>19.v-if 与 v-for 的优先级调整</h3> <p>2.x 版本中在一个元素上同时使用 v-if 和 v-for 时，v-for 会优先作用。<br /> 3.x 版本中 v-if 总是优先于 v-for 生效。</p> <h3> <a id="20_native_1036" rel="nofollow"></a>20.移除修饰符 .native</h3> <p>默认情况下，传递给带有 v-on 的组件的事件监听器只能通过 this.$emit 触发。要将原生 DOM 监听器添加到子组件的根元素中，可以使用 .native 修饰符：</p> <pre><code>&lt;my-component   v-on:close="close"   v-on:click.native="handleNativeClickEvent" /&gt; </code></pre> <p>vue3中 新增的 emits 选项允许子组件定义真正会被触发的事件。<br /> 因此，对于子组件中未被定义为组件触发的所有事件监听器，Vue 现在将把它们作为原生事件监听器添加到子组件的根元素中 (除非在子组件的选项中设置了 inheritAttrs: false)。</p> <pre><code>&lt;my-component   v-on:close="close"   v-on:click="handleNativeClickEvent" /&gt;   //MyComponent.vue &lt;script&gt;   export default {     emits: ['close']   } &lt;/script&gt; </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-58520.htm">win11系统怎么关闭共享文件夹</a></p>
+                                        <p>下一个：<a href="/news/article-59459.htm">动物疫苗价格排行榜前十名有哪些种类的（动物疫苗价格排行榜前十名有哪些种类的疫苗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35500.htm" title="孤狸可以养吗（养殖孤狸）">孤狸可以养吗（养殖孤狸）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-latest-clash-node.htm" title="「2月2日」最高速度22.6M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址">「2月2日」最高速度22.6M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25886.htm" title="瑞派宠物医院价格表（瑞派宠物医院贵吗）">瑞派宠物医院价格表（瑞派宠物医院贵吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-clash-node-github.htm" title="「11月15日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接">「11月15日」最高速度22.9M/S，2024年Clash/V2ray/Shadowrocket/SSR每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25421.htm" title="动物疫苗接种方法有哪些种类图片 动物疫苗接种方法有哪些种类图片大全">动物疫苗接种方法有哪些种类图片 动物疫苗接种方法有哪些种类图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-39705.htm" title="宠物粮食行业发展前景如何呢视频讲解下载（宠物粮食创业）">宠物粮食行业发展前景如何呢视频讲解下载（宠物粮食创业）</a></li>
+                        <li class="py-2"><a href="/news/article-50150.htm" title="中国宠物用品批发市场在哪里（国内宠物批发市场）">中国宠物用品批发市场在哪里（国内宠物批发市场）</a></li>
+                        <li class="py-2"><a href="/news/article-33886.htm" title="重庆狗狗领养（重庆狗狗领养中心）">重庆狗狗领养（重庆狗狗领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-36761.htm" title="领养狗狗要签协议吗 领养狗狗要签协议吗合法吗">领养狗狗要签协议吗 领养狗狗要签协议吗合法吗</a></li>
+                        <li class="py-2"><a href="/news/article-54957.htm" title="国产品牌十大宠物食品有哪些（国产品牌十大宠物食品有哪些呢）">国产品牌十大宠物食品有哪些（国产品牌十大宠物食品有哪些呢）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
