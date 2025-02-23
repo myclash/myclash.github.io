@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-61218.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>0基础学MySQL数据库—从小白到大牛（1）初识数据库</title>
+        <meta name="description" content="初识数据库  初识数据库   1.为什么我们要使用数据库? 2.数据库（DB）和数据库管理系统（DBMS）   2.1数据库的概念 2.2数据库和数据库管理系统的关系 2.3常见数据库管理系统排名 2" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-61218.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="0基础学MySQL数据库—从小白到大牛（1）初识数据库" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/878e05c3836f42e1cff949ae256a5ba0.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:13:08" />
+    <meta property="og:updated_time" content="2025-02-22T07:13:08" />
+        <meta property="og:description" content="初识数据库  初识数据库   1.为什么我们要使用数据库? 2.数据库（DB）和数据库管理系统（DBMS）   2.1数据库的概念 2.2数据库和数据库管理系统的关系 2.3常见数据库管理系统排名 2" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="0基础学MySQL数据库—从小白到大牛（1）初识数据库">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">0基础学MySQL数据库—从小白到大牛（1）初识数据库</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>初识数据库</h3> <ul> <li><a href="#_2" rel="nofollow">初识数据库</a></li> <li> <ul> <li><a href="#1_3" rel="nofollow">1.为什么我们要使用数据库?</a></li> <li><a href="#2DBDBMS_9" rel="nofollow">2.数据库（DB）和数据库管理系统（DBMS）</a></li> <li> <ul> <li><a href="#21_10" rel="nofollow">2.1数据库的概念</a></li> <li><a href="#22_27" rel="nofollow">2.2数据库和数据库管理系统的关系</a></li> <li><a href="#23_30" rel="nofollow">2.3常见数据库管理系统排名</a></li> <li><a href="#24_34" rel="nofollow">2.4常见数据库介绍</a></li> <li><a href="#25MySQL_51" rel="nofollow">2.5MySQL简述</a></li> </ul> </li> <li><a href="#3RDBMSRDBMS_55" rel="nofollow">3.RDBMS和非RDBMS</a></li> <li> <ul> <li><a href="#31RDBMS_57" rel="nofollow">3.1关系型数据库RDBMS</a></li> <li><a href="#32_66" rel="nofollow">3.2非关系型数据库</a></li> </ul> </li> </ul> </li> </ul> </div> </h1> <h2> <a id="1_3" rel="nofollow"></a>1.为什么我们要使用数据库?</h2> <p><strong>持久化</strong>：使用数据库的原因主要是可以让数据持久化，即把数据保存到可掉电式存储设备中，数据的持久化其实就是意味着，<strong>把内存中的数据保存到硬盘加以固化</strong>。使用持久化就必须要有相关的介质，比如说存储到文件中（.doc/.jpg)还有一些其它的介质，以及数据库中。<br /><strong>非数据库存储缺点</strong>：<strong>大量的数据</strong>存储还是存储到数据库当中较好，当然存储到其他文件中也是可以的，但如果存储到其他文件中，不仅效率非常的差，且如果数据量大，我们要查找其中一条数据，时间消耗是非常大的，如果放在数据库中，我们的数据库就有多种的优化手段，可以快速查找到记录。<br /><strong>生活中的数据持久化</strong>：例如手机当中的微信登录，开始登录需要输入账户密码，或者是手机号验证，这时候如果把微信从后台划掉了，依旧还是可以登录成功，或者是至少会保留你刚刚数据的账号密码，这就是<strong>数据持久化</strong>，包括相关的聊天内容各种信息，这都是数据持久化。<br /><img fetchpriority="high" decoding="async" src="http://img.555519.xyz/uploads/20230118/444d65194b0f566804faa434a8d37d81.jpg" alt="0基础学MySQL数据库—从小白到大牛（1）初识数据库"></p> <h2> <a id="2DBDBMS_9" rel="nofollow"></a>2.数据库（DB）和数据库管理系统（DBMS）</h2> <h3> <a id="21_10" rel="nofollow"></a>2.1数据库的概念</h3> <table> <thead> <tr> <th align="left"><code>数据库DB</code></th> </tr> </thead> <tbody> <tr> <td align="left"><strong>就是存储数据的仓库，是一个文件系统。里面存的是有组织的数据</strong></td> </tr> </tbody> </table> <table> <thead> <tr> <th align="left"><code>数据库管理系统DBMS</code></th> </tr> </thead> <tbody> <tr> <td align="left"><strong>操作和管理数据库的软件，可以建立、使用、维护数据库，对数据库的管理和控制，用户可以通过数据库管理访问系统来访问数据库表内数据</strong></td> </tr> </tbody> </table> <table> <thead> <tr> <th align="left"><code>数据库管理员DBA</code></th> </tr> </thead> <tbody> <tr> <td align="left"><strong>从事管理和维护数据库管理系统的相关工作人员的统称</strong></td> </tr> </tbody> </table> <table> <thead> <tr> <th align="left"><code>结构化查询语言SQL(不要分开读)</code></th> </tr> </thead> <tbody> <tr> <td align="left"><strong>用来和数据库通讯的语言</strong></td> </tr> </tbody> </table> <h3> <a id="22_27" rel="nofollow"></a>2.2数据库和数据库管理系统的关系</h3> <p>一个数据库管理系统可以管理多个数据库，一个数据库可以建多个表，数据库管理系统和数据库的关系如图：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/a45f0cb59bf45db216dba0a4c5e11291.jpg" alt="0基础学MySQL数据库—从小白到大牛（1）初识数据库"></p> <h3> <a id="23_30" rel="nofollow"></a>2.3常见数据库管理系统排名</h3> <p>全世界数据库系统有将近<strong>400种</strong>，市面上常见的数据库管理软件Oracle、MySQL、MS SQL Server、DB2等，下图为<mark>2022年</mark>数据库受欢迎统计结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230118/fb523f8de67c016aad3146871f55c9b7.jpg" alt="0基础学MySQL数据库—从小白到大牛（1）初识数据库"><br /> 排名第一是Oracle但是和第二MySQL两个是非常接近的，但是MySQL已经被Oracle收购了！！</p> <h3> <a id="24_34" rel="nofollow"></a>2.4常见数据库介绍</h3> <ul> <li> <mark>Oracle</mark><br /> 1979年诞生，他是<strong>商用的</strong>RDBMS（关系型数据库管理系统）带Relational的都是关系型数据库管理系统<br /> 2009年收购了MySQL</li> <li> <mark>SQL Server</mark><br /> 1989年<strong>微软开发的</strong>大型商业数据库</li> <li> <mark>DB2</mark><br /> IBM公司的数据库产品，是收费的，常<strong>运用于银行系统</strong> </li> <li> <mark>PostgreSQL</mark><br /> 稳定性极强，<strong>最符合SQL标准</strong>，开放源码，具备商业级质量</li> <li> <mark>SQLite</mark><br /> 嵌入式小型数据库，<strong>应用在手机端</strong> </li> <li> <mark>MySQL</mark><br /> 是一个<strong>开放源代码的关系型数据库管理系统</strong>。MariaDB是MySQL创作者担心MySQL被闭源所以创建了MariaDB</li> <li> <mark>GreatDB</mark><br /> GreatDB是万里开源自主开发的高性能关系型数据库软件，完整支持事务特性，产品稳定性强、高可靠方案完备，实现了面向国产化软硬件平台定向性能优化，是企业级应用的理想产品，满足多行业场景。</li> </ul> <h3> <a id="25MySQL_51" rel="nofollow"></a>2.5MySQL简述</h3> <ul> <li>优点：<br /> 体积小、速度快、成本低、可以处理千万条记录的大型数据库、开放源代码、性能卓越、服务稳定</li> </ul> <h2> <a id="3RDBMSRDBMS_55" rel="nofollow"></a>3.RDBMS和非RDBMS</h2> <p>从排名里面分析，关系型数据库是主流</p> <h3> <a id="31RDBMS_57" rel="nofollow"></a>3.1关系型数据库RDBMS</h3> <ul> <li>实质<br /><mark>最古老</mark>的数据库类型，把复杂的数据结构归结为简单的<mark>二元关系</mark>（既二维表格型式）<br /> 关系型数据库以<mark>行</mark>和<mark>列</mark>这行和列的组合称为表，一组表成了一个库</li> <li>优势<br /> 复杂查询<br /> 可以用SQL语句方便在一个表以及多表之间做复查的数据查询<br /> 事务支持<br /> 使得对安全性能很高的数据访问要求得以实现。</li> </ul> <h3> <a id="32_66" rel="nofollow"></a>3.2非关系型数据库</h3> <p>可以理解为关系型数据库的<mark>阉割版本</mark>基于键值对存储数据，不需要经过SQL层的解析，减少不常用功能<mark>性能非常高</mark>。</p> <ul> <li>3.2.1键值型数据库<br /> 典型使用场景是内存缓存，<strong>Redis</strong>是最流行的键值型数据库。</li> <li>3.2.2文档型数据库<br /> 此数据库可以存放文档、可以是XML或者是JSON等格式。MongDB是最流行的文档数据库。</li> <li>3.2.3搜索引擎数据库<br /> 是在搜索引擎领域的数据存储形式，由于搜索引擎会爬取大量数据，所以已特定的格式进行存储，这样在检索的时候才可以保证最优解。核心原理是<strong>倒排索引</strong>。</li> <li>3.2.4列式数据库<br /> Oracle、MySQL等数据库都是采用行存储。而列式按照列存储到数据库中，好处是降低I/O，减少数据的冗余，适合分布式文件系统，不足就是功能有限。</li> <li>3.2.5图形数据库<br /> 利用了图这种数据结构存储了实体（对象）之间的关系。例如人物和人物之间的关系就可以用图形数据库。</li> </ul> <p><code>不作为商业用途，仅作为个人学习记录。</code></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60619.htm">宠物疫苗可以带上火车吗（宠物用疫苗可以带上高铁吗）</a></p>
+                                        <p>下一个：<a href="/news/article-61219.htm">南京有没有免费领养宠物的地方啊（南京领养宠物都要做什么条件）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-today-clash-node.htm" title="「2月8日」最高速度20.7M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点链接地址">「2月8日」最高速度20.7M/S，2025年SSR/Shadowrocket/Clash/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-windows-clash-node.htm" title="「2月18日」最高速度18.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址">「2月18日」最高速度18.5M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe.htm" title="「11月17日」最高速度22.9M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接">「11月17日」最高速度22.9M/S，2024年SSR/Clash/V2ray/Shadowrocket每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-shadowrocket-node.htm" title="「2月15日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址">「2月15日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-node-github.htm" title="「2月11日」最高速度18.6M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「2月11日」最高速度18.6M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-54958.htm" title="中牧股份宠物疫苗（中牧实业股份有限公司兽用疫苗生产基地）">中牧股份宠物疫苗（中牧实业股份有限公司兽用疫苗生产基地）</a></li>
+                        <li class="py-2"><a href="/news/article-26824.htm" title="动物疫苗检测机构 动物疫苗检测机构有哪些">动物疫苗检测机构 动物疫苗检测机构有哪些</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-clash-v2ray-ss-ssr.htm" title="「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接">「11月10日」最高速度19.9M/S，2024年Shadowrocket/SSR/V2ray/Clash每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-linux-clash-github.htm" title="「1月29日」最高速度18.1M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点链接地址">「1月29日」最高速度18.1M/S，2025年SSR/Clash/V2ray/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52251.htm" title="pyspark读取和存入数据的三种方法">pyspark读取和存入数据的三种方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
