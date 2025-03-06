@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-66682.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused</title>
+        <meta name="description" content="使用docker拉取镜像时出现下面状况，根据个人理解这个情况应该是docker无法解析https://registry-1.docker.io/v2/这个网站，所以需要修改类似DNS server这样" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-66682.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/5d17f8f5290445081388e8a05c6c7931.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:15:05" />
+    <meta property="og:updated_time" content="2025-03-03T08:15:05" />
+        <meta property="og:description" content="使用docker拉取镜像时出现下面状况，根据个人理解这个情况应该是docker无法解析https://registry-1.docker.io/v2/这个网站，所以需要修改类似DNS server这样" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>使用docker拉取镜像时出现下面状况，根据个人理解这个情况应该是docker无法解析https://registry-1.docker.io/v2/这个网站，所以需要修改类似DNS server这样的东西，在这里修改的是resolv.conf文件里面的nameserver</p> <pre><code>zy@zy:~$ sudo docker pull ubuntu:16.04 Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on [::1]:53: read udp [::1]:58060-&gt;[::1]:53: read: connection refused</code></pre> <p>修改文件/etc/resolv.conf</p> <pre><code>sudo vim /etc/resolv.conf</code></pre> <p>将nameserver修改为8.8.8.8或者114.114.114.114</p> <blockquote> <p>这里提供一个网址<a href="https://dns.icoa.cn/" rel="nofollow">https://dns.icoa.cn/</a>，通过这个网址可以查看很多可用的DNS服务器</p> </blockquote> <pre><code># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8) #     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN # nameserver 127.0.1.1 nameserver 114.114.114.114</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66044.htm">宠爱国际动物医院官网招聘 宠爱国际动物医院工作怎么样</a></p>
+                                        <p>下一个：<a href="/news/article-66685.htm">同安宠物领养中心电话多少号（同安哪里有宠物医院）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-47146.htm" title="宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢">宠物买卖纠纷找哪个部门协调解决 宠物买卖纠纷找哪个部门协调解决呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-clash.htm" title="「1月13日」最高速度21.5M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「1月13日」最高速度21.5M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43672.htm" title="java实现机械表">java实现机械表</a></li>
+                        <li class="py-2"><a href="/news/article-53865.htm" title="南京宠物收容中心 南京宠物收容中心电话">南京宠物收容中心 南京宠物收容中心电话</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-linux-clash-github.htm" title="「2月24日」最高速度19.3M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费节点链接地址">「2月24日」最高速度19.3M/S，2025年V2ray/Clash/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50667.htm" title="动物疫苗厂家排名榜单前十 动物疫苗厂家排名榜单前十名">动物疫苗厂家排名榜单前十 动物疫苗厂家排名榜单前十名</a></li>
+                        <li class="py-2"><a href="/news/article-51163.htm" title="学宠物美容有用吗知乎（学宠物美容有用吗知乎推荐）">学宠物美容有用吗知乎（学宠物美容有用吗知乎推荐）</a></li>
+                        <li class="py-2"><a href="/news/article-45179.htm" title="为啥家猫不需要打疫苗宠物猫要打呢（家猫为什么不用打疫苗）">为啥家猫不需要打疫苗宠物猫要打呢（家猫为什么不用打疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-67331.htm" title="领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）">领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-clash-v2ray-ss-ssr.htm" title="「1月21日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「1月21日」最高速度22.8M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
