@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-71197.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>数据库上云实践：使用Ora2pg进行数据库迁移</title>
+        <meta name="description" content="概述  本文将介绍如何使用 Oracle到postgresql的迁移使用ora2pg工具。配置环境后，你将了解如何编写配置文件，进行数据库迁移任务。 重要  在本教程中，你将了解如何执行以下操作： 编" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-71197.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="数据库上云实践：使用Ora2pg进行数据库迁移" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/b24892e7e8b6c69c58c9e6acf7394eb7.webp" />
+        <meta property="og:release_date" content="2025-03-10T04:37:47" />
+    <meta property="og:updated_time" content="2025-03-10T04:37:47" />
+        <meta property="og:description" content="概述  本文将介绍如何使用 Oracle到postgresql的迁移使用ora2pg工具。配置环境后，你将了解如何编写配置文件，进行数据库迁移任务。 重要  在本教程中，你将了解如何执行以下操作： 编" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="数据库上云实践：使用Ora2pg进行数据库迁移">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">数据库上云实践：使用Ora2pg进行数据库迁移</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div class="toc"> <div class="toc-container-header"><span style="font-size: 1.5em;">概述</span></div> </div> <p>本文将介绍如何使用 Oracle到postgresql的迁移使用ora2pg工具。配置环境后，你将了解如何编写配置文件，进行数据库迁移任务。</p> <h4 id="重要">重要</h4> <ul> <li>在本教程中，你将了解如何执行以下操作：</li> <li>编写ora2pg配置文件</li> <li>通过配置文件将Oracle中的表、序列、视图、同义词、函数过程包进行迁移</li> </ul> <h4 id="前置条件">前置条件</h4> <ul> <li>perl解释器</li> <li>perl 模块 DBD(DataBase Description)  *DBI(DataBase Interface)</li> <li>ora2pg源码</li> </ul> <h2 id="配置环境">配置环境</h2> <h4 id="win环境配置">Win环境配置</h4> <ol> <li>perl解释器安装:  strawberry-perl-5.32.1.1-64bit.msi</li> <li>在win下 strawberry-perl(version 5.32以后)自带<code>DBD::Oracle</code> 和<code>DBD::Pg</code>.</li> </ol> <pre><code class="language-shell">perl -MCPAN -e install DBD::Oracle perl -MCPAN -e install DBD::Pg</code></pre> <ol start="3"> <li>利用perl解释器，解释makefile.pl文件，配置环境并安装ora2pg。win下使用gmake指令</li> </ol> <pre><code class="language-shell">cd ora2pg  perl Makefile.PL gmake &amp;&amp; gmake install</code></pre> <ol start="4"> <li>DBI的安装需要下载源码包，通过源码安装(在win下，可以使用gmake指令)</li> </ol> <pre><code class="language-shell">tar -zxvf DBI-1.641.tar.gz cd DBI-1.641 perl Makefile.PL gmake &amp;&amp; gmake install</code></pre> <ol start="5"> <li>安装Oracle客户端</li> </ol> <h4 id="linux环境配置">linux环境配置</h4> <ol> <li> <p>perl版本5.10以上，安装依赖包<code>perl-ExtUtils-CBuilder</code><code>perl-ExtUtils-MakeMaker</code>(注：win下的strawberry-perl自带这两个包)</p> <pre><code class="language-shell">yum install -y perl perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker</code></pre> </li> <li> <p>安装DBI</p> <pre><code class="language-shell">tar -zxvf DBI-1.641.tar.gz cd DBI-1.641 perl Makefile.PL make &amp;&amp; make install</code></pre> </li> <li> <p>安装Oracle客户端(略)</p> <pre><code class="language-shell">    rpm -ivh oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm     rpm -ivh oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm     rpm -ivh oracle-instantclient12.2-jdbc-12.2.0.1.0-1.x86_64.rpm     rpm -ivh oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm</code></pre> </li> <li> <p>安装DBD-Oracle</p> <p>定义ORACLE_HOME环境变量</p> <pre><code class="language-shell">tar -zxvf DBD-Oracle-1.74.tar.gz cd DBD-Oracle-1.74 perl Makefile.PL make &amp;&amp; make install</code></pre> </li> <li> <p>安装DBD:PG</p> <pre><code class="language-shell">#使用官方提供的yum安装方式 #Linux系统版本centos7 64位版本 #Pg版本为12 yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm yum install postgresql12 yum install postgresql12-server yum install postgresql12-contrib  #配置开机启动与启动 systemctl enable postgresql-12 systemctl start postgresql-12 #修改配置文件 #打开并编辑文件“/var/lib/pgsql/12/data/postgresql.conf”。将“#listen_addresses = ‘localhost’”改为“listen_addresses = ‘*’” #打开并编辑文件“/var/lib/pgsql/12/data/pg_hba.conf”。在文件的末尾添加“host all all 0.0.0.0/0 md5” #设置pgsql的环境变量</code></pre> </li> <li> <p>安装Ora2PG</p> <pre><code class="language-shell">tar -zxvf ora2pg-22.1.tar.bz2cd ora2pg-22.1/perl Makefile.PLmake &amp;&amp; make install</code></pre> </li> </ol> <h2 id="ora2pg使用方法">Ora2Pg使用方法</h2> <p>编写conf文件，执行指令将Oracle转化为Postgresql</p> <pre><code class="language-shell">ora2pg -c ora2pg_table.conf</code></pre> <h4 id="配置文件ora2pg_tableconf">配置文件ora2pg_table.conf</h4> <pre><code class="language-cmake">PG_VERSION 12 ORACLE_HOME  /home/oracle/app/oracle/product/11.2.0/dbhome_1 ORACLE_DSN  dbi:Oracle:host=xx.xx.x.xxx;service_name=xxx;port=xx ORACLE_USER xxxxxx ORACLE_PWD  ###### USER_GRANTS 1 SCHEMA  xxxx TYPE TABLE PG_NUMERIC_TYPE    0 PG_INTEGER_TYPE    1 DEFAULT_NUMERIC float #SKIP    fkeys pkeys ukeys indexes checks NLS_LANG    AMERICAN_AMERICA.UTF8 OUTPUT    /home/ora2pg/xxxxx.sql</code></pre> <h4 id="配置文件解释oracle数据库连接配置项">配置文件解释：Oracle数据库连接配置项</h4> <h5 id="oracle_home">ORACLE_HOME</h5> <p>使用ORACLE_HOME作为环境变量，ora2pg可以通过该参数找到Perl的DBD模块连接ORACLE数据库所需要的依赖包。</p> <ul> <li>若在Linux环境下，该变量可能为：<code> /home/oracle/app/oracle/product/11.2.0/dbhome_1</code></li> <li>若在Windows环境下，该变量可能为：<code>D:\app\Administrator\product\11.2.0\dbhome_1</code></li> </ul> <h5 id="oracle_dsn">ORACLE_DSN</h5> <pre><code>该参数与Oracle数据库具体配置有关，主要为数据库的</code></pre> <p><code>host</code>,<code>sid</code>,<code>port</code>等参数</p> <pre><code class="language-shell">dbi:Oracle:host=oradb_host.myhost.com;sid=DB_SID;port=1521dbi:Oracle:DB_SID #On 18c this could be for example:dbi:Oracle:host=192.168.1.29;service_name=pdb1;port=1521 #for the second notation the SID should be declared in the well known #file $ORACLE_HOME/network/admin/tnsnames.ora or in the path given to#the TNS_ADMIN environment variable. #For MySQL the DSN will lool like this:dbi:mysql:host=192.168.1.10;database=sakila;port=3306 the 'sid' part is replaced by 'database'.</code></pre> <h5 id="oracle_user-et-oracle_pwd">ORACLE_USER et ORACLE_PWD</h5> <pre><code>USER和PWD表示Oracle数据库的用户名和密码，选用账号的时候尽量选择DBA权限的账号，以防止数据库扫描时出现的权限问题。</code></pre> <ul> <li>若配置文件*.conf未设置该参数，可安装perl的Term::ReadKey模块，在执行指令时的交互式命令行输入账号密码</li> <li>连接本地的数据据库实例如果为"as sysdba"，那么可以将ORACLE_USER设置为""，密码为空</li> </ul> <h5 id="user_grants">USER_GRANTS</h5> <ul> <li>如果连接Oracle数据库为普通，该值设置为1，此时没有权限抽取DBA 表格，此时将会使用ALL 表格</li> <li>若导出类型为<code>GRANT</code>，该值必须设置为0，否者将无效。</li> </ul> <h5 id="transaction">TRANSACTION*</h5> <p>事务隔离类型，如果需要改变导出数据的默认隔离级别，需要设置该参数，总共由4中事务隔离类型：</p> <ul> <li>READ ONLY</li> <li>READ WRITE</li> <li>ISOLATION LEVEL SERIALIZABLE</li> <li>ISOLATION LEVEL READ COMMITTED</li> </ul> <h2 id="基本原理">基本原理</h2> <p>在Oarcle数据库和Postgresql数据库中间，使用一台机器，这台机器实现将Oracle数据库的元数据导出，并根据数据库中的表格、序列、视图等内容生成符合Postgresql语法的DDL(data definition language)，并保存为相应的 *.sql文件按</p> <h3 id="数据类型变化参考ora2pg源码定义">数据类型变化(参考Ora2PG源码定义)</h3> <pre><code class="language-perl">our %TYPE = (	'NUMBER' =&gt; 'numeric', # CHAR types limit of 2000 bytes with defaults to 1 if no length # is specified. PG char type has max length set to 8104 so it # should match all needs 				'CHAR' =&gt; 'char', 				'NCHAR' =&gt; 'char', # VARCHAR types the limit is 2000 bytes in Oracle 7 and 4000 in # Oracle 8. PG varchar type has max length iset to 8104 so it # should match all needs 				'VARCHAR' =&gt; 'varchar',                 'NVARCHAR' =&gt; 'varchar',                 'VARCHAR2' =&gt; 'varchar',                 'NVARCHAR2' =&gt; 'varchar',                 'STRING' =&gt; 'varchar', # The DATE data type is used to store the date and time # information. PG type timestamp should match all needs. 				'DATE' =&gt; 'timestamp', # Type LONG is like VARCHAR2 but with up to 2Gb. PG type text # should match all needs or if you want you could use blob  				'LONG' =&gt; 'text', # Character data of variable length 				'LONG RAW' =&gt; 'bytea', # Types LOB and FILE are like LONG but with up to 4Gb. PG type # text should match all needs or if you want you could use blob # (large object) 				'CLOB' =&gt; 'text', # A large object containing single-byte characters 				'NCLOB' =&gt; 'text', # A large object containing national character set data 				'BLOB' =&gt; 'bytea', # Binary large object # The full path to the external file is returned if destination type is text. # If the destination type is bytea the content of the external file is returned. 				'BFILE' =&gt; 'bytea', # Locator for external large binary file # The RAW type is presented as hexadecimal characters. The # contents are treated as binary data. Limit of 2000 bytes # PG type text should match all needs or if you want you could # use blob (large object)、 				'RAW' =&gt; 'bytea',                 'ROWID' =&gt; 'oid',                 'UROWID' =&gt; 'oid',                 'FLOAT' =&gt; 'double precision',                 'DEC' =&gt; 'decimal',                 'DECIMAL' =&gt; 'decimal',                 'DOUBLE PRECISION' =&gt; 'double precision',                 'INT' =&gt; 'numeric',                 'INTEGER' =&gt; 'numeric',                 'BINARY_INTEGER' =&gt; 'integer',                 'PLS_INTEGER' =&gt; 'integer',                 'REAL' =&gt; 'real',                 'SMALLINT' =&gt; 'smallint',                 'BINARY_FLOAT' =&gt; 'double precision',                 'BINARY_DOUBLE' =&gt; 'double precision',                 'TIMESTAMP' =&gt; 'timestamp',                 'BOOLEAN' =&gt; 'boolean',                 'INTERVAL' =&gt; 'interval',                 'XMLTYPE' =&gt; 'xml',                 'TIMESTAMP WITH TIME ZONE' =&gt; 'timestamp with time zone',                 'TIMESTAMP WITH LOCAL TIME ZONE' =&gt; 'timestamp with time zone',                 'SDO_GEOMETRY' =&gt; 'geometry'                 );</code></pre> <h3 id="常见的oracle对象到postgresql数据库的转换">常见的Oracle对象到Postgresql数据库的转换</h3> <table> <thead> <tr> <th>ORACLE</th> <th>POSTGRESQL</th> </tr> </thead> <tbody> <tr> <td>Database Link</td> <td>Foreign Data Wrapper</td> </tr> <tr> <td>External Table</td> <td>Foreign Table</td> </tr> <tr> <td>Synonym</td> <td>View / Set search_path</td> </tr> <tr> <td>Global Temporary Table</td> <td>Unlogged Table / Temp Table</td> </tr> <tr> <td>Virtual column</td> <td>View / Function / Trigger</td> </tr> <tr> <td>Connect by</td> <td>With Recursive</td> </tr> <tr> <td>Reverse Index</td> <td>Functional Index</td> </tr> <tr> <td>Index Organized Table (IOT table)</td> <td>Cluster the table according to an Index</td> </tr> </tbody> </table> <h4 id="数据库链接database-link">数据库链接(Database Link)</h4> <h5 id="oracle">Oracle</h5> <pre><code class="language-sql">CREATE PUBLIC DATABASE LINK remote_service USING 'remote_db'; SELECT * FROM employees@remote_service;</code></pre> <h5 id="postgresql">Postgresql</h5> <pre><code class="language-sql">CREATE SERVER remote_service FOREIGN DATA WRAPPER oracle_fdw OPTIONS (dbserver 'remote_db'); CREATE USER MAPPING FOR current_user SERVER remote_service OPTIONS (user 'scott', password 'tiger'); CREATE FOREIGN TABLE employees_fdw (&lt;columns_list&gt;) SERVER remote_service OPTIONS(schema 'HR',table 'EMPLOYEES');</code></pre> <h4 id="外部表external-tables">外部表(External Tables)</h4> <p>假设有这么一张表</p> <pre><code class="language-shell">cat /data/ext/file_ext.csv 1234,ALBERT,GRANT,21 1235,ALFRED,BLUEOS,26 1236,BERNY,JOLYSE,34</code></pre> <h5 id="oracle-1">Oracle</h5> <pre><code class="language-sql">CREATE OR REPLACE DIRECTORY ext_dir AS '/data/ext/'; CREATE TABLE ext_table (     empno VARCHAR2(4),      firstname VARCHAR2(20),      lastname VARCHAR2(20),     age VARCHAR2(2) ) ORGANIZATION EXTERNAL (DEFAULT DIRECTORY ext_dir ACCESS PARAMETERS (…LOCATION ('file_ext.csv')));</code></pre> <h5 id="postgresql-1">Postgresql</h5> <pre><code class="language-sql">CREATE FOREIGN TABLE ext_table(     empno VARCHAR(4),     firstname VARCHAR(20),     lastname VARCHAR(20),     age VARCHAR(2) )SERVER ext_dir OPTIONS (filename '/data/ext/file_ext.csv', format 'csv', delimiter ',');</code></pre> <h4 id="同义词synonyms">同义词(Synonyms)</h4> <p><strong>Synonyms are not supported in PostgreSQL</strong></p> <h5 id="oracle-2">Oracle</h5> <pre><code class="language-sql">CREATE PUBLIC SYNONYM emp_table FOR hr.employees [@ dblink];</code></pre> <h5 id="postgresql-2">Postgresql</h5> <p>有两种方式<code>search path</code>和<code>view</code></p> <pre><code class="language-sql">--search path – session level – no permanent effect, it needs to be set for every connectionSET search_path TO other_schema; --search path – role or database level – it takes permanent effect--@postgresqlalter database &lt;database_name&gt; set search_path = "other_schema";--@database_namealter role &lt;role_name&gt; set search_path = "other_schema";--view:CREATE VIEW public.emp_table AS SELECT * FROM hr.employees;ALTER VIEW public.emp_table OWNER TO hr;GRANT ALL ON public.emp_table TO PUBLIC;</code></pre> <h4 id="全局临时表global-temporary-tables">全局临时表(Global Temporary Tables)</h4> <p><strong>Option 1: Unlogged Table:</strong></p> <h5 id="oracle-3">Oracle</h5> <pre><code class="language-sql">CREATE GLOBAL TEMPORARY TABLE MY_CONTRACT_MONTH(         ID NUMBER(10),     CMONTH DATE )ON COMMIT DELETE ROWS;</code></pre> <h5 id="postgresql-3">PostgreSQL</h5> <pre><code class="language-sql">CREATE UNLOGGED TABLE MY_CONTRACT_MONTH(     ID number,     CMONTH timestamp,     pid bigint default pg_backend_pid() );  ALTER TABLE MY_CONTRACT_MONTH ENABLE ROW LEVEL SECURITY; ALTER TABLE MY_CONTRACT_MONTH FORCE ROW LEVEL SECURITY;  CREATE POLICY cm_pid ON MY_CONTRACT_MONTH TO &lt;role_name&gt;  USING (pid = (selectpg_backend_pid()));</code></pre> <p>在Postgresql中Role即User，若表格不保存日志，对于 Unlogged 表，必须实现行级安全，以防止会话查询其他会话数据。还需要实施一项作业，以消除非活动会话的未记录表上的数据</p> <pre><code class="language-sql">DELETE FROM smdr.contract_months cm WHERE not exists (select 1 from pg_stat_activity psa where psa.pid = cm.pid);</code></pre> <p><strong>Option 2: Temp Table:</strong></p> <h5 id="oracle-4">Oracle</h5> <pre><code class="language-sql">CREATE GLOBAL TEMPORARY TABLE MY_CONTRACT_MONTH(     ID NUMBER(10),     CMONTH DATE )ON COMMIT DELETE ROWS; --Oracle 永久存储临时表的定义，就像常规表的定义一样。</code></pre> <h5 id="postgresql-4">PostgreSQL</h5> <pre><code class="language-sql">CREATE GLOBAL TEMPORARY TABLE MY_CONTRACT_MONTH(     ID NUMERIC,     CMONTH TIMESTAMP )ON COMMIT DELETE ROWS;</code></pre> <p><code>CREATE TEMPORARY TABLE</code> 语句创建一个临时表，该表在会话或当前事务结束时自动删除（ON COMMIT DROP 选项。在转换过程中，您需要从应用程序代码中提取 CREATE TEMPORARY TABLE 语句，存储过程、触发器等并执行它们一次以创建临时表定义。Oracle 不支持 ON COMMIT DROP，因此如果需要此选项，则需要明确每次提交后执行 DROP TABLE 语句 ON COMMIT PRESERVE ROWS 是 PostgreSQL 中的默认值，ON COMMIT DELETE ROWS 是 Oracle 中的默认值</p> <h4 id="virtual-column">Virtual Column</h4> <h5 id="oracle-5">Oracle</h5> <pre><code class="language-sql">CREATE TABLE VIRT_COL_TABLE (   id NUMBER,   first_name VARCHAR2(10),   last_name VARCHAR2(10),   salary NUMBER(9,2),   comm1 NUMBER(3),   comm2 NUMBER(3),   salary1 AS (ROUND(salary*(1+comm1/100),2)),   salary2 NUMBER GENERATED ALWAYS AS (ROUND(salary*(1+comm2/100),2)) VIRTUAL );</code></pre> <h5 id="postgresql-5">PostgreSQL</h5> <pre><code class="language-sql">CREATE TABLE virt_col_table (   id bigint NOT NULL,   first_name varchar(10),   last_name varchar(10),   salary double precision,   comm1 smallint,   comm2 smallint,   salary1 bigint,   salary2 bigint);</code></pre> <p>Ora2pg通过一个包含触发器的定义的额外文件 VIRTUAL_COLUMNS_(...).sql，来实现原始<code>Virtual Column</code>的默认值</p> <pre><code class="language-sql">DROP TRIGGER IF EXISTS virt_col_VIRT_COL_TABLE_trigger ON VIRT_COL_TABLE CASCADE; CREATE OR REPLACE FUNCTION fct_virt_col_VIRT_COL_TABLE_trigger()   RETURNS trigger  AS $BODY$ BEGINNEW.SALARY2 = ROUND(NEW.SALARY*(1+NEW.COMM2/100),2); NEW.SALARY1 = ROUND(NEW.SALARY*(1+NEW.COMM1/100),2); RETURN NEW; end  $BODY$ LANGUAGE 'plpgsql' SECURITY DEFINER; CREATE TRIGGER virt_col_VIRT_COL_TABLE_trigger BEFORE INSERT OR UPDATE ON VIRT_COL_TABLE FOR EACH ROWEXECUTE PROCEDURE fct_virt_col_VIRT_COL_TABLE_trigger();</code></pre> <h4 id="connect-by--hierarchical-query">Connect By – Hierarchical query</h4> <p>在Oracle通过<code>connect by (子句)</code> 以实现层级遍历，而在PostgreSQL中使用<code>WITH RECURSIVE (子句)</code></p> <h5 id="oracle-6">Oracle</h5> <pre><code class="language-sql">CREATE TABLE taxonomy (   key NUMBER(11) NOT NULL CONSTRAINT taxPkey PRIMARY KEY,   value VARCHAR2(255),taxHier NUMBER(11) ); ALTER TABLE taxonomy ADD CONSTRAINT taxTaxFkey FOREIGN KEY (taxHier) REFERENCEStax(key); SELECT value FROM taxonomy CONNECT BY PRIOR key = taxHier START WITH key = 0;</code></pre> <h5 id="postgresql-6">PostgreSQL</h5> <pre><code class="language-sql">WITH RECURSIVE cte AS (   SELECT key, value, 1 AS level      FROM taxonomy     WHERE key = 0   UNION ALL   SELECT t.key, t.value, c.level + 1     FROM cte c      JOIN taxonomy t ON t.taxHier = c.key   ) SELECT value FROM cte ORDER BY level;</code></pre> <h4 id="反向索引reverse-index">反向索引(Reverse Index)</h4> <p>当反向索引应用于 TEXT 列时，此解决方法有效。</p> <h5 id="oracle-7">Oracle</h5> <pre><code class="language-sql">CREATE TABLE REV_TEMP (   Id NUMBER(10) NOT NULL PRIMARY KEY,   Description VARCHAR2(512) NOT NULL ); CREATE INDEX REV_TEMP_N1 ON REV_TEMP(Description) REVERSE;</code></pre> <h5 id="postgresql-7">PostgreSQL</h5> <pre><code class="language-sql">CREATE TABLE REV_TEMP (   Id NUMERIC(10) NOT NULL PRIMARY KEY,   Description VARCHAR(512) NOT NULL ); CREATE INDEX REV_TEMP_N1 ON REV_TEMP(REVERSE(Description));</code></pre> <h4 id="索引组织表index-organized-table">索引组织表(Index Organized Table)</h4> <p>Oracle 数据库默认使用堆表。 可以使用 ORGANIZATION INDEX 子句创建索引组织表，Oracle 数据库始终使用主键作为集群键。</p> <h5 id="oracle-8">Oracle</h5> <pre><code class="language-sql">CREATE TABLE IOT_TEMP (   Id NUMBER(10) NOT NULL PRIMARY KEY,   Description VARCHAR2(512) NOT NULL ) ORGANIZATION INDEX;</code></pre> <h5 id="postgresql-8">PostgreSQL</h5> <p>PostgreSQL 只使用堆表。 但是，使用 CLUSTER 子句将堆表的内容与索引对齐。</p> <pre><code class="language-sql">CREATE TABLE IOT_TEMP (   Id NUMERIC(10) NOT NULL PRIMARY KEY,   Description VARCHAR(512) NOT NULL ); CREATE INDEX IOT_TEMP_N1 ON IOT_TEMP(ID);</code></pre> <h4 id="job梳理与改造">job梳理与改造</h4> <pre><code class="language-sql">SELECT JOB,WHAT,INTERVAL,SCHEMA_USER FROM ALL_JOBS WHERE SCHEMA_USER='SJCK'</code></pre> <h4 id="known-unsupported">Known Unsupported</h4> <ul> <li>Type inheritance and type with member method are not supported</li> <li>Global indexes over partitions are not supported</li> <li>Compound triggers are not supported</li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70547.htm">淘宝旺旺是干什么的(淘宝旺旺入口)</a></p>
+                                        <p>下一个：<a href="/news/article-71198.htm">动物疫苗新规定最新版是什么 动物疫苗新规定最新版是什么意思</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-53315.htm" title="springcloud解决使用feign调用服务 header参数传递的问题">springcloud解决使用feign调用服务 header参数传递的问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-ssr-subscribe.htm" title="「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址">「1月4日」最高速度18.5M/S，2025年V2ray/SSR/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-57763.htm" title="学美甲要多少时间和多少钱（学美甲要多少时间和多少钱贵州毕节）">学美甲要多少时间和多少钱（学美甲要多少时间和多少钱贵州毕节）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-clash-node-daily-updates.htm" title="「2月4日」最高速度18.9M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点链接地址">「2月4日」最高速度18.9M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-47633.htm" title="小动物疫苗注射证明在哪里办理手续 小动物疫苗注射证明在哪里办理手续呢">小动物疫苗注射证明在哪里办理手续 小动物疫苗注射证明在哪里办理手续呢</a></li>
+                        <li class="py-2"><a href="/news/article-48121.htm" title="C语言数据结构、十字链表的分析及实现">C语言数据结构、十字链表的分析及实现</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-shadowrocket-node.htm" title="「2月15日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址">「2月15日」最高速度21.3M/S，2025年V2ray/Clash/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-14-free-node-subscribe-links.htm" title="「2月14日」最高速度22.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点链接地址">「2月14日」最高速度22.3M/S，2025年Clash/Shadowrocket/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36761.htm" title="领养狗狗要签协议吗 领养狗狗要签协议吗合法吗">领养狗狗要签协议吗 领养狗狗要签协议吗合法吗</a></li>
+                        <li class="py-2"><a href="/news/article-67332.htm" title="狗粮品牌有哪些品牌好的（狗粮品牌大全）">狗粮品牌有哪些品牌好的（狗粮品牌大全）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
