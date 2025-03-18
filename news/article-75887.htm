@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-75887.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>springboot Jar包 秒部署到Linux服务器运行</title>
+        <meta name="description" content="最近开发完一个springboot项目，打包成jar包之后要部署到Linux服务器上面运行，我用的nohup java -jar 命令，但是代码更新之后重新部署的时候覆盖原来的项目，又要手动运行 ps" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-75887.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="springboot Jar包 秒部署到Linux服务器运行" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/ece7c105e835beaf41d38e189017fdf0.webp" />
+        <meta property="og:release_date" content="2025-03-17T09:41:42" />
+    <meta property="og:updated_time" content="2025-03-17T09:41:42" />
+        <meta property="og:description" content="最近开发完一个springboot项目，打包成jar包之后要部署到Linux服务器上面运行，我用的nohup java -jar 命令，但是代码更新之后重新部署的时候覆盖原来的项目，又要手动运行 ps" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot Jar包 秒部署到Linux服务器运行">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">springboot Jar包 秒部署到Linux服务器运行</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>最近开发完一个springboot项目，打包成jar包之后要部署到Linux服务器上面运行，我用的nohup java -jar 命令，但是代码更新之后重新部署的时候覆盖原来的项目，又要手动运行</p> <p>ps -ef|grep jar包名 去查找进程，然后kill -9 去kill进程，有时候nohup进程老是kill不掉,只能多试几次，烦不胜烦。后来专门花时间研究了一下脚本和本地window上传文件到linux服务器的命令，整合了一个启动脚本，顿时项目部署变得无比简单，一分钟内在线上的代码就可以更新了。下面是具体步骤：</p> <p>1、在idea上写一个maven 打包命令 ： clean package -DskipTests=true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (打包跳过测试，打包更快)</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/b5bf80c3373d58da3bcfe97df1b1a9a8.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p><span style="white-space:pre"><br /></span></p> <p><span style="white-space:pre">2</span>、运行 package 打包，会在项目根路径target下面生成jar包</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/8d1da44f6e9942f999094f733e7ccb73.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p>3、接下来我们要把本地项目jar包上传到Linux服务器上面，怎么快速上传呢？主要有两种方式：</p> <p>一、直接用鼠标拉取jar包到Xftp文件夹下，如下图</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230110/a2bb06c0b8776cd0a50b516697e95d3b.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p></p> <p>二、直接在用命令上传，比较推荐这种，不用再去打开target文件夹了，也不用再拉取了</p> <p>我们先安装一个文件上传和下载的工具软件包 ：yum -y install lrzsz &nbsp; &nbsp;</p> <p>lrzsz包安装完成后包括上传rz、下载sz命令</p> <p>然后我们可以 输入命令 rz -y &nbsp; &nbsp; ，（rz 代表上传， -y 可以强制覆盖文件），会弹出一个文件选择框，我们可以鼠标选择jar包位置，确定即可，下次再上传的时候会直接弹出jar包窗口，当然下次用的时候也可以用tab键光标跳转选择，这就完全不用鼠标了，注意下面发送文件到ASCII不要打钩<img decoding="async" src="http://img.555519.xyz/uploads/20230110/b70614b72786db36871976286965534c.jpg" alt="springboot Jar包 秒部署到Linux服务器运行"></p> <p></p> <p>4、最后就是重头戏了，项目重启的脚本，写个start.sh 的脚本，注意脚本和jar包同级目录 ，&nbsp;如下：</p> <pre><code class="language-java">#!/bin/sh RESOURCE_NAME=resource-0.0.1-SNAPSHOT.jar  tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then echo 'Stop Process...' kill -15 $tpid fi sleep 5 tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then echo 'Kill Process!' kill -9 $tpid else echo 'Stop Success!' fi  tpid=`ps -ef|grep $RESOURCE_NAME|grep -v grep|grep -v kill|awk '{print $2}'` if [ ${tpid} ]; then     echo 'App is running.' else     echo 'App is NOT running.' fi   rm -f tpid nohup java -jar ./$RESOURCE_NAME --spring.profiles.active=test &amp; echo $! &gt; tpid echo Start Success! </code></pre> <p> 5、脚本运行 &nbsp;&nbsp;</p> <p>cd /home (我是把jar包和脚本放在home下面)</p> <p>chmod +x start.sh (第一次运行的时候获取一下超级管理员权限)</p> <p>然后以后每次运行直接</p> <p>./start.sh 即可</p> <p></p> <p>拷贝脚本的时候运行的时候如果报错，应该是文件格式转换的问题</p> </h1> <p>可以 &nbsp;yum -y install dos2unix &nbsp;</p> <p>然后 dos2unix start.sh&nbsp;</p> <p>重新运行脚本</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75196.htm">枣花馒头的做法（枣花馒头的做法大全）</a></p>
+                                        <p>下一个：<a href="/news/article-75888.htm">动物疫苗研发到生产的周期 动物疫苗研发到生产的周期是多久</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-clash.htm" title="「3月18日」最高速度20.9M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址">「3月18日」最高速度20.9M/S，2025年V2ray/SSR/Shadowrocket/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39705.htm" title="宠物粮食行业发展前景如何呢视频讲解下载（宠物粮食创业）">宠物粮食行业发展前景如何呢视频讲解下载（宠物粮食创业）</a></li>
+                        <li class="py-2"><a href="/news/article-45179.htm" title="为啥家猫不需要打疫苗宠物猫要打呢（家猫为什么不用打疫苗）">为啥家猫不需要打疫苗宠物猫要打呢（家猫为什么不用打疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-48122.htm" title="Kafka架构及基本原理简析">Kafka架构及基本原理简析</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-clash-v2ray-ss-ssr.htm" title="「2月19日」最高速度20.1M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址">「2月19日」最高速度20.1M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-42685.htm" title="动物医院个人总结2000字（动物医院总结报告）">动物医院个人总结2000字（动物医院总结报告）</a></li>
+                        <li class="py-2"><a href="/news/article-38726.htm" title="宠物粮食行业发展前景如何呢知乎 宠物粮食行业发展前景如何呢知乎文章">宠物粮食行业发展前景如何呢知乎 宠物粮食行业发展前景如何呢知乎文章</a></li>
+                        <li class="py-2"><a href="/news/article-58332.htm" title="golang关于panic的解析">golang关于panic的解析</a></li>
+                        <li class="py-2"><a href="/news/article-37702.htm" title="公务员国考2024年考试时间（2022公务员国考时间）">公务员国考2024年考试时间（2022公务员国考时间）</a></li>
+                        <li class="py-2"><a href="/news/article-67969.htm" title="深圳开个宠物店大概要多少钱（深圳宠物店上班多少钱一个月）">深圳开个宠物店大概要多少钱（深圳宠物店上班多少钱一个月）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
