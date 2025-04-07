@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-89982.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>一文搞懂js中的typeof用法_在线工具</title>
+        <meta name="description" content="基础 typeof 运算符是 javascript 的基础知识点，尽管它存在一定的局限性（见下文），但在前端js的实际编码过程中，仍然是使用比较多的类型判断方式。 因此，掌握该运算符的特点，对于写出好" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-89982.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="一文搞懂js中的typeof用法_在线工具" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/39c277d649cb600e36fe5a36a7e9f6b6.webp" />
+        <meta property="og:release_date" content="2025-04-06T10:10:13" />
+    <meta property="og:updated_time" content="2025-04-06T10:10:13" />
+        <meta property="og:description" content="基础 typeof 运算符是 javascript 的基础知识点，尽管它存在一定的局限性（见下文），但在前端js的实际编码过程中，仍然是使用比较多的类型判断方式。 因此，掌握该运算符的特点，对于写出好" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="一文搞懂js中的typeof用法_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">一文搞懂js中的typeof用法_在线工具</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="基础">基础</h2> <p><code>typeof</code> 运算符是 <code>javascript</code> 的基础知识点，尽管它存在一定的局限性（见下文），但在前端js的实际编码过程中，仍然是使用比较多的类型判断方式。<br /> 因此，掌握该运算符的特点，对于写出好的代码，就会起到很大的帮助作用。</p> <p><strong>typeof</strong> 返回一个字符串，表示该操作值的数据类型，基本语法：</p> <pre><code class="language-js">typeof operand typeof(operand) </code></pre> <p>可能返回的类型字符串有：<code>string</code>, <code>boolean</code>, <code>number</code>, <code>bigint</code>, <code>symbol</code>, <code>undefined</code>, <code>function</code>, <code>object</code>。</p> <h2 id="返回类型">返回类型</h2> <p>将根据可能的返回类型，进行以下的分类介绍，对typeof的使用方法一网打尽。</p> <h3 id="string-和-boolean">string 和 boolean</h3> <p>字符串、布尔值分别返回 <code>string</code>、<code>boolean</code>。<br /> 包括 <code>String()</code> 和 <code>Boolean()</code>。</p> <pre><code class="language-js">typeof '1' // 'string' typeof String(1) // 'string' typeof true // 'boolean' typeof Boolean() // 'boolean' </code></pre> <h3 id="number-和-bigint">number 和 bigint</h3> <p>数字返回 <code>number</code>，包括 <code>Number()</code>、<code>NaN</code> 和 <code>Infinity</code> 等，以及 <code>Math</code> 对象下的各个数学常量值。<br /><code>BigInt</code> 数字类型值返回 <code>bigint</code>，包括 <code>BigInt(1)</code>。</p> <pre><code class="language-js">typeof 1 // 'number' typeof NaN // 'number' typeof Math.PI // 'number' typeof 42n // 'bigint' typeof BigInt(1) // 'bigint' </code></pre> <h3 id="symbol">symbol</h3> <p><strong>symbol</strong> 值返回 <code>symbol</code>，包括 <code>Symbol()</code>。</p> <pre><code class="language-js">typeof Symbol() // 'symbol' typeof Symbol('foo') // 'symbol' typeof Symbol.iterator // 'symbol' </code></pre> <h3 id="undefined">undefined</h3> <p><strong>undefined</strong> 本身返回 <code>undefined</code>。<br /> 不存在的，或者定义了但未赋初值的变量，都会返回 <code>undefined</code>。<br /> 还有 <code>document.all</code> 等浏览器的非标准特性。</p> <pre><code class="language-js">typeof undefined // 'undefined' typeof ttttttt // 'undefined' typeof document.all // 'undefined' </code></pre> <h3 id="function">function</h3> <p>函数返回 <code>function</code>。<br /> 包括使用es6的 <code>class</code> 类声明的。<br /> 还有各个内置对象 <code>String</code>、<code>Number</code>、<code>BigInt</code>、<code>Boolean</code>、<code>RegExp</code>、<code>Error</code>、<code>Object</code>、<code>Date</code>、<code>Array</code>、<code>Function</code>、<code>Symbol</code> 本身。<br /> 以及 <code>Function()</code>，<code>new Function()</code>。</p> <pre><code class="language-js">function func () {} typeof func // 'function' typeof class cs {} // 'function' typeof String // 'function' typeof RegExp // 'function' typeof new Function() // 'function' </code></pre> <h3 id="object">object</h3> <p><code>对象</code>、<code>数组</code>、<code>null</code>、<code>正则表达式</code>，都返回 <code>object</code>。<br /> 包括 <code>Math</code>、<code>JSON</code> 对象本身。<br /> 还有使用 <code>new</code> 操作符的数据，除了 <code>Function</code> 以外。</p> <pre><code class="language-js">typeof {} // 'object' typeof [] // 'object' typeof null // 'object' typeof /d/ // 'object' typeof Math // 'object' typeof new Number(1) // 'object' </code></pre> <h3 id="其他">其他</h3> <p>关于其他大部分的 <code>javascript关键字</code>，得到的结果值都是 <code>object</code> 或 <code>function</code>。<br /> 注：<em>多数小写字母开头的是对象 <code>object</code>，多数大写字母开头的都是方法 <code>function</code>。常见的明确知道的方法不算，如 <code>alert</code>，<code>prompt</code> 等方法</em></p> <p>除此以外，还有各js环境下具体实现的宿主对象。</p> <h2 id="常见问题">常见问题</h2> <h3 id="引用错误">引用错误</h3> <p>在 <code>let</code> 和 <code>const</code> 块级作用域变量定义之前，使用 <code>typeof</code> 会抛错 <code>ReferenceError</code>。<br /> 因为块级作用域变量，会在头部形成 <code>暂存死区</code>，直到被初始化，否则会报引用错误。</p> <pre><code class="language-js">typeof t let t = 1 // VM327:1 Uncaught ReferenceError: t is not defined //    at &lt;anonymous&gt;:1:1 </code></pre> <p>如果是使用 <code>var</code> 定义变量，不会报错，返回 <code>undefined</code> 。<br /> 有变量提升，不会形成暂时死区。</p> <h3 id="typeof-null">typeof null</h3> <p>对于 <code>typeof null === 'object'</code> ，记住即可，可能的解释：<br /><em>在JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于null代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，typeof null 也因此返回 "object"。</em></p> <h3 id="typeof-的局限性">typeof 的局限性</h3> <p><code>typeof</code> 的局限性，在于无法精确判断出 <code>null、数组、对象、正则</code> 的类型。<br /> 所以如果要精准判断，还需要使用其他技术手段，或组合判断。<br /> 如下，判断数组类型：</p> <pre><code class="language-js">Object.prototype.toString.call([]) // '[object Array]'  [] instanceof Array // true  [].constructor === Array // true </code></pre> <p>其中，<code>Object.prototype.toString.call</code> 是javascript中用于准确判断数据类型的通用手段。</p> <h2 id="扩展bigint-类型">扩展：BigInt 类型</h2> <p><code>BigInt</code> 来自于 <code>ES11</code> 增加的一种最新的基础类型，可以用任意精度表示整数。<br /> 它提供了一种表示大于 <code>2^53 - 1</code> 整数的方法，能表示任意大的整数。<br /> 它是通过在整数末尾附加 <code>n</code> 或调用构造函数 <code>BigInt()</code> 来创建的。<br /><code>IE</code> 不支持。</p> <pre><code class="language-js">10n BigInt(99) // 99n </code></pre> <p><strong>注意点：</strong></p> <ul> <li> <code>BigInt</code> 能使用运算符 <code>+、*、-、**和%</code>。</li> <li>除 <code>&gt;&gt;&gt; （无符号右移）</code> 之外的 <code>位操作</code> 也可以支持。因为<code>BigInt</code> 都是有符号的。</li> <li> <code>BigInt</code> 不支持单目 (+) 运算符，会报类型错误。</li> <li>不能对 <code>BigInt</code> 使用 <code>Math</code> 对象中的方法。</li> <li> <code>BigInt</code> 不能与 <code>Number数字</code> 进行混合计算，否则，将抛出 <code>TypeError</code>。</li> <li>在将 <code>BigInt</code> 转换为 <code>Boolean</code> 时，它的行为类似 <code>Number数字</code> 。</li> <li> <code>BigInt</code> 变量在转换成 <code>Number</code> 变量时可能会丢失精度。</li> <li> <code>typeof</code> 操作时返回 <code>bigint</code>。</li> <li>使用 <code>Object、String</code> 等内置对象转换时，类似于 <code>Number数字</code>。</li> <li> <code>BigInt</code> 使用 <code>/</code> 除操作时，带小数的运算会被取整。</li> <li> <code>Number</code> 和 <code>BigInt</code> 可以进行比较，非严格相等。</li> <li> <code>JSON.stringify</code> 处理 <code>BigInt</code> 会引发类型错误。</li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89244.htm">宠物领养的文案短句（宠物领养的文案短句怎么写）</a></p>
+                                        <p>下一个：<a href="/news/article-89983.htm">狗粮颗粒机二手市场（狗粮设备生产线二手）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-86378.htm" title="宠物猫疫苗多久打一次（宠物猫疫苗间隔多久打一次）">宠物猫疫苗多久打一次（宠物猫疫苗间隔多久打一次）</a></li>
+                        <li class="py-2"><a href="/news/article-69236.htm" title="养猫的人容易得什么病猫藓（养猫的人容易得什么皮肤病）">养猫的人容易得什么病猫藓（养猫的人容易得什么皮肤病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-clash-v2ray-ss-ssr.htm" title="「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址">「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-81387.htm" title="国内最大的狗粮批发市场在哪里进货（国内大型的狗粮厂在哪里）">国内最大的狗粮批发市场在哪里进货（国内大型的狗粮厂在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-71867.htm" title="中农大动物医院地址（中国农大动物医院地址）">中农大动物医院地址（中国农大动物医院地址）</a></li>
+                        <li class="py-2"><a href="/news/article-68566.htm" title="湘菜预制菜十大品牌">湘菜预制菜十大品牌</a></li>
+                        <li class="py-2"><a href="/news/article-77248.htm" title="狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）">狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-70547.htm" title="淘宝旺旺是干什么的(淘宝旺旺入口)">淘宝旺旺是干什么的(淘宝旺旺入口)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share.htm" title="「3月6日」最高速度22.3M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点链接地址">「3月6日」最高速度22.3M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe.htm" title="「3月22日」最高速度20.3M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点链接地址">「3月22日」最高速度20.3M/S，2025年Shadowrocket/Clash/V2ray/SSR每天更新免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

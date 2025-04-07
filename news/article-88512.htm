@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-88512.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>pycharm对SQLite的可视化操作</title>
+        <meta name="description" content="  Pycharm对SQLite的可视化操作，当我们使用Django框架来创建项目时，他自带的数据库是SQLite，pycharm支持查看SQLite数据库。 第一步：打开PyCharm，然后Data" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-88512.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="pycharm对SQLite的可视化操作" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/f47ea086d949f5dbda7fbf624f325d0b.webp" />
+        <meta property="og:release_date" content="2025-04-04T09:11:49" />
+    <meta property="og:updated_time" content="2025-04-04T09:11:49" />
+        <meta property="og:description" content="  Pycharm对SQLite的可视化操作，当我们使用Django框架来创建项目时，他自带的数据库是SQLite，pycharm支持查看SQLite数据库。 第一步：打开PyCharm，然后Data" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pycharm对SQLite的可视化操作">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">pycharm对SQLite的可视化操作</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> <p>  Pycharm对SQLite的可视化操作，当我们使用Django框架来创建项目时，他自带的数据库是SQLite，pycharm支持查看SQLite数据库。<br /> 第一步：打开PyCharm，然后Database—Data Sourece—SQLite；<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/89acb1f79b79ebfaf6518f05682b8fe7.jpg" alt="pycharm对SQLite的可视化操作"><br /> **注意：**如果Database按钮没有在PyCharm右侧中显示，可以做如下操作：<br /> View—Tool Windows—Database，然后Database就会出现PyCharm按钮的右侧；<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/9f47c6ad3bdfcf54ad2ca8e450a453ce.jpg" alt="pycharm对SQLite的可视化操作"><br /> 第二步：安装SQLite驱动；<br /> 当第一次打开SQLite数据库时需要安装SQLite驱动，下图显示是未安装驱动的提示，点击安装即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/578b8184b6c33ec03721b5be5714e7b6.jpg" alt="pycharm对SQLite的可视化操作"><br /> 驱动安装完成后<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/0088f269d75bcb5470dcb9184238e726.jpg" alt="pycharm对SQLite的可视化操作"><br /> 第三步：打开数据库文件，并测试是否成功连接<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/03639980acc6e6a3b79fbbf84d384497.jpg" alt="pycharm对SQLite的可视化操作"><br /> 第四步：打开数据库成功效果图如下所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/4b9f40dd178c46d510b3b32758f101b4.jpg" alt="pycharm对SQLite的可视化操作"><br /> 第五步：添加数据<br /> 需要双击右面的表才能打开操作界面，点击“+”号添加数据，然后点击向上的绿色箭头提交数据，如果不点击提交数据则不会保存数据，点击“-”号删除数据（不管是增删改查都需要提交数据）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230112/d3e5d3c05ee18ddfddacc0d0bd4a81a2.jpg" alt="pycharm对SQLite的可视化操作"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-87819.htm">动物防疫站周六日上班吗 动物防疫站周六日上班吗北京</a></p>
+                                        <p>下一个：<a href="/news/article-88513.htm">宠物救助站领养宠物流程（宠物救助站领养宠物流程视频）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-69893.htm" title="领养宠物流程图片大全大图（领养宠物什么套路）">领养宠物流程图片大全大图（领养宠物什么套路）</a></li>
+                        <li class="py-2"><a href="/news/article-77248.htm" title="狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）">狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-clash-v2ray-ss-ssr.htm" title="「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址">「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-71198.htm" title="动物疫苗新规定最新版是什么 动物疫苗新规定最新版是什么意思">动物疫苗新规定最新版是什么 动物疫苗新规定最新版是什么意思</a></li>
+                        <li class="py-2"><a href="/news/article-84935.htm" title="如何在MySQL DATEDIFF()函数中使用两位数的年份值？">如何在MySQL DATEDIFF()函数中使用两位数的年份值？</a></li>
+                        <li class="py-2"><a href="/news/article-75196.htm" title="枣花馒头的做法（枣花馒头的做法大全）">枣花馒头的做法（枣花馒头的做法大全）</a></li>
+                        <li class="py-2"><a href="/news/article-67332.htm" title="狗粮品牌有哪些品牌好的（狗粮品牌大全）">狗粮品牌有哪些品牌好的（狗粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/news/article-71867.htm" title="中农大动物医院地址（中国农大动物医院地址）">中农大动物医院地址（中国农大动物医院地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-today-clash-node.htm" title="「3月27日」最高速度21M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点链接地址">「3月27日」最高速度21M/S，2025年SSR/Shadowrocket/V2ray/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-84200.htm" title="WebSocket协议详解（什么是webSocket）">WebSocket协议详解（什么是webSocket）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

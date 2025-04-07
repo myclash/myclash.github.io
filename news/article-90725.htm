@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-90725.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>我们如何从MySQL中的给定日期获取日期和月份？</title>
+        <meta name="description" content="它可以通过两种方式流入- (A)借助EXRACT()函数-EXTRACT()函数可以从MySQL TIMESTAMP值中获取任何部分。以下是从给定日期获取月份和日期的示例。 mysql&gt;&nbs" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-90725.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="我们如何从MySQL中的给定日期获取日期和月份？" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/e1a948293df20524126d23c3e8e9f1da.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:03:33" />
+    <meta property="og:updated_time" content="2025-04-07T09:03:33" />
+        <meta property="og:description" content="它可以通过两种方式流入- (A)借助EXRACT()函数-EXTRACT()函数可以从MySQL TIMESTAMP值中获取任何部分。以下是从给定日期获取月份和日期的示例。 mysql&gt;&nbs" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="我们如何从MySQL中的给定日期获取日期和月份？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">我们如何从MySQL中的给定日期获取日期和月份？</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>它可以通过两种方式流入-</p> <p><strong>(A)借助<code>EXRACT()</code>函数</strong>-<code>EXTRACT()</code>函数可以从MySQL TIMESTAMP值中获取任何部分。以下是从给定日期获取月份和日期的示例。</p> <pre>mysql&gt;&nbsp;Select&nbsp;EXTRACT(Month&nbsp;from&nbsp;'2017-10-22')&nbsp;AS&nbsp;'MONTH'; +-------+ |&nbsp;MONTH&nbsp;| +-------+ |&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;| +-------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)  mysql&gt;&nbsp;Select&nbsp;EXTRACT(day&nbsp;from&nbsp;'2017-10-22')AS&nbsp;'DAY'; +------+ |&nbsp;DAY&nbsp;&nbsp;| +------+ |&nbsp;&nbsp;&nbsp;22&nbsp;| +------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p><strong>(B)在<code>MONTH()</code>或<code>DAY()</code>函数&nbsp;的帮助下</strong>-与其传递月份和日期作为<code>EXTRACT()</code>函数的参数之一，不如使用<code>MONTH()</code>和<code>DAY()</code>函数从给定的日期获取MONTH和DAY的值，如下所示：</p> <pre>mysql&gt;&nbsp;Select&nbsp;DAY('2017-10-22')AS&nbsp;'DAY'; +------+ |&nbsp;DAY&nbsp;&nbsp;| +------+ |&nbsp;&nbsp;&nbsp;22&nbsp;| +------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)  mysql&gt;&nbsp;Select&nbsp;MONTH('2017-10-22')AS&nbsp;'MONTH'; +-------+ |&nbsp;MONTH&nbsp;| +-------+ |&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;| +-------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89983.htm">狗粮颗粒机二手市场（狗粮设备生产线二手）</a></p>
+                                        <p>下一个：<a href="/news/article-90727.htm">怎样制作狗粮颗粒饲料（怎样制作狗粮颗粒饲料视频）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-83502.htm" title="将文件转成base64 字符串">将文件转成base64 字符串</a></li>
+                        <li class="py-2"><a href="/news/article-75888.htm" title="动物疫苗研发到生产的周期 动物疫苗研发到生产的周期是多久">动物疫苗研发到生产的周期 动物疫苗研发到生产的周期是多久</a></li>
+                        <li class="py-2"><a href="/news/article-66682.htm" title="Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused">Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused</a></li>
+                        <li class="py-2"><a href="/news/article-73194.htm" title="重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）">重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-80644.htm" title="宠物猫打疫苗多久一次、多少钱（宠物猫打一次疫苗要多少钱）">宠物猫打疫苗多久一次、多少钱（宠物猫打一次疫苗要多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-clash-v2ray-ss-ssr.htm" title="「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址">「4月3日」最高速度20.1M/S，2025年V2ray/Shadowrocket/SSR/Clash每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89983.htm" title="狗粮颗粒机二手市场（狗粮设备生产线二手）">狗粮颗粒机二手市场（狗粮设备生产线二手）</a></li>
+                        <li class="py-2"><a href="/news/article-70546.htm" title="武汉宠物猫领养中心电话（武汉市宠物猫领养网）">武汉宠物猫领养中心电话（武汉市宠物猫领养网）</a></li>
+                        <li class="py-2"><a href="/news/article-67331.htm" title="领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）">领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）</a></li>
+                        <li class="py-2"><a href="/news/article-71870.htm" title="兽药麻杏石甘散价格（兽用麻杏石甘散的功效与作用）">兽药麻杏石甘散价格（兽用麻杏石甘散的功效与作用）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
