@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-93711.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Django 之视图url参数获取</title>
+        <meta name="description" content="Django   中的视图主要是负责接受   Web   请求   HttpRequest  ，同时进行逻辑处理，并返回   Web   响应   HttpResponse给请求者。     通过创建" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-93711.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="Django 之视图url参数获取" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/facb73094e7340fe1d0bf1fa777fb1b9.webp" />
+        <meta property="og:release_date" content="2025-04-11T08:58:42" />
+    <meta property="og:updated_time" content="2025-04-11T08:58:42" />
+        <meta property="og:description" content="Django   中的视图主要是负责接受   Web   请求   HttpRequest  ，同时进行逻辑处理，并返回   Web   响应   HttpResponse给请求者。     通过创建" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Django 之视图url参数获取">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Django 之视图url参数获取</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div>  <span style="color:#000000;">Django </span><br />  <span style="color:#000000;">中的视图主要是负责接受 </span><br />  <span style="color:#000000;">Web </span><br />  <span style="color:#000000;">请求 </span><br />  <span style="color:#000000;">HttpRequest</span><br />  <span style="color:#000000;">，同时进行逻辑处理，并返回 </span><br />  <span style="color:#000000;">Web </span><br />  <span style="color:#000000;">响应 </span><br />  <span style="color:#000000;">HttpResponse给请求者。</span> </div> <div></div> <div>  <span style="color:#000000;">通过创建一个 webtest2 项目以及创建一个 book 应用为例进行说明</span> </div> <div> <pre><code class="language-python">#创建一个 webtest2 项目，执行如下命令：  django-admin startproject webtest2</code></pre> <div>   <span style="color:#000000;">进入 </span><br />   <span style="color:#000000;">webtest2 </span><br />   <span style="color:#000000;">项目目录，并创建 </span><br />   <span style="color:#000000;">book </span><br />   <span style="color:#000000;">应用，命令如下： </span>  </div> <div> <pre><code class="language-python">cd webtest2 python manage.py startapp book</code></pre> <div>    <span style="color:#000000;">在 </span><br />    <span style="color:#000000;">webtest2/settings.py </span><br />    <span style="color:#000000;">中 </span><br />    <span style="color:#000000;">INSTALLED_APPS </span><br />    <span style="color:#000000;">项安装应用</span>   </div> <div> <pre><code class="language-python">INSTALLED_APPS = [     'django.contrib.admin',     'django.contrib.auth',     'django.contrib.contenttypes',     'django.contrib.sessions',     'django.contrib.messages',     'django.contrib.staticfiles',     'book',  #添加book应用到项目中 ]</code></pre> <div>     <span style="color:#000000;">在 </span><br />     <span style="color:#000000;">webtest2/settings.py </span><br />     <span style="color:#000000;">中 </span><br />     <span style="color:#000000;">DATABASES </span><br />     <span style="color:#000000;">项配置使用 </span><br />     <span style="color:#000000;">MySQL </span><br />     <span style="color:#000000;">数据库 </span><br />     <span style="color:#000000;">dbtest</span>    </div> <div> <pre><code class="language-python">DATABASES = {     'default': {         'ENGINE': 'django.db.backends.mysql',         'NAME': "dbtest",    #数据名提前设置好         'HOST':"localhost",         'PORT':"3306",         'USER':"root",         'PASSWORD':"XXX", #密码自己设置     } }</code></pre> <div>      <span style="color:#000000;">创建模板目录结构 templates/book,如下:</span><br />      <img decoding="async" alt="" height="183" src="http://img.555519.xyz/uploads/20230108/a0cb808842880ccfb805068ace71f2a8.jpg"> </div> <div> <div>       <span style="color:#000000;">在 </span><br />       <span style="color:#000000;">webtest2/settings.py </span><br />       <span style="color:#000000;">中 </span><br />       <span style="color:#000000;">TEMPLATES </span><br />       <span style="color:#000000;">项配置模板查找路径:</span>      </div> <div> <pre><code class="language-python">TEMPLATES = [     {         'BACKEND': 'django.template.backends.django.DjangoTemplates',         'DIRS': [os.path.join(BASE_DIR,"templates")],  ##########填写这一条         'APP_DIRS': True,         'OPTIONS': {             'context_processors': [                 'django.template.context_processors.debug',                 'django.template.context_processors.request',                 'django.contrib.auth.context_processors.auth',                 'django.contrib.messages.context_processors.messages',             ],         },     }, ]</code></pre> <div>        <span style="color:#000000;">跳转webtest2/webtest2/__init__.py </span><br />        <span style="color:#000000;">文件，写入代码:</span>       </div> <div> <pre><code class="language-python">import pymysql pymysql.install_as_MySQLdb()</code></pre> <p>大概配置好了可以跳转了，<span style="color:#000000;">使用命令启动 </span><span style="color:#000000;">Django 服务器：python manage.py runserver</span></p> <p><span style="color:#000000;">这时候在编译器中可以看到:</span></p> <pre><code>#PS D:\Program Files (x86)\python\webtest2&gt; python manage.py runserver Performing system checks...  System check identified no issues (0 silenced). December 15, 2021 - 20:36:45 Django version 1.11.28, using settings 'webtest2.settings' Starting development server at http://127.0.0.1:8000/ Quit the server with CTRL-BREAK.</code></pre> <p>点击倒数第二行的 htto://127.0.0.1:8000/</p> <p><img fetchpriority="high" decoding="async" alt="" height="347" src="http://img.555519.xyz/uploads/20230108/854466e3deb52648e414c94178411818.jpg"></p> </p></div> </p></div> </p></div> <p>&nbsp;</p> <div>      <span style="color:#000000;">实际上，视图就是一个 </span><br />      <span style="color:#000000;">Python </span><br />      <span style="color:#000000;">函数，被定义在</span><br />      <span style="color:#000000;">"</span><br />      <span style="color:#000000;">应用</span><br />      <span style="color:#000000;">/views.py"</span><br />      <span style="color:#000000;">文件中。使用视图时需要进行两方面操作，分 别是定义视图、配置 URL</span><br />      <span style="color:#000000;">，且两个操作不分先后顺序。</span>     </div> <div>      在<br />      <span style="color:#000000;">webtest2/book/views.py </span><br />      <span style="color:#000000;">文件中定义一个视图函数：</span>     </div> <div> <pre><code class="language-python">from django.shortcuts import render from django.http import HttpResponse  # Create your views here. def index(request):     return render(request,"book/index.html")</code></pre> <p>在webtest2&gt;&gt;&gt;templates&gt;&gt;&gt;book&gt;&gt;&gt;创建一个index.html</p> </p></div> <div> <pre><code class="language-python">&lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;title&gt;Title&lt;/title&gt; &lt;/head&gt; &lt;body&gt;     &lt;h1&gt;首页&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt;</code></pre> <div>       <span style="color:#000000;">重要的一步来了，即配置 </span><br />       <span style="color:#000000;">URL</span><br />       <span style="color:#000000;">，将视图函数和 </span><br />       <span style="color:#000000;">url </span><br />       <span style="color:#000000;">对应起来，在 </span><br />       <span style="color:#000000;">webtest2/urls.py </span><br />       <span style="color:#000000;">中：</span>      </div> <div></div> </p></div> <p>&nbsp;</p> <pre><code class="language-python">from django.conf.urls import url,include from django.contrib import admin  urlpatterns = [     url(r'^admin/', admin.site.urls),     url(r"^",include("book.urls")),     #包含booktes应用中的 urls 文件 ] </code></pre> <div>      <span style="color:#000000;">在 </span><br />      <span style="color:#000000;">book </span><br />      <span style="color:#000000;">目录下创建 </span><br />      <span style="color:#000000;">urls.py </span><br />      <span style="color:#000000;">文件并编辑其内容：</span>     </div> <div> <pre><code class="language-python">from django.conf.urls import url from . import views  urlpatterns = [     url(r"^index$",views.index), #建立 url 和 views.index 视图函数的关联     url(r"^show(\d+)$",views.show) ]</code></pre> <div>       <span style="color:#000000;">启动服务器并通过浏览器访问 http://127.0.0.1:8000/index，可以看到就是打开index.html页面的样子:</span><br />       <img decoding="async" alt="" height="266" src="http://img.555519.xyz/uploads/20230108/b0d9ae546d3eb12992ed8f3c27c3b2fb.jpg"> </div> <p>当请求的 url 被看做是一个普通的 Python 字符串且进行匹配时，通常是不包括域名、get 或 post 参数的。请求地址如下： http://127.0.0.1:8000/show1?hello=666</p> <p>①若去除掉域名和参数部分，并将最前面的/去除后，只剩下如下部分与正则匹配，如下： show</p> <p>②此时，打开 book/urls.py 文件，定义与这个地址匹配的 url 如下： url(r'^show$',views.show), # 定义 url</p> <p>③在 book/views.py 中补充创建视图函数 show()</p> <pre><code class="language-python">def show(request,id):     return HttpResponse('show')</code></pre> <hr/> <p>我们可以在匹配过程中从 url 中捕获参数，并把每个捕获的参数都作为一个普通的 Python 字符串传 递给视图的。获取值需要在正则表达式中使用小括号表示，下面两种方式完成：</p> <div>       <span style="color:#000000;">(1)</span><br />       <span style="color:#000000;">位置参数； </span>      </div> <div>       <span style="color:#000000;">(2)</span><br />       <span style="color:#000000;">关键字参数。</span>      </div> <div> <hr/> <p>1：位置参数</p> </p></div> <p>此时，可以直接使用小括号，并通过位置参数传递给视图。以下是详细步骤：</p> <p>①为了提取参数值，我们可以修改上面的正则表达式如下： url(r"^show(\d+)$",views.show),</p> <p>②修改视图函数 show()，如下：</p> <pre><code class="language-python">def show(request,id):     return HttpResponse('show参数值:%s'%id)</code></pre> <p>③完成上述操作后，在地址栏输入如下地址： http://127.0.0.1:8000/show666</p> <p><img loading="lazy" decoding="async" alt="" height="169" src="http://img.555519.xyz/uploads/20230108/c7f071817fedcfff376316170c371264.jpg"></p> <hr/> <p>&nbsp;2：关键字参数</p> <p>此时，可以在正则表达式部分为组命名，这就是关键字参数，需要使用到的正则表达式为组命名</p> <table border="1" cellpadding="1" cellspacing="1" style="width:500px;"> <tbody> <tr> <td> <div>           <span style="color:#000000;">(?P&lt;name&gt;)</span>          </div> </td> <td> <div>           <span style="color:#000000;">分组起别名</span>          </div> </td> </tr> </tbody> </table> <p>①修改正则表达式，其中，?P 部分表示为这个参数定义的名称为 bid[注：后边使用时，必须写相同的名称]， 也可以是其它名称，如下： url(r"^show(?P&lt;bid&gt;\d+)$",views.show),</p> <p>②修改视图 show()函数，注意该视图函数 show()必须要有一个参数名为 bid，否则报错：</p> <pre><code class="language-python">from django.http import HttpResponse def show(request, bid):      return HttpResponse("显示关键字参数值:%s" % bid)</code></pre> <hr/> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.djangoproject.com/zh-hans/2.0/"  title="Django 文档 | Django 文档 | Django (djangoproject.com)" rel="nofollow">Django 文档 | Django 文档 | Django (djangoproject.com)</a></p> <p>有兴趣可以自行阅读</p> </p></div> </p></div> </p></div> </p></div> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92941.htm">宠物粮市场前景预测表 宠物粮市场前景预测表格</a></p>
+                                        <p>下一个：<a href="/news/article-93713.htm">小型宠物粮加工厂需要什么手续才能做生意 小型宠物粮加工厂需要什么手续才能做生意呢</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-78617.htm" title="时间复杂度与空间复杂度">时间复杂度与空间复杂度</a></li>
+                        <li class="py-2"><a href="/news/article-85645.htm" title="领养宠物的机构（领养宠物中心）">领养宠物的机构（领养宠物中心）</a></li>
+                        <li class="py-2"><a href="/news/article-67332.htm" title="狗粮品牌有哪些品牌好的（狗粮品牌大全）">狗粮品牌有哪些品牌好的（狗粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/news/article-70546.htm" title="武汉宠物猫领养中心电话（武汉市宠物猫领养网）">武汉宠物猫领养中心电话（武汉市宠物猫领养网）</a></li>
+                        <li class="py-2"><a href="/news/article-66043.htm" title="python中的time库安装步骤-python中time库的实例使用方法">python中的time库安装步骤-python中time库的实例使用方法</a></li>
+                        <li class="py-2"><a href="/news/article-84935.htm" title="如何在MySQL DATEDIFF()函数中使用两位数的年份值？">如何在MySQL DATEDIFF()函数中使用两位数的年份值？</a></li>
+                        <li class="py-2"><a href="/news/article-87079.htm" title="没有加盟费的加盟项目（无加盟费的创业好项目）">没有加盟费的加盟项目（无加盟费的创业好项目）</a></li>
+                        <li class="py-2"><a href="/news/article-77928.htm" title="记本地Debug测试遇见异步处理操作数据库遇见的问题">记本地Debug测试遇见异步处理操作数据库遇见的问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-clash-node-daily-updates.htm" title="「3月19日」最高速度21M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点链接地址">「3月19日」最高速度21M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83504.htm" title="哪个英语品牌最好听(十大英语品牌)">哪个英语品牌最好听(十大英语品牌)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
