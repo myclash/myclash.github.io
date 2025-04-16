@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-95955.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Go汇编语法和MatrixOne使用介绍</title>
+        <meta name="description" content="MatrixOne数据库是什么? Go汇编介绍 为什么使用Go汇编？  为什么不用CGO？   Go汇编语法特点  操作数顺序 寄存器宽度标识 函数调用约定   对写Go汇编代码有帮助的工具  avo" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-95955.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="Go汇编语法和MatrixOne使用介绍" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/26536a4c9fe926044d1c4d0e63158a10.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:04:14" />
+    <meta property="og:updated_time" content="2025-04-14T08:04:14" />
+        <meta property="og:description" content="MatrixOne数据库是什么? Go汇编介绍 为什么使用Go汇编？  为什么不用CGO？   Go汇编语法特点  操作数顺序 寄存器宽度标识 函数调用约定   对写Go汇编代码有帮助的工具  avo" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Go汇编语法和MatrixOne使用介绍">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Go汇编语法和MatrixOne使用介绍</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <ul> <li><a href="#MatrixOne%E6%95%B0%E6%8D%AE%E5%BA%93%E6%98%AF%E4%BB%80%E4%B9%88?" rel="nofollow">MatrixOne数据库是什么?</a></li> <li><a href="#Go%E6%B1%87%E7%BC%96%E4%BB%8B%E7%BB%8D" rel="nofollow">Go汇编介绍</a></li> <li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8Go%E6%B1%87%E7%BC%96%EF%BC%9F" rel="nofollow">为什么使用Go汇编？</a> <ul> <li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8CGO%EF%BC%9F" rel="nofollow">为什么不用CGO？</a></li> </ul> </li> <li><a href="#Go%E6%B1%87%E7%BC%96%E8%AF%AD%E6%B3%95%E7%89%B9%E7%82%B9" rel="nofollow">Go汇编语法特点</a> <ul> <li><a href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E9%A1%BA%E5%BA%8F" rel="nofollow">操作数顺序</a></li> <li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8%E5%AE%BD%E5%BA%A6%E6%A0%87%E8%AF%86" rel="nofollow">寄存器宽度标识</a></li> <li><a href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A" rel="nofollow">函数调用约定</a></li> </ul> </li> <li><a href="#%E5%AF%B9%E5%86%99Go%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84%E5%B7%A5%E5%85%B7" rel="nofollow">对写Go汇编代码有帮助的工具</a> <ul> <li><a href="#avo" rel="nofollow">avo</a></li> <li><a href="#text/template" rel="nofollow">text/template</a></li> <li><a href="#%E5%9C%A8Go%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%8F" rel="nofollow">在Go汇编代码中使用宏</a></li> </ul> </li> <li><a href="#%E5%9C%A8MatrixOne%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84Go%E8%AF%AD%E8%A8%80%E6%B1%87%E7%BC%96%E5%BA%94%E7%94%A8" rel="nofollow">在MatrixOne数据库中的Go语言汇编应用</a> <ul> <li><a href="#%E5%9F%BA%E6%9C%AC%E5%90%91%E9%87%8F%E8%BF%90%E7%AE%97%E5%8A%A0%E9%80%9F" rel="nofollow">基本向量运算加速</a></li> <li><a href="#Go%E8%AF%AD%E8%A8%80%E6%97%A0%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E7%9A%84%E6%8C%87%E4%BB%A4" rel="nofollow">Go语言无法直接调用的指令</a></li> <li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8%E6%97%A0%E6%B3%95%E8%BE%BE%E5%88%B0%E7%9A%84%E7%89%B9%E6%AE%8A%E4%BC%98%E5%8C%96%E6%95%88%E6%9E%9C" rel="nofollow">编译器无法达到的特殊优化效果</a></li> </ul> </li> <li><a href="#MatrixOne%E7%A4%BE%E5%8C%BA" rel="nofollow">MatrixOne社区</a></li> </ul> </h1> <p>MatrixOne是一个新一代超融合异构数据库，致力于打造单一架构处理TP、AP、流计算等多种负载的极简大数据引擎。MatrixOne由Go语言所开发，并已于2021年10月开源，目前已经release到0.3版本。在MatrixOne已发布的性能报告中，与业界领先的OLAP数据库Clickhouse相比也不落下风。作为一款Go语言实现的数据库，可以达到C++实现的数据库一样的性能，其中一个很重要的优化就是利用Go语言自带的汇编能力，来通过调用SIMD指令进行硬件加速。本文就将对Go汇编及在MatrixOne的应用做详细介绍。</p> <p>Github地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/matrixorigin/matrixone"  target="_blank" rel="nofollow">https://github.com/matrixorigin/matrixone</a> 有兴趣的读者欢迎star和fork。</p> </h1> <p>Go是一种较新的高级语言，提供诸如协程、快速编译等激动人心的特性。但是在数据库引擎中，使用纯粹的Go语言会有力所未逮的时候。例如，向量化是数据库计算引擎常用的加速手段，而Go语言无法通过调用SIMD指令来使向量化代码的性能最大化。又例如，在安全相关代码中，Go语言无法调用CPU提供的密码学相关指令。在C/C++/Rust的世界中，解决这类问题可通过调用CPU架构相关的intrinsics函数。而Go语言提供的解决方案是Go汇编。本文将介绍Go汇编的语法特点，并通过几个具体场景展示其使用方法。</p> <p>本文假定读者已经对计算机体系架构和汇编语言有基本的了解，因此常用的名词（比如“寄存器”）不做解释。如缺乏相关预备知识，可以寻求网络资源进行学习，例如<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://en.wikibooks.org/wiki/X86_Assembly"  target="_blank" rel="nofollow">这里</a>。</p> <p>如无特殊说明，本文所指的汇编语言皆针对x86（amd64）架构。关于x86指令集，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html"  target="_blank" rel="nofollow">Intel</a>和<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developer.amd.com/resources/developer-guides-manuals/"  target="_blank" rel="nofollow">AMD</a>官方都提供了完整的指令集参考文档。想快速查阅，也可以使用<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.felixcloutier.com/x86/index.html"  target="_blank" rel="nofollow">这个列表</a>。Intel的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html"  target="_blank" rel="nofollow">intrinsics文档</a>也可以作为一个参考。</p> </h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://en.wikipedia.org/wiki/Assembly_language#Historical_perspective"  target="_blank" rel="nofollow">维基百科</a>把使用汇编语言的理由概括成3类：</p> <ul> <li><strong>直接操作硬件</strong></li> <li><strong>使用特殊的CPU指令</strong></li> <li><strong>解决性能问题</strong></li> </ul> <p>Go程序员使用汇编的理由，也不外乎这3类。如果你面对的问题在这3个类别里面，并且没有现成的库可用，就可以考虑使用Go汇编。</p> <h2 id="为什么不用cgo">为什么不用CGO？</h2> <ul> <li><strong>巨大的函数调用开销</strong></li> <li><strong>内存管理问题</strong></li> <li><strong>打破goroutine语义</strong> 若协程里运行CGO函数，会占据单独线程，无法被Go运行时正常调度。</li> <li><strong>可移植性差</strong> 交叉编译需要目的平台的全套工具链。在不同平台部署需要安装更多依赖库。</li> </ul> <p>倘若在你的场景中以上几点无法接受，不妨尝试一下Go汇编。</p> </h1> <p>根据Rob Pike的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://youtu.be/KINIAgRpkDA"  target="_blank" rel="nofollow">The Design of the Go Assembler</a>，Go使用的汇编语言并不严格与CPU指令一一对应，而是一种被称作Plan 9 assembly的“伪汇编”。</p> <blockquote> <p>The most important thing to know about Go's assembler is that it is not a direct representation of the underlying machine. Some of the details map precisely to the machine, but some do not. This is because the compiler suite needs no assembler pass in the usual pipeline. Instead, the compiler operates on a kind of semi-abstract instruction set, and instruction selection occurs partly after code generation. The assembler works on the semi-abstract form, so when you see an instruction like MOV what the toolchain actually generates for that operation might not be a move instruction at all, perhaps a clear or load. Or it might correspond exactly to the machine instruction with that name. In general, machine-specific operations tend to appear as themselves, while more general concepts like memory move and subroutine call and return are more abstract. The details vary with architecture, and we apologize for the imprecision; the situation is not well-defined.</p> </blockquote> <p>我们不用关心Plan 9 assembly与机器指令的对应关系，只需要了解Plan 9 assembly的语法特点。网络上有一些可获得的文档，如<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/teh-cmc/go-internals/blob/master/chapter1_assembly_primer/README.md"  target="_blank" rel="nofollow">这里</a>和<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://go.dev/doc/asm"  target="_blank" rel="nofollow">这里</a>。</p> <p>一例胜千言，下面我们以最简单的64位整数加法为例，从不同方面来看Go汇编语法的特点。</p> <pre><code class="language-go">// add.go  func Add(x, y int64) int64</code></pre> <pre><code class="language-go">//add_amd64.s  #include "textflag.h"  TEXT ·Add(SB), NOSPLIT, $0-24 	MOVQ x+0(FP), AX 	MOVQ y+8(FP), CX     ADDQ AX, CX     MOVQ CX, ret+16(FP) 	RET</code></pre> <p>这四条汇编代码所做的依次是：</p> <ul> <li>第一个操作数x放入寄存器AX</li> <li>第二个操作数y放入寄存器CX</li> <li>CX加上AX，结果放回CX</li> <li>CX放入返回值所在栈地址</li> </ul> <h2 id="操作数顺序">操作数顺序</h2> <p>x86汇编最常用的语法有两种，AT&amp;T语法和Intel语法。AT&amp;T语法结果数放在最后，其他操作数放在前面。Intel语法结果数放最前面，其他操作数在后面。</p> <p>Go的汇编在这方面接近AT&amp;T语法，结果数放最后。</p> <p>一个容易写错的例子是CMP指令。从效果上来看，CMP类似于SUB指令只修改EFLAGS标志位，不修改操作数。而在Go汇编中，CMP是以第一个操作数减去第二个操作数（与SUB相反）的结果来设置标志位。</p> <h2 id="寄存器宽度标识">寄存器宽度标识</h2> <p>部分指令支持不同的寄存器宽度。以64位操作数的ADD为例，按AT&amp;T语法，指令名要加上宽度后缀变成ADDQ，寄存器也要加上宽度前缀变成RAX和RCX。按Intel语法，指令名不变，只给寄存器加上前缀。</p> <p>上面例子可以看出，Go汇编跟两者都不同：指令名需要加宽度后缀，寄存器不变。</p> <h2 id="函数调用约定">函数调用约定</h2> <p>编程语言在函数调用中传递参数的方式，称做函数调用约定（function calling convention）。x86-64架构上的主流C/C++编译器，都默认使用基于寄存器的方式：调用者把参数放进<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://wiki.osdev.org/Calling_Conventions"  target="_blank" rel="nofollow">特定的寄存器</a>传给被调用函数。而Go的调用约定，简单地讲，在最新的Go 1.18上，Go自己的runtime库在amd64与arm64与ppc64架构上使用基于寄存器的方式，其余地方（其他的CPU架构，以及非runtime库和用户写的库）使用基于栈的方式：调用者把参数依次压栈，被调用者通过传递的偏移量去栈中访问，执行结束后再把返回值压栈。</p> <p>在上面代码中，FP是一个虚拟寄存器，指向第一个参数在栈中的地址。多个参数和返回值会按顺序对齐存放，因此x，y，返回值在栈中地址分别是FP加上偏移量0，8，16。</p> </h1> <h2 id="avo"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/mmcloughlin/avo"  target="_blank" rel="nofollow">avo</a></h2> <p>熟悉汇编语言的读者应该知道，手写汇编语言，会有选择寄存器、计算偏移量等繁琐且易出错的步骤。avo库就是为解决此类问题而生。如欲了解avo的具体用法，请参见其repo中给出的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/mmcloughlin/avo/tree/master/examples"  target="_blank" rel="nofollow">样例</a>。</p> <h2 id="texttemplate"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pkg.go.dev/text/template"  target="_blank" rel="nofollow">text/template</a></h2> <p>这是Go语言自带的一个库。在写大量重复代码时会有帮助，例如在向量化代码中为不同类型实现相同基本算子。具体用法参见官方文档，这里不占用篇幅。</p> <h2 id="在go汇编代码中使用宏">在Go汇编代码中使用宏</h2> <p>Go汇编代码支持跟C语言类似的宏，也可以用在代码大量重复的场景。内部库中就有很多例子，比如<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/golang/go/blob/2ebe77a2fda1ee9ff6fd9a3e08933ad1ebaea039/src/crypto/aes/gcm_amd64.s#L263-L275"  target="_blank" rel="nofollow">这里</a>。</p> </h1> <h2 id="基本向量运算加速">基本向量运算加速</h2> <p>在OLAP数据库计算引擎中，向量化是必不可少的加速手段。通过向量化，消除了大量简单函数调用带来的不必要开销。而为了达到最大的向量化性能，使用SIMD指令是十分自然的选择。</p> <p>我们以8位整数向量化加法为例。将两个数组的元素两两相加，把结果放入第三个数组。这样的操作在某些C/C++编译器中，可以自动优化成使用SIMD指令的版本。而以编译速度见长的Go编译器，不会做这样的优化。这也是Go语言为了保证编译速度所做的主动选择。在这个例子中，我们介绍如何使用Go汇编以AVX2指令集实现int8类型向量加法（假设数组已经按32字节填充）。</p> <p>由于AVX2一共有16个256位寄存器，我们希望在循环展开中把它们全部使用上。如果完全手写的话，重复罗列寄存器非常繁琐且容易出错。因此我们使用avo来简化一些工作。avo的向量加法代码如下：</p> <pre><code class="language-go"> package main  import ( 	. "github.com/mmcloughlin/avo/build" 	. "github.com/mmcloughlin/avo/operand" 	. "github.com/mmcloughlin/avo/reg" )  var unroll = 16 var regWidth = 32  func main() {     TEXT("int8AddAvx2Asm", NOSPLIT, "func(x []int8, y []int8, r []int8)")     x := Mem{Base: Load(Param("x").Base(), GP64())}     y := Mem{Base: Load(Param("y").Base(), GP64())}     r := Mem{Base: Load(Param("r").Base(), GP64())}     n := Load(Param("x").Len(), GP64())      blocksize := regWidth * unroll     blockitems := blocksize / 1     regitems := regWidth / 1      Label("int8AddBlockLoop")     CMPQ(n, U32(blockitems))     JL(LabelRef("int8AddTailLoop"))      xs := make([]VecVirtual, unroll)     for i := 0; i &lt; unroll; i++ {         xs[i] = YMM()         VMOVDQU(x.Offset(regWidth*i), xs[i])     }     for i := 0; i &lt; unroll; i++ {         VPADDB(y.Offset(regWidth*i), xs[i], xs[i])     }     for i := 0; i &lt; unroll; i++ {         VMOVDQU(xs[i], r.Offset(regWidth*i))     }      ADDQ(U32(blocksize), x.Base)     ADDQ(U32(blocksize), y.Base)     ADDQ(U32(blocksize), r.Base)     SUBQ(U32(blockitems), n)     JMP(LabelRef("int8AddBlockLoop"))      Label("int8AddTailLoop")     CMPQ(n, U32(regitems))     JL(LabelRef("int8AddDone"))      VMOVDQU(x, xs[0])     VPADDB(y, xs[0], xs[0])     VMOVDQU(xs[0], r)      ADDQ(U32(regWidth), x.Base)     ADDQ(U32(regWidth), y.Base)     ADDQ(U32(regWidth), r.Base)     SUBQ(U32(regitems), n)     JMP(LabelRef("int8AddTailLoop"))      Label("int8AddDone")     RET() }</code></pre> <p>运行命令</p> <pre><code class="language-sh">go run int8add.go -out int8add.s</code></pre> <p>之后生成的汇编代码如下：</p> <pre><code>// Code generated by command: go run int8add.go -out int8add.s. DO NOT EDIT.  #include "textflag.h"  // func int8AddAvx2Asm(x []int8, y []int8, r []int8) // Requires: AVX, AVX2 TEXT ·int8AddAvx2Asm(SB), NOSPLIT, $0-72 	MOVQ x_base+0(FP), AX 	MOVQ y_base+24(FP), CX 	MOVQ r_base+48(FP), DX 	MOVQ x_len+8(FP), BX  int8AddBlockLoop: 	CMPQ    BX, $0x00000200 	JL      int8AddTailLoop 	VMOVDQU (AX), Y0 	VMOVDQU 32(AX), Y1 	VMOVDQU 64(AX), Y2 	VMOVDQU 96(AX), Y3 	VMOVDQU 128(AX), Y4 	VMOVDQU 160(AX), Y5 	VMOVDQU 192(AX), Y6 	VMOVDQU 224(AX), Y7 	VMOVDQU 256(AX), Y8 	VMOVDQU 288(AX), Y9 	VMOVDQU 320(AX), Y10 	VMOVDQU 352(AX), Y11 	VMOVDQU 384(AX), Y12 	VMOVDQU 416(AX), Y13 	VMOVDQU 448(AX), Y14 	VMOVDQU 480(AX), Y15 	VPADDB  (CX), Y0, Y0 	VPADDB  32(CX), Y1, Y1 	VPADDB  64(CX), Y2, Y2 	VPADDB  96(CX), Y3, Y3 	VPADDB  128(CX), Y4, Y4 	VPADDB  160(CX), Y5, Y5 	VPADDB  192(CX), Y6, Y6 	VPADDB  224(CX), Y7, Y7 	VPADDB  256(CX), Y8, Y8 	VPADDB  288(CX), Y9, Y9 	VPADDB  320(CX), Y10, Y10 	VPADDB  352(CX), Y11, Y11 	VPADDB  384(CX), Y12, Y12 	VPADDB  416(CX), Y13, Y13 	VPADDB  448(CX), Y14, Y14 	VPADDB  480(CX), Y15, Y15 	VMOVDQU Y0, (DX) 	VMOVDQU Y1, 32(DX) 	VMOVDQU Y2, 64(DX) 	VMOVDQU Y3, 96(DX) 	VMOVDQU Y4, 128(DX) 	VMOVDQU Y5, 160(DX) 	VMOVDQU Y6, 192(DX) 	VMOVDQU Y7, 224(DX) 	VMOVDQU Y8, 256(DX) 	VMOVDQU Y9, 288(DX) 	VMOVDQU Y10, 320(DX) 	VMOVDQU Y11, 352(DX) 	VMOVDQU Y12, 384(DX) 	VMOVDQU Y13, 416(DX) 	VMOVDQU Y14, 448(DX) 	VMOVDQU Y15, 480(DX) 	ADDQ    $0x00000200, AX 	ADDQ    $0x00000200, CX 	ADDQ    $0x00000200, DX 	SUBQ    $0x00000200, BX 	JMP     int8AddBlockLoop  int8AddTailLoop: 	CMPQ    BX, $0x00000020 	JL      int8AddDone 	VMOVDQU (AX), Y0 	VPADDB  (CX), Y0, Y0 	VMOVDQU Y0, (DX) 	ADDQ    $0x00000020, AX 	ADDQ    $0x00000020, CX 	ADDQ    $0x00000020, DX 	SUBQ    $0x00000020, BX 	JMP     int8AddTailLoop  int8AddDone: 	RET</code></pre> <p>可以看到，在avo代码中，我们只需要给变量指定寄存器类型，生成汇编的时候会自动帮我们绑定相应类型的可用寄存器。在很多场景下这确实能够带来方便。不过avo目前只支持x86架构，给arm CPU写汇编无法使用。</p> <h2 id="go语言无法直接调用的指令">Go语言无法直接调用的指令</h2> <p>除了SIMD，还有很多Go语言本身无法使用到的CPU指令，比如密码学相关指令。如果是用C/C++，可以使用编译器内置的intrinsics函数（gcc和clang皆提供）来调用，还算方便。遗憾的是Go语言并不提供intrinsics函数。遇到这样的场景，汇编是唯一的解决办法。Go语言自己的crypto官方库里就有大量的汇编代码。</p> <p>这里我们以CRC32C指令作为例子。在MatrixOne的哈希表实现中，整数key的哈希函数只使用一条CRC32指令，达到了理论上的最高性能。代码如下：</p> <pre><code class="language-go">TEXT ·Crc32Int64Hash(SB), NOSPLIT, $0-16 	MOVQ   -1, SI 	CRC32Q data+0(FP), SI 	MOVQ   SI, ret+8(FP) 	RET</code></pre> <p>实际代码中，为了消除汇编函数调用带来的指令跳转开销，以及参数进出栈开销，使用的是批量化的版本。这里为了节约篇幅，我们用简化版举例。</p> <h2 id="编译器无法达到的特殊优化效果">编译器无法达到的特殊优化效果</h2> <p>下面是MatrixOne使用的两个有序64位整数数组求交集的算法的一部分：</p> <pre><code>... loop: 	CMPQ  DX, DI 	JE    done 	CMPQ  R11, R8 	JE    done 	MOVQ  (DX), R10 	MOVQ  R10, (SI) 	CMPQ  R10, (R11) 	SETLE AL 	SETGE BL 	SETEQ CL 	SHLB  $0x03, AL 	SHLB  $0x03, BL 	SHLB  $0x03, CL 	ADDQ  AX, DX 	ADDQ  BX, R11 	ADDQ  CX, SI 	JMP   loop  done: ...</code></pre> <p><code>CMPQ R10, (R11)</code>这一行，是比较两个数组当前指针位置的元素。后面几行根据这个比较的结果，来移动对应操作数数组及结果数组的指针。文字解释不如对比下面等价的C语言代码来得清楚：</p> <pre><code class="language-c">while (true) {     if (a == a_end) break;     if (b == b_end) break;     *c = *a;     if (*a &lt;= *b) ++a;     if (*a &gt;= *b) ++b;     if (*a == *b) ++c; }</code></pre> <p>汇编代码中，循环体内只做了一次比较运算，并且没有任何的分支跳转。高级语言编译器达不到这样的优化效果，原因是任何高级语言都不提供“根据一个比较运算的3种不同结果，分别修改3个不同的数”这样直接跟CPU指令集相关的语义。</p> <p>这个例子算是对汇编语言威力的一个展示。编程语言不断发展，抽象层次越来越高，但是在性能最大化的场景下，仍然需要直接与CPU指令打交道的汇编语言。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-95125.htm">青浦二中分数线2021高考多少分（青浦二中分数线2021高考多少分录取）</a></p>
+                                        <p>下一个：<a href="/news/article-95958.htm">Docker 安装 Jenkins_在线工具</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-89243.htm" title="Android中Handler的使用方法">Android中Handler的使用方法</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-free-v2ray.htm" title="「4月11日」最高速度18.2M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点链接地址">「4月11日」最高速度18.2M/S，2025年Shadowrocket/V2ray/Clash/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-77929.htm" title="宠物领养的网站叫什么（宠物领养网站的设计与实现）">宠物领养的网站叫什么（宠物领养网站的设计与实现）</a></li>
+                        <li class="py-2"><a href="/news/article-88512.htm" title="pycharm对SQLite的可视化操作">pycharm对SQLite的可视化操作</a></li>
+                        <li class="py-2"><a href="/news/article-73194.htm" title="重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）">重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-67332.htm" title="狗粮品牌有哪些品牌好的（狗粮品牌大全）">狗粮品牌有哪些品牌好的（狗粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/news/article-84201.htm" title="在哪儿领养宠物（在哪里能领养宠物）">在哪儿领养宠物（在哪里能领养宠物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-node-subscribe-links.htm" title="「4月12日」最高速度19.1M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址">「4月12日」最高速度19.1M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87818.htm" title="SpringSecurity核心功能详解">SpringSecurity核心功能详解</a></li>
+                        <li class="py-2"><a href="/news/article-88513.htm" title="宠物救助站领养宠物流程（宠物救助站领养宠物流程视频）">宠物救助站领养宠物流程（宠物救助站领养宠物流程视频）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

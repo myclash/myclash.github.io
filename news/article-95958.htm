@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-95958.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Docker 安装 Jenkins_在线工具</title>
+        <meta name="description" content="本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。 1 Jenkins 的 Docker 镜像 Docker 官方曾经提供了 " />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-95958.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="Docker 安装 Jenkins_在线工具" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/045abda5525e98c95fd70a26b7919915.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:04:14" />
+    <meta property="og:updated_time" content="2025-04-14T08:04:14" />
+        <meta property="og:description" content="本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。 1 Jenkins 的 Docker 镜像 Docker 官方曾经提供了 " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Docker 安装 Jenkins_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">Docker 安装 Jenkins_在线工具</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>本文将介绍 Jenkins 初学者如何在学习环境使用 Docker 能够快速安装 Jenkins，本文内容不适用于生产环境。</p> <h2 id="1-jenkins-的-docker-镜像">1 Jenkins 的 Docker 镜像</h2> <p>Docker 官方曾经提供了 Docker 镜像的安装镜像，镜像名直接就是 <code>jenkins</code>，但 Docker 官方提供的镜像几年前就不维护了。如果使用 Docker 官方提供的镜像，只能使用老版本的 Jenkins，会导致有些插件不能正常安装。所以，我们应该使用 Jenkins 官方提供了镜像，镜像名 <code>jenkins/jenkins</code>。</p> <p>Jenkins 官方提供的 Docker 镜像仓库地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hub.docker.com/r/jenkins/jenkins%EF%BC%8C%E9%95%9C%E5%83%8F%E7%9A%84%E6%BA%90%E7%A0%81%E5%92%8C%E7%94%A8%E6%B3%95%E5%9C%A8"  target="_blank"  rel="nofollow">https://hub.docker.com/r/jenkins/jenkins，镜像的源码和用法在</a> Github 上：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/jenkinsci/docker%E3%80%82"  target="_blank"  rel="nofollow">https://github.com/jenkinsci/docker。</a></p> <h2 id="2-运行装有-jenkins-的-docker-容器">2 运行装有 Jenkins 的 Docker 容器</h2> <p>最基本的运行命令如下，它会启动一个安装有最新版本 Jenkins 的 Docker 容器，将宿主机的 8080 端口映射到容器的 8080 端口，宿主机的 5000 端口映射到容器的 5000 端口。</p> <pre><code class="language-docker">docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts </code></pre> <p>但上面这条命令没有将 Jenkins 的数据持久化，关闭容器之后数据就丢失了。因此需要容器中 Jinkins 的数据保存到卷中。如下命令在后台（<code>-d</code>）启动了一个容器，并将容器中 Jenkins 的数据放到卷<code>jenkins_home</code>中；这样，重启容器之后还能够保留数据。</p> <pre><code class="language-docker">docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts </code></pre> <h2 id="3-登录-jenkins">3 登录 Jenkins</h2> <p>Docker 容器启动之后就可以通过浏览器访问 Jenkins 了，访问的地址是：<code>http://localhost:8080</code>，刚才映射的宿主机端口是 <code>8080</code>。Jenkins 在启动时会在控制台打印初始密码，这个密码在首次进入页面时需要用到。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/866cdef153c67c62c039d392a7082345.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>可以通过 Docker Desktop 查看控制台输出。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/d5530418d04a32b6e40fe06d53fb0fd0.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>使用密码进入之后，提示安装初始插件。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/b11dfffd20b6c0d57b0ab7ac5608386d.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>根据需要选择安装推荐插件（左边）或者自己选择要安装的插件（右边）即可。下图为选择安装推荐插件之后的结果。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/ba29e029a2262f2fd326da2a2a9a2e0f.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>插件安装成功之后自动进入设置 Admin 密码页面，按照提示设置密码等信息。最终进入到如下页面，此时可以添加程序了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/5a00494d8d0056d47c1e93832d962fa7.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <h2 id="4-运行-hello-world">4 运行 Hello World</h2> <p>点击 [Create a Job]，进入如下页面，填入管道名称 "hello-world"，选择 "Pipeline"，点击 [ok]，进入管道配置页面。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/dcf331f2abe05b9bcbe307b2e7fce556.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>在管道配置页面的 "Pipeline" 框中填入如下内容，然后点击 [Save]，保存配置并进入 <code>hello-world</code> 管道页面。</p> <pre><code class="language-groovy">pipeline{     agent any     stages{         stage('Print Hello World'){             steps{                 echo 'Hello, beautiful Wolrd.'             }         }     } } </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/bca750f951936f2246deef35df3a2ad5.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>配置完成之后就可以运行管道了。在 <code>hello-world</code> 管道页面点击 [Build Now] 运行管道。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220428/54537d45c825264cb46d37c193ee20e4.jpg" alt="Docker 安装 Jenkins_在线工具"></p> <p>因为管道任务很短，管道很快就能运行完成，可以通过点击 [Console Output] 看到输出的内容。</p> <pre><code>Started by user Roots Running in Durability level: MAX_SURVIVABILITY [Pipeline] Start of Pipeline [Pipeline] node Running on Jenkins in /var/jenkins_home/workspace/hello-world [Pipeline] { [Pipeline] stage [Pipeline] { (Print Hello World) [Pipeline] echo Hello, beautiful Wolrd. [Pipeline] } [Pipeline] // stage [Pipeline] } [Pipeline] // node [Pipeline] End of Pipeline Finished: SUCCESS </code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-95955.htm">Go汇编语法和MatrixOne使用介绍</a></p>
+                                        <p>下一个：<a href="/news/article-96714.htm">狐狸犬多少元一只（银狐犬属于什么档次）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-node-share.htm" title="「4月7日」最高速度19.6M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址">「4月7日」最高速度19.6M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-free-ssr-node.htm" title="「3月30日」最高速度19.1M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「3月30日」最高速度19.1M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89983.htm" title="狗粮颗粒机二手市场（狗粮设备生产线二手）">狗粮颗粒机二手市场（狗粮设备生产线二手）</a></li>
+                        <li class="py-2"><a href="/news/article-67332.htm" title="狗粮品牌有哪些品牌好的（狗粮品牌大全）">狗粮品牌有哪些品牌好的（狗粮品牌大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-node-subscribe-links.htm" title="「4月12日」最高速度19.1M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址">「4月12日」最高速度19.1M/S，2025年Clash/V2ray/Shadowrocket/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-97405.htm" title="小猫10元一只去哪里买好（小猫10元一只去哪里买好呢）">小猫10元一只去哪里买好（小猫10元一只去哪里买好呢）</a></li>
+                        <li class="py-2"><a href="/news/article-82049.htm" title="做梦梦见抱着小女孩好不好（做梦梦见抱着小女孩好不好呀）">做梦梦见抱着小女孩好不好（做梦梦见抱着小女孩好不好呀）</a></li>
+                        <li class="py-2"><a href="/news/article-66682.htm" title="Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused">Error response from daemon: Get https://registry-1.docker.io/v2/ &#8230; read: connection refused</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-16-free-v2ray-subscribe.htm" title="「4月16日」最高速度20.5M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点链接地址">「4月16日」最高速度20.5M/S，2025年Clash/Shadowrocket/V2ray/SSR每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67331.htm" title="领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）">领养宠物赚钱软件是哪个软件的（领养宠物赚钱软件是哪个软件的）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

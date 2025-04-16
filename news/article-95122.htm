@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-95122.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>微信小程序自定义封装顶部导航栏</title>
+        <meta name="description" content="微信小程序官方的navigationBar只能设置颜色，字体大小，但是实际开发中多层页面嵌套则需要我们有返回上一级页面或者返回指定页面的功能，这个时候官方提供的就不能满足我们的需求了，但是官方也为我们" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-95122.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="微信小程序自定义封装顶部导航栏" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/e1a948293df20524126d23c3e8e9f1da.webp" />
+        <meta property="og:release_date" content="2025-04-13T07:19:43" />
+    <meta property="og:updated_time" content="2025-04-13T07:19:43" />
+        <meta property="og:description" content="微信小程序官方的navigationBar只能设置颜色，字体大小，但是实际开发中多层页面嵌套则需要我们有返回上一级页面或者返回指定页面的功能，这个时候官方提供的就不能满足我们的需求了，但是官方也为我们" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="微信小程序自定义封装顶部导航栏">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">微信小程序自定义封装顶部导航栏</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> </h1> <p>微信小程序官方的navigationBar只能设置颜色，字体大小，但是实际开发中多层页面嵌套则需要我们有返回上一级页面或者返回指定页面的功能，这个时候官方提供的就不能满足我们的需求了，但是官方也为我们提供了解决的方法</p> <blockquote> <p><strong>Navigation</strong><br /> Navigation是小程序的顶部导航组件，当页面配置navigationStyle设置为custom的时候可以使用此组件替代原生导航栏。</p> </blockquote> <p><strong>截图</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/69517446a101e0b154b75fca430a4517.jpg" alt="微信小程序自定义封装顶部导航栏"><br /><strong>1、首先需要在app.json中将navigationStyle设置为custom：</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/37ae921d60c8d858ade6eefa66fbd5ca.jpg" alt="微信小程序自定义封装顶部导航栏"></p> <p><strong>2、在项目中一旦使用自定义导航栏，那么每个页面都需要进行配置，将其封装成为一个组件，在每个页面中使用起来也就更加方便。</strong><br /> 组件目录：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/0fdc5a63c2d8cf927ae16a75cf4b004e.jpg" alt="微信小程序自定义封装顶部导航栏"><br /> navbar.wxml文件</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cover-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>nav-wrap<span class="token punctuation">'</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token style language-css"><span class="token selector">height:</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span><span class="token punctuation">(</span>height*2 + 25<span class="token punctuation">)</span>*2<span class="token punctuation">}</span><span class="token punctuation">}</span>rpx<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span></span><span class="token punctuation">&gt;</span></span>   <span class="token comment">&lt;!-- 导航栏 中间的标题 --&gt;</span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cover-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>nav-title<span class="token punctuation">'</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token style language-css"><span class="token selector">line-height:</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span><span class="token punctuation">(</span>height*2 + 35<span class="token punctuation">)</span>*2<span class="token punctuation">}</span><span class="token punctuation">}</span>rpx<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span></span><span class="token punctuation">&gt;</span></span>     {<!-- -->{navbarData.title}}   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cover-view</span><span class="token punctuation">&gt;</span></span>    <span class="token comment">&lt;!-- 导航栏  左上角的返回按钮 --&gt;</span>   <span class="token comment">&lt;!-- 其中wx:if='{<!-- -->{navbarData.showCapsule}}' 是控制左上角按钮的显示隐藏，首页不显示 --&gt;</span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cover-view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>nav-capsule<span class="token punctuation">'</span></span>  <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>{<!-- -->{navbarData.showCapsule}}<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>     <span class="token comment">&lt;!-- 左上角的返回按钮，wx:if='{<!-- -->{!share}}'空制返回按钮显示 --&gt;</span>     <span class="token comment">&lt;!-- 从分享进入小程序时 返回上一级按钮不应该存在 --&gt;</span>     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cover-view</span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>_navback<span class="token punctuation">'</span></span> <span class="token attr-name"><span class="token namespace">wx:</span>if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>{<!-- -->{!share}}<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cover-image</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>../../img/left.png<span class="token punctuation">'</span></span> <span class="token attr-name">mode</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>aspectFit<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>back-pre<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cover-image</span><span class="token punctuation">&gt;</span></span>     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cover-view</span><span class="token punctuation">&gt;</span></span>     <span class="token comment">&lt;!-- &lt;cover-view class='navbar-v-line' wx:if='{<!-- -->{share}}'&gt;&lt;/cover-view&gt; --&gt;</span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cover-view</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cover-view</span><span class="token punctuation">&gt;</span></span> </code></pre> <p>navbar.wxss文件</p> <pre><code class="prism language-css"><span class="token comment">/* component/navbar/navbar.wxss */</span> <span class="token comment">/* 顶部要固定定位   标题要居中   自定义按钮和标题要和右边微信原生的胶囊上下对齐 */</span> <span class="token selector">.nav-wrap</span> <span class="token punctuation">{<!-- --></span>   <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>   <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>   <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>   <span class="token property">background</span><span class="token punctuation">:</span> #fda851<span class="token punctuation">;</span>   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>   <span class="token property">z-index</span><span class="token punctuation">:</span> 9999999<span class="token punctuation">;</span>   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>   <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment">/* 标题要居中 */</span> <span class="token selector">.nav-title</span> <span class="token punctuation">{<!-- --></span>   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>   <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token property">max-width</span><span class="token punctuation">:</span> 350rpx<span class="token punctuation">;</span>   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>   <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>   <span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span>   <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>   <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>   <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>   <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>   <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>   <span class="token property">font-size</span><span class="token punctuation">:</span> 42rpx<span class="token punctuation">;</span>   <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>   <span class="token property">font-weight</span><span class="token punctuation">:</span> 500<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token selector">.nav-capsule</span> <span class="token punctuation">{<!-- --></span>   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>   <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>   <span class="token property">margin-left</span><span class="token punctuation">:</span> 30rpx<span class="token punctuation">;</span>   <span class="token property">width</span><span class="token punctuation">:</span> 200rpx<span class="token punctuation">;</span>   <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span>   <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token selector">.navbar-v-line</span> <span class="token punctuation">{<!-- --></span>   <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>   <span class="token property">height</span><span class="token punctuation">:</span> 32rpx<span class="token punctuation">;</span>   <span class="token property">background-color</span><span class="token punctuation">:</span> #e5e5e5<span class="token punctuation">;</span> <span class="token punctuation">}</span>  <span class="token selector">.back-pre</span> <span class="token punctuation">{<!-- --></span>   <span class="token property">width</span><span class="token punctuation">:</span> 36rpx<span class="token punctuation">;</span>   <span class="token property">height</span><span class="token punctuation">:</span> 36rpx<span class="token punctuation">;</span>   <span class="token property">margin-top</span><span class="token punctuation">:</span> 18rpx<span class="token punctuation">;</span>   <span class="token property">padding</span><span class="token punctuation">:</span> 10rpx<span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>navbar.json文件</p> <pre><code class="prism language-javascript"><span class="token punctuation">{<!-- --></span>   <span class="token string">"component"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token string">"usingComponents"</span><span class="token operator">:</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <p>navbar.js文件</p> <pre><code class="prism language-javascript"><span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>   properties<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     navbarData<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>   <span class="token comment">//navbarData   由父页面传递的数据，变量名字自命名</span>       type<span class="token operator">:</span> Object<span class="token punctuation">,</span>       value<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">,</span>       <span class="token function-variable function">observer</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">newVal<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>   data<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     height<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>     <span class="token comment">//默认值  默认显示左上角</span>     navbarData<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>       showCapsule<span class="token operator">:</span> <span class="token number">1</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>   <span class="token function-variable function">attached</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// 获取是否是通过分享进入的小程序</span>     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       share<span class="token operator">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>share     <span class="token punctuation">}</span><span class="token punctuation">)</span>     <span class="token comment">// 定义导航栏的高度   方便对齐</span>     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       height<span class="token operator">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>height     <span class="token punctuation">}</span><span class="token punctuation">)</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>   methods<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// 返回上一页面</span>     <span class="token function">_navback</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token comment">// 当前页面为“成长记录”时，对返回按钮进行劫持，直接跳转到首页</span>       <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>navbarData<span class="token punctuation">.</span>title <span class="token operator">===</span> <span class="token string">'成长记录'</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>navbarData<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>         wx<span class="token punctuation">.</span><span class="token function">switchTab</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>           url<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">../index</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>           <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>              <span class="token keyword">var</span> page <span class="token operator">=</span> <span class="token function">getCurrentPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token keyword">if</span> <span class="token punctuation">(</span>page <span class="token operator">==</span> <span class="token keyword">undefined</span> <span class="token operator">||</span> page <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>              page<span class="token punctuation">.</span><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span>         <span class="token keyword">return</span> <span class="token punctuation">;</span>       <span class="token punctuation">}</span>       wx<span class="token punctuation">.</span><span class="token function">navigateBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre> <p>app.js文件</p> <pre><code class="prism language-javascript"><span class="token comment">//app.js</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>   <span class="token function-variable function">onLaunch</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// 判断是否由分享进入小程序</span>     <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>scene <span class="token operator">==</span> <span class="token number">1007</span> <span class="token operator">||</span> options<span class="token punctuation">.</span>scene <span class="token operator">==</span> <span class="token number">1008</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">this</span><span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>share <span class="token operator">=</span> <span class="token boolean">true</span>     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">this</span><span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>share <span class="token operator">=</span> <span class="token boolean">false</span>     <span class="token punctuation">}</span><span class="token punctuation">;</span>     <span class="token comment">//获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度）</span>     wx<span class="token punctuation">.</span><span class="token function">getSystemInfo</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>       <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>height <span class="token operator">=</span> res<span class="token punctuation">.</span>statusBarHeight       <span class="token punctuation">}</span>     <span class="token punctuation">}</span><span class="token punctuation">)</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span>    globalData<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     share<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>  <span class="token comment">// 分享默认为false</span>     height<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre> <p><strong>3、在页面中使用</strong><br /> pages文件夹中的页面<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/9ef2b5f18ede7229972767724d3fa713.jpg" alt="微信小程序自定义封装顶部导航栏"><br /> login.wxml文件</p> <pre><code class="prism language-html"><span class="token comment">&lt;!-- pages/index/login/login.wxml --&gt;</span> // 'navbar-data'中navbar是自定义导航栏标题 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav-bar</span> <span class="token attr-name">navbar-data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>{<!-- -->{nvabarData}}<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav-bar</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>login<span class="token punctuation">"</span></span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token style language-css"><span class="token selector">margin-top:</span> <span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>height<span class="token punctuation">}</span><span class="token punctuation">}</span>px</span><span class="token punctuation">'</span></span></span><span class="token punctuation">&gt;</span></span>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span> </code></pre> <p>login.js文件</p> <pre><code class="prism language-javascript"> <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>     <span class="token comment">/**      * 页面的初始数据      */</span>     data<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>       <span class="token comment">// 组件所需的参数</span>       nvabarData<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>         showCapsule<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//是否显示左上角图标   1表示显示    0表示不显示</span>         title<span class="token operator">:</span> <span class="token string">'奉贤区早教'</span><span class="token punctuation">,</span> <span class="token comment">//导航栏 中间的标题</span>       <span class="token punctuation">}</span><span class="token punctuation">,</span>       height<span class="token operator">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>height <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">20</span> <span class="token punctuation">,</span> <span class="token comment">// 此页面 页面内容距最顶部的距离</span>    <span class="token punctuation">}</span>  <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre> <p>login.json文件</p> <pre><code class="prism language-javascript"><span class="token punctuation">{<!-- --></span>   <span class="token string">"usingComponents"</span><span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     <span class="token string">"nav-bar"</span><span class="token operator">:</span> <span class="token string">"../../../component/navbar/navbar"</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> <h2> <a id="_212" rel="nofollow"></a>补充</h2> <p>组件中view和image标签使用<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html"  rel="nofollow">cover-view</a> 、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html"  rel="nofollow">cover-image</a>代替，是要保证导航栏在使用时，层级保持最高，因为在之前开发过程中其中一个页面使用到了Echarts，当页面过长向上滚动时，会出现图表覆盖在导航栏上面，使用<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html"  rel="nofollow">cover-view</a> 、<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html"  rel="nofollow">cover-image</a>标签可以解决这个问题。</p> <h2> <a id="_214" rel="nofollow"></a>总结</h2> <p>对于小程序开发本人也在摸索阶段，上面代码若有错误之处还望大家能够多多指正。<br /> 更多文章__&gt; &gt;&gt; <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.lhzzs.top/portal/home"  rel="nofollow">码砖猿的技术博客</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-94071.htm">开宠物店很赚钱吗女生（开宠物店的女生影响生育吗）</a></p>
+                                        <p>下一个：<a href="/news/article-95125.htm">青浦二中分数线2021高考多少分（青浦二中分数线2021高考多少分录取）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-94071.htm" title="开宠物店很赚钱吗女生（开宠物店的女生影响生育吗）">开宠物店很赚钱吗女生（开宠物店的女生影响生育吗）</a></li>
+                        <li class="py-2"><a href="/news/article-73857.htm" title="开宠物医院的条件有哪些（开宠物医院都需要什么证件）">开宠物医院的条件有哪些（开宠物医院都需要什么证件）</a></li>
+                        <li class="py-2"><a href="/news/article-77248.htm" title="狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）">狗粮批发市场进货渠道小包装多少钱一吨（狗粮批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-high-speed-nodes.htm" title="「3月7日」最高速度18.2M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址">「3月7日」最高速度18.2M/S，2025年Shadowrocket/Clash/SSR/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share.htm" title="「3月6日」最高速度22.3M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点链接地址">「3月6日」最高速度22.3M/S，2025年SSR/V2ray/Clash/Shadowrocket每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-69235.htm" title="被家猫抓了轻微渗血需要打多少针（被家猫抓了轻微渗血需要打多少针狂犬疫苗）">被家猫抓了轻微渗血需要打多少针（被家猫抓了轻微渗血需要打多少针狂犬疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-95125.htm" title="青浦二中分数线2021高考多少分（青浦二中分数线2021高考多少分录取）">青浦二中分数线2021高考多少分（青浦二中分数线2021高考多少分录取）</a></li>
+                        <li class="py-2"><a href="/news/article-84936.htm" title="动物医院运营的工作内容 动物医院运营的工作内容是什么">动物医院运营的工作内容 动物医院运营的工作内容是什么</a></li>
+                        <li class="py-2"><a href="/news/article-66044.htm" title="宠爱国际动物医院官网招聘 宠爱国际动物医院工作怎么样">宠爱国际动物医院官网招聘 宠爱国际动物医院工作怎么样</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-node-share.htm" title="「4月7日」最高速度19.6M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址">「4月7日」最高速度19.6M/S，2025年Clash/V2ray/SSR/Shadowrocket每天更新免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
