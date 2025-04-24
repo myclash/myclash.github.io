@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://myclash.github.io/news/article-102491.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>MySQL FROM_UNIXTIME()函数的用途是什么？</title>
+        <meta name="description" content="MySQL FROM_UNIXTIME()函数用于从Unix时间戳版本返回日期/日期时间。返回值的格式可以是“ YYYY-MM-DD HH：MM：SS”或“ YYYYMMDDHHMMSS.uuuuuu" />
+        <link rel="icon" href="/assets/website/img/myclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="MyClash官网每日更新站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://myclash.github.io/news/article-102491.htm" />
+    <meta property="og:site_name" content="MyClash官网每日更新站" />
+    <meta property="og:title" content="MySQL FROM_UNIXTIME()函数的用途是什么？" />
+    <meta property="og:image" content="https://myclash.github.io/uploads/20240710/8fd46efd231b741faaa98a4cb4fb5e46.webp" />
+        <meta property="og:release_date" content="2025-04-23T08:43:59" />
+    <meta property="og:updated_time" content="2025-04-23T08:43:59" />
+        <meta property="og:description" content="MySQL FROM_UNIXTIME()函数用于从Unix时间戳版本返回日期/日期时间。返回值的格式可以是“ YYYY-MM-DD HH：MM：SS”或“ YYYYMMDDHHMMSS.uuuuuu" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL FROM_UNIXTIME()函数的用途是什么？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/myclash/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/myclash/lindy-uikit.css" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5DZ5QQPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JV5DZ5QQPV');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+    <!-- ========================= hero-section-wrapper-2 start ========================= -->
+    <section id="home" class="hero-section-wrapper-2 list">
+                <!-- ========================= header-2 start ========================= -->
+        <header class="header header-2">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                                                        <span>MyClash</span>
+                                                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent2">
+                                    <ul id="nav2" class="navbar-nav ml-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                                <!-- navbar collapse -->
+                            </nav>
+                            <!-- navbar -->
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </div>
+            <!-- navbar area -->
+        </header>
+        <!-- ========================= header-2 end ========================= -->
+        <!-- ========================= hero-2 start ========================= -->
+        <div class="hero-section hero-style-2">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="hero-content-wrapper">
+                            <h1 class="mb-30 wow fadeInUp" data-wow-delay=".4s">MySQL FROM_UNIXTIME()函数的用途是什么？</h1>
+                            <p class="mb-50 wow fadeInUp" data-wow-delay=".6s">
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="/assets/website/img/myclash/hero/hero-2/hero-img.svg" alt="" class="wow fadeInRight" data-wow-delay=".2s">
+                            <img src="/assets/website/img/myclash/hero/hero-2/paattern.svg" alt="" class="shape shape-1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========================= hero-2 end ========================= -->
+    </section>
+    <!-- ========================= hero-section-wrapper-2 end ========================= -->
+    <!-- ========================= about style-3 start ========================= -->
+    <section id="about" class="about-section about-style-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<p>MySQL FROM_UNIXTIME()函数用于从Unix时间戳版本返回日期/日期时间。返回值的格式可以是“ YYYY-MM-DD HH：MM：SS”或“ YYYYMMDDHHMMSS.uuuuuu”，具体取决于函数的上下文，即上下文是数字还是字符串。</p> <p>以下是FROM_UNIXTIME的语法-</p> <pre>FROM_UNIXTIME(unix_timestamp,&nbsp;[format])</pre> <p>这里的unix_timestamp是Unix时间戳的值，格式包括我们要返回该值的格式字符串。</p> <h2>示例</h2> <pre>mysql&gt;&nbsp;Select&nbsp;FROM_UNIXTIME(1555033470); +---------------------------+ |&nbsp;FROM_UNIXTIME(1555033470)&nbsp;| +---------------------------+ |&nbsp;2019-04-12&nbsp;07:14:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| +---------------------------+ 1&nbsp;row&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101793.htm">Git基础配置Git用户签名的方式详解</a></p>
+                                        <p>下一个：<a href="/news/article-102495.htm">Vue-跑马灯效果</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-71197.htm" title="数据库上云实践：使用Ora2pg进行数据库迁移">数据库上云实践：使用Ora2pg进行数据库迁移</a></li>
+                        <li class="py-2"><a href="/news/article-92941.htm" title="宠物粮市场前景预测表 宠物粮市场前景预测表格">宠物粮市场前景预测表 宠物粮市场前景预测表格</a></li>
+                        <li class="py-2"><a href="/news/article-93711.htm" title="Django 之视图url参数获取">Django 之视图url参数获取</a></li>
+                        <li class="py-2"><a href="/news/article-73194.htm" title="重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）">重庆的宠物批发市场在哪里（重庆的宠物批发市场在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-82049.htm" title="做梦梦见抱着小女孩好不好（做梦梦见抱着小女孩好不好呀）">做梦梦见抱着小女孩好不好（做梦梦见抱着小女孩好不好呀）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-clash-windows.htm" title="「4月19日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点链接地址">「4月19日」最高速度21.5M/S，2025年SSR/Clash/Shadowrocket/V2ray每天更新免费节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-97405.htm" title="小猫10元一只去哪里买好（小猫10元一只去哪里买好呢）">小猫10元一只去哪里买好（小猫10元一只去哪里买好呢）</a></li>
+                        <li class="py-2"><a href="/news/article-84201.htm" title="在哪儿领养宠物（在哪里能领养宠物）">在哪儿领养宠物（在哪里能领养宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-89244.htm" title="宠物领养的文案短句（宠物领养的文案短句怎么写）">宠物领养的文案短句（宠物领养的文案短句怎么写）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-node-subscribe.htm" title="「3月21日」最高速度18.5M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点链接地址">「3月21日」最高速度18.5M/S，2025年Shadowrocket/SSR/V2ray/Clash每天更新免费节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= about style-3 end ========================= -->
+        <footer class="footer footer-style-1">
+        <div class="container">
+            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>MyClash官网每日更新站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer style-1 end ========================= -->
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/myclash/jquery-3.4.1.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/bootstrap.5.0.0.alpha-2-min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/contact-form.js"></script>
+    <script src="/assets/website/js/frontend/myclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/myclash/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/imagesloaded.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/isotope.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/count-up.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/myclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
