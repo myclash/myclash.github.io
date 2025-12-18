@@ -1,4 +1,4 @@
-# 「12月10日」最高速度21.5M/S，2025年Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点每天更新免费节点链接地址  更新时间 2025-12-10 11:28:06
+# 「12月18日」最高速度22.4M/S，2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点每天更新免费节点链接地址  更新时间 2025-12-18 10:13:07
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://myclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://myclash.github.io/uploads/2025/12/0-20251210.yaml
-- https://myclash.github.io/uploads/2025/12/1-20251210.yaml
-- https://myclash.github.io/uploads/2025/12/2-20251210.yaml
-- https://myclash.github.io/uploads/2025/12/3-20251210.yaml
-- https://myclash.github.io/uploads/2025/12/4-20251210.yaml
+- https://myclash.github.io/uploads/2025/12/0-20251218.yaml
+- https://myclash.github.io/uploads/2025/12/1-20251218.yaml
+- https://myclash.github.io/uploads/2025/12/2-20251218.yaml
+- https://myclash.github.io/uploads/2025/12/3-20251218.yaml
+- https://myclash.github.io/uploads/2025/12/4-20251218.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://myclash.github.io/uploads/2025/12/0-20251210.txt
-- https://myclash.github.io/uploads/2025/12/1-20251210.txt
-- https://myclash.github.io/uploads/2025/12/2-20251210.txt
-- https://myclash.github.io/uploads/2025/12/3-20251210.txt
-- https://myclash.github.io/uploads/2025/12/4-20251210.txt
+- https://myclash.github.io/uploads/2025/12/0-20251218.txt
+- https://myclash.github.io/uploads/2025/12/1-20251218.txt
+- https://myclash.github.io/uploads/2025/12/2-20251218.txt
+- https://myclash.github.io/uploads/2025/12/3-20251218.txt
+- https://myclash.github.io/uploads/2025/12/4-20251218.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://myclash.github.io/uploads/2025/12/20251210.json
+- https://myclash.github.io/uploads/2025/12/20251218.json
 
 ## 更多Clash节点订阅 ：
 
