@@ -1,4 +1,4 @@
-# 「9月23日」最高速度21.5M/S，2025年SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点每天更新免费节点链接地址  更新时间 2026-09-23 10:48:58
+# 「9月30日」最高速度22.4M/S，2025年V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点每天更新免费节点链接地址  更新时间 2026-09-30 10:43:35
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://myclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://myclash.github.io/uploads/2026/09/0-20260923.yaml
-- https://myclash.github.io/uploads/2026/09/1-20260923.yaml
-- https://myclash.github.io/uploads/2026/09/2-20260923.yaml
-- https://myclash.github.io/uploads/2026/09/3-20260923.yaml
-- https://myclash.github.io/uploads/2026/09/4-20260923.yaml
+- https://myclash.github.io/uploads/2026/09/0-20260930.yaml
+- https://myclash.github.io/uploads/2026/09/1-20260930.yaml
+- https://myclash.github.io/uploads/2026/09/2-20260930.yaml
+- https://myclash.github.io/uploads/2026/09/3-20260930.yaml
+- https://myclash.github.io/uploads/2026/09/4-20260930.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://myclash.github.io/uploads/2026/09/0-20260923.txt
-- https://myclash.github.io/uploads/2026/09/1-20260923.txt
-- https://myclash.github.io/uploads/2026/09/2-20260923.txt
-- https://myclash.github.io/uploads/2026/09/3-20260923.txt
-- https://myclash.github.io/uploads/2026/09/4-20260923.txt
+- https://myclash.github.io/uploads/2026/09/0-20260930.txt
+- https://myclash.github.io/uploads/2026/09/1-20260930.txt
+- https://myclash.github.io/uploads/2026/09/2-20260930.txt
+- https://myclash.github.io/uploads/2026/09/3-20260930.txt
+- https://myclash.github.io/uploads/2026/09/4-20260930.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://myclash.github.io/uploads/2026/09/20260923.json
+- https://myclash.github.io/uploads/2026/09/20260930.json
 
 ## 更多Clash节点订阅 ：
 
